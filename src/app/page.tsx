@@ -271,18 +271,18 @@ export default function HomePage() {
         <div className='mx-8 font-hero'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose'>
             <div className='flex flex-wrap items-center justify-between w-full gap-4'>
-              <div className='text-7xl font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-left'>Simplifying ownership of</div>
-              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] w-[286px] rounded-lg'>
+              <div className='text-3xl md:text-7xl font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left'>Simplifying ownership of</div>
+              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat w-full h-[114px] md:w-[286px] rounded-lg'>
               </div>
             </div>
             <div className='flex flex-wrap items-center justify-between w-full mt-8 gap-4'>
-              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] w-[372px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat w-full h-[114px] md:w-[372px] rounded-lg'>
               </div>
-              <div className='text-7xl font-medium text-slate-900 drop-shadow-md leading-tight italic text-right'>best performing asset</div>
+              <div className='text-3xl md:text-7xl font-medium text-slate-900 drop-shadow-md leading-tight italic text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
             <div className='flex flex-wrap items-center justify-between w-full mt-8 gap-4'>
-              <div className='text-7xl font-medium text-yellow-900 drop-shadow-md leading-tight text-left'>of the 21st century</div>
-              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] w-[446px] rounded-lg'>
+              <div className='text-3xl md:text-7xl font-medium text-yellow-900 drop-shadow-md leading-tight text-center md: text-left w-full md:w-auto'>of the 21st century</div>
+              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat w-full h-[114px] md:w-[446px] rounded-lg'>
               </div>
             </div>
           </div>
@@ -293,19 +293,19 @@ export default function HomePage() {
           <div className='flex flex-1 justify-center'>
             <div className='bg-greyBg p-3 rounded-md text-white text-lg'>In the last 10 years</div>
           </div>
-          <div className='flex justify-center items-center relative'>
-            <div className='absolute left-0 top-10 mx-10'>
+          <div className='flex justify-center items-center relative mt-8 md:mt-0'>
+            <div className='absolute left-0 top-1/2 -translate-y-1/2 mx-10 hidden md:block'>
               <div className='flex flex-col w-2'>
                 {
                   Array(COMPARISON_DATA.length).fill(1).map((item, index) => {
-                    return (<div key={index} className={clsx('w-2 rounded-md h-4 mt-2', index === selectedIndex && 'bg-white h-8', index !== selectedIndex && ' bg-greyBg' )}
+                    return (<div key={index} className={clsx('w-2 rounded-md h-4 mt-2 cursor-pointer', index === selectedIndex && 'bg-white h-8', index !== selectedIndex && ' bg-greyBg' )}
                     onClick={() => {setSelectedIndex(index)}}>
                     </div>)
                   })
                 }
               </div>
             </div>
-            <div className='absolute right-0 top-10 w-[180px] py-6 px-4 bg-greyBg rounded-l-lg'>
+            <div className='absolute right-0 top-1/2 -translate-y-1/2 w-[180px] py-6 px-4 bg-greyBg rounded-l-lg hidden md:block'>
               <div className='text-grabniteGrey'>
                 {COMPARISON_DATA?.[selectedIndex]?.title } <span>{COMPARISON_DATA?.[selectedIndex]?.gain}%</span>
               </div>
@@ -315,12 +315,12 @@ export default function HomePage() {
               </div>
             </div>
             <div className='card w-full mx-10'>
-              <div className='flex items-center justify-center w-full mt-4'>
+              <div className='flex items-center flex-wrap md:flex-nowrap justify-center w-full mt-4'>
                 {
                   COMPARISON_DATA?.[selectedIndex]?.cards.map((card, index) => {
                     return (
                       <>
-                      <div className={index === 0?'w-4/7':'w-3/7 ml-6'}>
+                      <div className={index === 0?'w-4/7':'w-3/7 ml-0 md:ml-6'}>
                         <div className={'flex justify-center items-center'}>
                           <NextImage
                             className='h-10 w-10 rounded-md'
@@ -334,12 +334,15 @@ export default function HomePage() {
                           className='rounded-lg mt-6'
                           alt={card?.image_data?.alt_text}
                           src={card?.image_data?.uri}
-                          width={index=== 0?440:292.54}
+                          width={292}
                           height={166}
                           />
+                        {
+                          index === 0 && <div className='text-white w-full text-center text-2xl font-normal tracking-wide flex flex-col justify-center min-h-full block md:hidden'>vs</div>
+                        }
                       </div>
                         {
-                          index === 0 && <div className='text-white font-xl font-normal tracking-wide ml-6 flex flex-col justify-center min-h-full'>vs</div>
+                          index === 0 && <div className='text-white text-2xl font-normal tracking-wide ml-6 flex flex-col justify-center min-h-full hidden md:block'>vs</div>
                         }
                       </>
                     )
@@ -348,20 +351,35 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          <div className='w-full py-6 px-4 bg-greyBg mt-12 visible md:hidden'>
+            <div className='text-grabniteGrey text-xl font-normal mx-5'>
+              {COMPARISON_DATA?.[selectedIndex]?.title } <span>{COMPARISON_DATA?.[selectedIndex]?.gain}%</span>
+            </div>
+            <div className='flex justify-end items-center mt-2 text-white'>
+              <div >Know more</div>
+              <RiArrowRightLine className='ml-2'/>
+            </div>
+          </div>
         </div>
       </section>
-      <section className='bg-darkBg bg-opacity-99 px-20 font-content'>
+      <section className='bg-darkBg bg-opacity-99 font-content'>
+        <div className={clsx('flex flex-col md:flex-row justify-between items-center gap-6 pt-4 px-10')}>
+          <div className={clsx('w-full md:w-1/2 order-last md:order-first')}>
+            <div className='flex flex-col'>
+              <div className='flex flex-col items-start md:items-center'>
+                <div className='text-lg md:text-2xl font-normal text-white'>Your Bitcoin Partner from</div>
+                <div className='text-xl md:text-3xl font-bold text-white'>Purchase to Custody.</div>
+              </div>
+            </div>
+          </div>
+        </div>
         {
           CAPTION_DATA?.map((card,index) => {
             return (
-              <div className='pt-6' key={index}>
-                <div className='flex justify-between items-center gap-6 mt-4'>
-                  <div className='flex-1'>
+              <div className='py-6 px-10' key={index}>
+                <div className='flex flex-col md:flex-row justify-between items-center gap-6 mt-4'>
+                  <div className={clsx('w-full md:w-1/2 order-last md:order-first')}>
                     <div className='flex flex-col'>
-                      <div className='flex flex-col items-center'>
-                        <div className='text-3xl font-normal text-white'>Your Bitcoin Partner from</div>
-                        <div className='text-3xl font-bold text-white'>Purchase to Custody.</div>
-                      </div>
                       <div className='flex flex-1 p-4 justify-center items-center mt-6'>
                         <NextImage
                           className='flex-1 max-w-[400px]'
@@ -372,9 +390,9 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className='flex-1'>
-                    <div className='text-3xl font-normal text-white max-w-sm'>{card?.title}</div>
-                    <div className='text-xl font-normal text-grabniteGrey max-w-md mt-4'>{card?.description}</div>
+                  <div className={clsx('w-full md:w-1/2 order-first md:order-last')}>
+                    <div className='text-2xl md:text-3xl font-normal text-white max-w-sm'>{card?.title}</div>
+                    <div className='text-md md:text-xl font-normal text-grabniteGrey max-w-md mt-4'>{card?.description}</div>
                   </div>
                 </div>
               </div>
@@ -383,40 +401,40 @@ export default function HomePage() {
         }
       </section>
       <section className='bg-white px-20 py-20 font-content'>
-        <div className='flex flex-1 justify-between items-center gap-4'>
-            <div className='text-kobicha text-2xl font-semibold'>Powered by</div>
-          {
-            PARTNER_DATA?.map((item, index) => {
-              return (
-                <div key={index} className='self-stretch flex flex-col justify-between'>
-                  <NextImage
-                    className='flex-1'
-                    alt={item?.image_data?.alt_text}
-                    src={item?.image_data?.uri}
-                    width={166}
-                    height={48}/>
-                  <div className='text-xs text-grabniteGrey font-light text-center mt-2'>{item?.description}</div>
-                </div>
-              )
-            })
-          }
+        <div className='flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4'>
+            <div className='text-kobicha text-2xl font-semibold w-full md:w-auto text-center md:text-left'>Powered by</div>
+            {
+              PARTNER_DATA?.map((item, index) => {
+                return (
+                  <div key={index} className='w-full md:w-auto self-auto md:self-stretch flex flex-col justify-between items-center'>
+                    <NextImage
+                      className='flex-1'
+                      alt={item?.image_data?.alt_text}
+                      src={item?.image_data?.uri}
+                      width={166}
+                      height={48}/>
+                    <div className='text-xs text-grabniteGrey font-light text-center mt-1'>{item?.description}</div>
+                  </div>
+                )
+              })
+            }
           <div className='text-md text-kobicha font-normal'>and more...</div>
         </div>
       </section>
       <section className='bg-white bg-opacity-80 font-content'>
         <div className='mx-10'>
-          <div className='layout relative flex min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
-            <div className='flex flex-wrap items-center justify-between w-full'>
-              <div className='text-3xl font-normal text-kobicha text-left max-w-md'>Be a part of our thriving</div>
-              <div className='text-3xl font-bold text-kobicha text-left max-w-md'>  Bitcoiners community</div>
-              <div className='text-xl font-normal text-kobichaLight text-left max-w-sm mt-6'>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>
+          <div className='layout relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
+            <div className='flex flex-wrap items-center justify-between'>
+              <div className='text-lg md:text-2xl font-normal text-kobicha text-center md:text-left max-w-full md:max-w-md'>Be a part of our thriving</div>
+              <div className='text-xl md:text-3xl font-bold text-kobicha text-center md: text-left max-w-full md:max-w-md'>  Bitcoiners community</div>
+              <div className='text-md md:text-xl font-normal text-kobichaLight text-left max-w-sm mt-6 tracking-tighter'>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>
             </div>
-            <div className='flex flex-col flex-wrap items-center justify-between w-full mt-6 px-6 gap-12'>
+            <div className='flex flex-col flex-wrap items-center justify-between w-full mt-6 px-0 md:px-6 gap-12'>
               {
                 COMMUNITY_DATA?.map((item, index) => {
                   return (
                     <div key={index} className='bg-kobicha rounded-lg p-6 flex-1 w-full'>
-                      <div className='flex justify-between items-start'>
+                      <div className='flex flex-col md:flex-row justify-between items-center md:items-start'>
                         <div>
                           <div className='h-10 w-10 rounded-full bg-bone flex justify-center items-center bg-opacity-30 p-2'>
                             <NextImage alt={item?.icon?.alt_text} src={item?.icon?.uri} width={40} height={40}/>
@@ -440,20 +458,22 @@ export default function HomePage() {
         </div>
       </section>
       <section className='bg-black font-content'>
-        <div className='py-16 flex items-center justify-between'>
+        <div className='py-16 flex flex-col md:flex-row items-center justify-between'>
           <div className='flex-1 flex items-center justify-center p-6'>
             <div>
-              <div className='text-white text-4xl font-normal max-w-md tracking-wide leading-relaxed'>To start preserving &
+              <div className='text-white text-2xl md:text-4xl font-normal max-w-sm md:max-w-md tracking-wide leading-relaxed'>To start preserving &
                 multiplying your wealth
                 now!
               </div>
-              <div className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white py-1 px-4 tracking-wider mt-4'>
-                <div className='font-normal text-lg text-white'>
+              <div className='flex justify-start items-center mt-4'>
+                <div className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white py-1 px-4 tracking-wider mt-4'>
+                <div className='font-normal text-md md:text-lg text-white'>
                   Contact us now
                 </div>
                 <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center'>
                   <RiArrowRightLine className='text-black'/>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -467,38 +487,38 @@ export default function HomePage() {
         </div>
       </section>
       <section className='bg-black font-content'>
-        <div className='py-10 flex items-center justify-between'>
-          <div className='flex-1 flex items-center justify-center p-6'>
+        <div className='py-10 w-full flex flex-col md:flex-row items-center justify-between px-10'>
+          <div className='w-full md:w-1/2 flex items-center justify-center'>
             <div>
               {/*<NextImage alt={} src={}/>*/}
-              <div className='text-white text-opacity-70 text-md font-normal max-w-md pr-12'>
-                Join the rank of Savy Investor who
-                trust us for their Bitcoins needs.
+              <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12'>
+                Join the rank of Savy Investor who trust us for their Bitcoins needs.
               </div>
               <div className="relative mt-6 max-w-sm">
                 <div className="absolute top-4 left-3">
                   <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
                 </div>
-                <input type="text" className="w-96 pr-20 rounded-lg z-0 focus:shadow focus:outline-none bg-transparent" placeholder="Email"/>
-                  <div className="absolute top-2 right-2">
-                    <button className="px-1 py-1 text-eerieBlack text-xs font-semibold rounded-lg bg-white">Subscribe</button>
-                  </div>
+                <input type="text" className="block min-w-full pr-20 rounded-lg z-0 focus:shadow focus:outline-none bg-transparent" placeholder="Email"/>
+                <div className="absolute top-2 right-2">
+                  <button className="px-1 py-1 text-eerieBlack text-xs font-semibold rounded-lg bg-white">Subscribe</button>
+                </div>
               </div>
             </div>
           </div>
-          <div className='flex-1  flex items-center justify-center p-6'>
-            <div>
-              <div className='flex justify-start items-center gap-6'>
-                {
-                  FOOTER_LINKS.map((item, index) => {
-                    return (
-                      <PrimaryLink key={index} href={item?.uri} variant={'primary'}>{item?.title}</PrimaryLink>
-                    )
-                  })
-                }
-              </div>
-              <div className='flex justify-start items-center gap-4 mt-10'>
-                <div className='text-white text-opacity-60 text-sm tracking-wide'>Follow us on: </div>
+          <div className='w-full md:w-1/2'>
+            {/*<div className='flex-1'>*/}
+            <div className='flex flex-col md:flex-row justify-start items-center gap-6 mt-8 md:mt-0'>
+              {
+                FOOTER_LINKS.map((item, index) => {
+                  return (
+                    <PrimaryLink key={index} href={item?.uri} variant={'primary'}>{item?.title}</PrimaryLink>
+                  )
+                })
+              }
+            </div>
+            <div className='flex flex-col md:flex-row flex-nowrap md:flex-wrap justify-start items-center gap-4 mt-10'>
+              <div className='text-white text-opacity-60 text-sm tracking-wide'>Follow us on: </div>
+              <div className='flex justify-start items-center gap-4'>
                 {SOCIAL_MEDIA_DATA?.map((item, index) => {
                   return (
                     <NextImage
@@ -511,6 +531,7 @@ export default function HomePage() {
                 })}
               </div>
             </div>
+            {/*</div>*/}
           </div>
         </div>
       </section>
