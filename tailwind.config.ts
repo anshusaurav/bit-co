@@ -7,6 +7,11 @@ export default {
     extend: {
       fontFamily: {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        hero: ['Roboto', ...defaultTheme.fontFamily.sans],
+        content: ['Noto Sans', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        '7xl': '4.8rem',
       },
       colors: {
         primary: {
@@ -24,6 +29,22 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#222222',
+        kobicha: '#66381F',
+        kobichaLight:'#85604C',
+        bone: '#E5D8C5',
+        jet: '#2C2C2C',
+        pumpkin: '#EF7828',
+        eerieBlack: '#191817',
+        platinum: '#E6E6E6',
+        grabniteGrey: '#666666',
+        darkBg:'#0F0F0F',
+        greyBg: '#2C2D31',
+
+
+
+      },
+      backgroundColor: {
+        bone: '#E5D8C5',
       },
       keyframes: {
         flicker: {
