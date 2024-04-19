@@ -1,11 +1,14 @@
 'use client';
 
 import Head from 'next/head';
+import Link from 'next/link'
 import * as React from 'react';
 import '@/lib/env';
+// import { PopupWidget } from "react-calendly";
 import { RiArrowRightLine } from "react-icons/ri";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import '@/styles/Home.module.css';
+
 // import ArrowLink from '@/components/links/ArrowLink';
 // import ButtonLink from '@/components/links/ButtonLink';
 // import UnderlineLink from '@/components/links/UnderlineLink';
@@ -144,9 +147,9 @@ const PARTNER_DATA = [
     title: 'Zebpay',
     image_data: {
       alt_text: 'zebpay',
-      uri: '/images/Zebpay.png'
+      uri: '/images/ZebPay.png'
     },
-    description: 'Exchange Partner'
+    description: 'Exchange'
   },
   {
     title: 'Trezor',
@@ -154,7 +157,7 @@ const PARTNER_DATA = [
       alt_text: 'trezor',
       uri: '/images/Trezor.png'
     },
-    description: 'Hardware Wallet Partner'
+    description: 'Hardware Wallet'
   },
   {
     title: 'Liminal',
@@ -162,7 +165,7 @@ const PARTNER_DATA = [
       alt_text: 'liminal',
       uri: '/images/Liminal.png'
     },
-    description: 'Multisig Custody Partner'
+    description: 'Multisig Custody'
   }
 ]
 const COMMUNITY_DATA = [
@@ -177,29 +180,29 @@ const COMMUNITY_DATA = [
       action: {
         type: 'NAVIGATION',
         data: {
-          uri: ''
+          uri: 'https://calendly.com/anshu-saurav/15min'
         }
       }
     },
     countString: '1000+'
   },
-  {
-    icon: {
-      uri: '/images/views.png',
-      alt_text: 'view count'
-    },
-    title: 'Views',
-    cta: {
-      title: 'Watch our content',
-      action: {
-        type: 'NAVIGATION',
-        data: {
-          uri: ''
-        }
-      }
-    },
-    countString: '5M+'
-  },
+  // {
+  //   icon: {
+  //     uri: '/images/views.png',
+  //     alt_text: 'view count'
+  //   },
+  //   title: 'Views',
+  //   cta: {
+  //     title: 'Watch our content',
+  //     action: {
+  //       type: 'NAVIGATION',
+  //       data: {
+  //         uri: ''
+  //       }
+  //     }
+  //   },
+  //   countString: '5M+'
+  // },
 
 ]
 const FOOTER_LINKS = [
@@ -214,23 +217,35 @@ const FOOTER_LINKS = [
 ]
 
 const SOCIAL_MEDIA_DATA = [
+  // {
+  //   title: 'Youtube',
+  //   image_data: {
+  //     uri: '/images/youtube.png',
+  //     alt_text: 'Youtube',
+  //     width: 110,
+  //     height: 30
+  //   },
+  //   uri: 'https://www.facebook.com/Bitcoincierge'
+  // },
+  // {
+  //   title: 'Instagram',
+  //   image_data: {
+  //     uri: '/images/instagram.png',
+  //     alt_text: 'Instagram',
+  //     width: 30,
+  //     height: 30
+  //   },
+  //   https://www.facebook.com/Bitcoincierge
+  // },
   {
-    title: 'Youtube',
+    title: 'Twitter',
     image_data: {
-      uri: '/images/youtube.png',
-      alt_text: 'Youtube',
-      width: 110,
-      height: 30
-    }
-  },
-  {
-    title: 'Instagram',
-    image_data: {
-      uri: '/images/instagram.png',
-      alt_text: 'Instagram',
+      uri: '/images/twitter.png',
+      alt_text: 'Twitter',
       width: 30,
       height: 30
-    }
+    },
+    uri:'https://www.linkedin.com/company/bitcoincierge/'
   },
   {
     title: 'Facebook',
@@ -239,16 +254,8 @@ const SOCIAL_MEDIA_DATA = [
       alt_text: 'Facebook',
       width: 30,
       height: 30
-    }
-  },
-  {
-    title: 'Twitter',
-    image_data: {
-      uri: '/images/twitter.png',
-      alt_text: 'Twitter',
-      width: 30,
-      height: 30
-    }
+    },
+    uri:'https://www.facebook.com/Bitcoincierge/'
   },
   {
     title: 'LinkedIn',
@@ -362,7 +369,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-darkBg bg-opacity-99 font-content'>
+      <section className='bg-darkBg bg-opacity-99 font-content pb-16'>
         <div className={clsx('flex flex-col md:flex-row justify-between items-center gap-6 pt-4 px-10')}>
           <div className={clsx('w-full md:w-1/2 order-last md:order-first')}>
             <div className='flex flex-col'>
@@ -421,19 +428,19 @@ export default function HomePage() {
           <div className='text-md text-kobicha font-normal'>and more...</div>
         </div>
       </section>
-      <section className='bg-white bg-opacity-80 font-content'>
+      <section className='bg-white bg-opacity-80 font-content' id={'calendly-node'}>
         <div className='mx-10'>
           <div className='layout relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
             <div className='flex flex-wrap items-center justify-between'>
               <div className='text-lg md:text-2xl font-normal text-kobicha text-center md:text-left max-w-full md:max-w-md'>Be a part of our thriving</div>
-              <div className='text-xl md:text-3xl font-bold text-kobicha text-center md: text-left max-w-full md:max-w-md'>  Bitcoiners community</div>
+              <div className='text-xl md:text-3xl font-bold text-kobicha text-center md: text-left max-w-full md:max-w-md'>Bitcoiners community</div>
               <div className='text-md md:text-xl font-normal text-kobichaLight text-left max-w-sm mt-6 tracking-tighter'>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>
             </div>
             <div className='flex flex-col flex-wrap items-center justify-between w-full mt-6 px-0 md:px-6 gap-12'>
               {
                 COMMUNITY_DATA?.map((item, index) => {
                   return (
-                    <div key={index} className='bg-kobicha rounded-lg p-6 flex-1 w-full'>
+                    <Link href={item?.cta?.action?.data?.uri} target="_blank" key={index} className='bg-kobicha rounded-lg p-6 flex-1 w-full'>
                       <div className='flex flex-col md:flex-row justify-between items-center md:items-start'>
                         <div>
                           <div className='h-10 w-10 rounded-full bg-bone flex justify-center items-center bg-opacity-30 p-2'>
@@ -449,7 +456,7 @@ export default function HomePage() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   )
                 })
               }
@@ -505,30 +512,32 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className='w-full md:w-1/2'>
+          <div className='w-full md:w-1/2 flex justify-center items-center'>
             {/*<div className='flex-1'>*/}
-            <div className='flex flex-col md:flex-row justify-start items-center gap-6 mt-8 md:mt-0'>
-              {
-                FOOTER_LINKS.map((item, index) => {
-                  return (
-                    <PrimaryLink key={index} href={item?.uri} variant={'primary'}>{item?.title}</PrimaryLink>
-                  )
-                })
-              }
-            </div>
-            <div className='flex flex-col md:flex-row flex-nowrap md:flex-wrap justify-start items-center gap-4 mt-10'>
-              <div className='text-white text-opacity-60 text-sm tracking-wide'>Follow us on: </div>
-              <div className='flex justify-start items-center gap-4'>
-                {SOCIAL_MEDIA_DATA?.map((item, index) => {
-                  return (
-                    <NextImage
-                      key={index}
-                      alt={item?.image_data?.alt_text}
-                      src={item?.image_data?.uri}
-                      height={item?.image_data?.height}
-                      width={item?.image_data?.width}/>
-                  )
-                })}
+            <div>
+              <div className='flex flex-col md:flex-row justify-start items-center gap-6 mt-8 md:mt-0'>
+                {
+                  FOOTER_LINKS.map((item, index) => {
+                    return (
+                      <PrimaryLink key={index} href={item?.uri} variant={'primary'}>{item?.title}</PrimaryLink>
+                    )
+                  })
+                }
+              </div>
+              <div className='flex flex-col md:flex-row flex-nowrap md:flex-wrap justify-start items-center gap-4 mt-10'>
+                <div className='text-white text-opacity-60 text-sm tracking-wide'>Follow us on: </div>
+                <div className='flex justify-start items-center gap-4'>
+                  {SOCIAL_MEDIA_DATA?.map((item, index) => {
+                    return (
+                      <NextImage
+                        key={index}
+                        alt={item?.image_data?.alt_text}
+                        src={item?.image_data?.uri}
+                        height={item?.image_data?.height}
+                        width={item?.image_data?.width}/>
+                    )
+                  })}
+                </div>
               </div>
             </div>
             {/*</div>*/}
