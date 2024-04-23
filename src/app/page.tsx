@@ -667,7 +667,7 @@ export default function HomePage() {
                     {
                       SIDEBAR_SOCIAL_DATA?.map((item, index) => {
                         return (
-                          <Link href={item?.uri} target="_blank">
+                          <Link key={index} href={item?.uri} target="_blank">
                             <NextImage className='cursor-pointer' key={index} alt={item?.image_data?.alt_text} src={item?.image_data?.uri} width={item?.image_data?.width} height={item?.image_data?.height}/>
                           </Link>
                         )
