@@ -9,6 +9,8 @@ export default {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
         hero: ['Roboto', ...defaultTheme.fontFamily.sans],
         content: ['Noto Sans', ...defaultTheme.fontFamily.sans],
+        decor: ['Recife', ...defaultTheme.fontFamily.sans],
+        polysans:['Polysans', ...defaultTheme.fontFamily.sans]
       },
       fontSize: {
         '7xl': '4.8rem',
@@ -39,9 +41,6 @@ export default {
         grabniteGrey: '#666666',
         darkBg:'#0F0F0F',
         greyBg: '#2C2D31',
-
-
-
       },
       backgroundColor: {
         bone: '#E5D8C5',
@@ -71,7 +70,15 @@ export default {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
       },
-    },
+      screens: {
+
+        'mlg': '840px',
+        // => @media (min-width: 768px) { ... }
+        'lxl': '1120px',
+        // => @media (min-width: 1280px) { ... }
+
+      }
+    }
   },
   plugins: [require('@tailwindcss/forms')],
 } satisfies Config;

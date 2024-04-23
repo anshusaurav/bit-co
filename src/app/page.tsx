@@ -5,10 +5,10 @@ import Link from 'next/link'
 import * as React from 'react';
 import '@/lib/env';
 // import { PopupWidget } from "react-calendly";
-import { RiArrowRightLine } from "react-icons/ri";
+import {RiArrowRightLine, RiCloseLine} from "react-icons/ri";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import '@/styles/Home.module.css';
-
+// import localFont from '@next/font/local'
 // import ArrowLink from '@/components/links/ArrowLink';
 // import ButtonLink from '@/components/links/ButtonLink';
 // import UnderlineLink from '@/components/links/UnderlineLink';
@@ -21,9 +21,9 @@ import '@/styles/Home.module.css';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import Logo from '~/svg/Logo.svg';
+// import Logo from '~/svg/Logo.svg';
 import NextImage from '@/components/NextImage';
-import Image from 'next/image';
+// import Image from 'next/image';
 import clsx from 'clsx';
 import PrimaryLink from '@/components/links/PrimaryLink';
 // import Background from '~/images/background.png';
@@ -245,7 +245,7 @@ const SOCIAL_MEDIA_DATA = [
       width: 30,
       height: 30
     },
-    uri:'https://www.linkedin.com/company/bitcoincierge/'
+    uri:'https://www.x.com/bitcoincierge-x/'
   },
   {
     title: 'Facebook',
@@ -264,38 +264,122 @@ const SOCIAL_MEDIA_DATA = [
       alt_text: 'LinkedIn',
       width: 30,
       height: 30
-    }
+    },
+    uri:'https://www.linkedin.com/company/bitcoincierge/'
   }
+]
+const SIDEBAR_DATA = [
+  {
+    title: 'About',
+    image_data: {
+      uri: '/images/about.svg',
+      alt_text: 'About',
+      width: 30,
+      height: 30
+    },
+    uri: '#about-section'
+  },
+  {
+    title: 'Why Us',
+    image_data: {
+      uri: '/images/why-us.svg',
+      alt_text: 'Why us',
+      width: 30,
+      height: 30
+    },
+    uri: '#whyus-section'
+  },
+  {
+    title: 'Client',
+    image_data: {
+      uri: '/images/client.svg',
+      alt_text: 'Client',
+      width: 30,
+      height: 30
+    },
+    uri: '#client-section'
+  },
+  {
+    title: 'Features',
+    image_data: {
+      uri: '/images/features.svg',
+      alt_text: 'Features',
+      width: 30,
+      height: 30
+    },
+    uri: '#feature-section'
+  },
+  {
+    title: 'Podcast',
+    image_data: {
+      uri: '/images/podcast.svg',
+      alt_text: 'Podcast',
+      width: 30,
+      height: 30
+    },
+    uri: '#podcast-section'
+  }
+]
+const SIDEBAR_SOCIAL_DATA = [
+  {
+    uri: 'https://www.facebook.com/Bitcoincierge/',
+    image_data: {
+      uri: '/images/facebook-sb.svg',
+      alt_text: 'Facebook',
+      width: 30,
+      height: 30
+    }
+  },
+  {
+    uri: 'https://www.linkedin.com/company/bitcoincierge/',
+    image_data: {
+      uri: '/images/linkedin-sb.svg',
+      alt_text: 'Linkedin',
+      width: 30,
+      height: 30
+    }
+  },
+  {
+    uri:'https://www.x.com/bitcoincierge-x/',
+    image_data: {
+      uri: '/images/twitter-sb.svg',
+      alt_text: 'Twitter',
+      width: 30,
+      height: 30
+    }
+  },
 ]
 export default function HomePage() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+  const toggleSidebar = () => {setSidebarOpen(bool => !bool)}
   return (
-    <main style={{backgroundImage: `url("/images/background.png")`}} className='bg-contain bg-center bg-repeat-y'>
+    <main style={{backgroundImage: `url("/images/background.png")`}} className='bg-contain bg-center bg-repeat-y relative'>
       <Head>
         <title>Hi</title>
       </Head>
-      <section className='bg-white bg-opacity-80'>
-        <div className='mx-8 font-hero'>
+      <section className=''>
+        <div className='mx-8'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose'>
             <div className='flex flex-wrap items-center justify-between w-full gap-4'>
-              <div className='text-3xl md:text-7xl font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left'>Simplifying ownership of</div>
-              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat w-full h-[114px] md:w-[286px] rounded-lg'>
+              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
+              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] md:[h-90px] lg:[h-114px] w-full md:w-[198px] lg:w-[240px] rounded-lg'>
               </div>
             </div>
             <div className='flex flex-wrap items-center justify-between w-full mt-8 gap-4'>
-              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat w-full h-[114px] md:w-[372px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[114px] md:[h-90px] lg:[h-114px] w-full md:w-[260px] lg:w-[340px] rounded-lg'>
               </div>
-              <div className='text-3xl md:text-7xl font-medium text-slate-900 drop-shadow-md leading-tight italic text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
+              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
             <div className='flex flex-wrap items-center justify-between w-full mt-8 gap-4'>
-              <div className='text-3xl md:text-7xl font-medium text-yellow-900 drop-shadow-md leading-tight text-center md: text-left w-full md:w-auto'>of the 21st century</div>
-              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat w-full h-[114px] md:w-[446px] rounded-lg'>
+              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-normal text-center md:text-left w-full md:w-auto'>of the 21st century</div>
+              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] md:[h-90px] lg:[h-114px] w-full md:w-[284px] lg:w-[420px] rounded-lg'>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className='bg-darkBg font-content py-12'>
+      <section className='bg-darkBg font-content py-12' id='about-section'>
         <div className='py-10'>
           <div className='flex flex-1 justify-center'>
             <div className='bg-greyBg p-3 rounded-md text-white text-lg'>In the last 10 years</div>
@@ -328,7 +412,7 @@ export default function HomePage() {
                     return (
                       <>
                       <div className={index === 0?'w-4/7':'w-3/7 ml-0 md:ml-6'}>
-                        <div className={'flex justify-center items-center'}>
+                        <div className='flex justify-center items-center'>
                           <NextImage
                             className='h-10 w-10 rounded-md'
                             alt={card?.icon?.alt_text}
@@ -369,7 +453,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-darkBg bg-opacity-99 font-content pb-16'>
+      <section className='bg-darkBg bg-opacity-99 font-content pb-16' id='whyus-section'>
         <div className={clsx('flex flex-col md:flex-row justify-between items-center gap-6 pt-4 px-10')}>
           <div className={clsx('w-full md:w-1/2 order-last md:order-first')}>
             <div className='flex flex-col'>
@@ -407,7 +491,7 @@ export default function HomePage() {
           })
         }
       </section>
-      <section className='bg-white px-20 py-20 font-content'>
+      <section className='bg-white px-20 py-20 font-content' id='client-section'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4'>
             <div className='text-kobicha text-2xl font-semibold w-full md:w-auto text-center md:text-left'>Powered by</div>
             {
@@ -428,7 +512,7 @@ export default function HomePage() {
           <div className='text-md text-kobicha font-normal'>and more...</div>
         </div>
       </section>
-      <section className='bg-white bg-opacity-80 font-content' id={'calendly-node'}>
+      <section className='bg-white bg-opacity-80 font-content'>
         <div className='mx-10'>
           <div className='layout relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
             <div className='flex flex-wrap items-center justify-between'>
@@ -486,14 +570,14 @@ export default function HomePage() {
           </div>
           <div className='flex-1 flex justify-center items-center relative'>
             <NextImage
-              alt={'Contact us'}
-              src={'/images/contact-us.png'}
+              alt='Contact us'
+              src='/images/contact-us.png'
               width={282}
               height={380}/>
           </div>
         </div>
       </section>
-      <section className='bg-black font-content'>
+      <section className='bg-black font-content' id='feature-section'>
         <div className='py-10 w-full flex flex-col md:flex-row items-center justify-between px-10'>
           <div className='w-full md:w-1/2 flex items-center justify-center'>
             <div>
@@ -519,7 +603,7 @@ export default function HomePage() {
                 {
                   FOOTER_LINKS.map((item, index) => {
                     return (
-                      <PrimaryLink key={index} href={item?.uri} variant={'primary'}>{item?.title}</PrimaryLink>
+                      <PrimaryLink key={index} href={item?.uri} variant='primary'>{item?.title}</PrimaryLink>
                     )
                   })
                 }
@@ -529,12 +613,14 @@ export default function HomePage() {
                 <div className='flex justify-start items-center gap-4'>
                   {SOCIAL_MEDIA_DATA?.map((item, index) => {
                     return (
-                      <NextImage
+                      <PrimaryLink key={index} href={item?.uri} variant='primary'>
+                        <NextImage
                         key={index}
                         alt={item?.image_data?.alt_text}
                         src={item?.image_data?.uri}
                         height={item?.image_data?.height}
                         width={item?.image_data?.width}/>
+                      </PrimaryLink>
                     )
                   })}
                 </div>
@@ -544,11 +630,60 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-black border-t border-t-amber-50 py-6 font-content'>
+      <section className='bg-black border-t border-t-amber-50 py-6 font-content' id='podcast-section'>
         <div className='text-white font-normal text-sm tracking-wide flex justify-center items-center'>
           © 2024 21Towers. All rights reserved
         </div>
       </section>
+      {
+        sidebarOpen && <div style={{backgroundImage: `url("/images/noise-bg.png")`}} className='bg-contain bg-center bg-repeat-y fixed inset-0 w-full z-50'>
+        <div className='relative'>
+          <div className='absolute inset-y-0 right-0 max-w-[465px] w-full min-h-screen bg-jet'>
+            <div className='flex-1 flex-col'>
+              <div className='border-b border-b-bone border-opacity-20'>
+                <div className='flex justify-end px-14 py-6 text-bone'>
+                  <RiCloseLine size={48} className='cursor-pointer' onClick={toggleSidebar}/>
+                </div>
+              </div>
+              <div className='flex-1 px-14 py-10'>
+                <div className='flex flex-col gap-8'>
+                  {
+                    SIDEBAR_DATA?.map((item, index) => {
+                      return (
+                        <Link key={index} href={item?.uri} className='flex justify-start items-center gap-3 py-3' onClick={toggleSidebar}>
+                          <NextImage alt={item?.image_data?.alt_text} src={item?.image_data?.uri} width={item?.image_data?.width}
+                                     height={item?.image_data?.height}/>
+                          <div className='text-4xl text-bone font-semibold'>{item?.title}</div>
+                        </Link>
+
+                      )
+                    })
+                  }
+                </div>
+              </div>
+              <div className='px-14 py-6'>
+                  <div className='text-bone font-xs font-light'>We are available here</div>
+                  <div className='flex justify-start items-center gap-6 mt-1'>
+                    {
+                      SIDEBAR_SOCIAL_DATA?.map((item, index) => {
+                        return (
+                          <NextImage key={index} alt={item?.image_data?.alt_text} src={item?.image_data?.uri} width={item?.image_data?.width} height={item?.image_data?.height}/>
+                        )
+                      })
+                    }
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      <div className='layout absolute top-0 inset-x-0 py-10 z-10'>
+        <div className='flex justify-between items-center '>
+          <NextImage alt='Logo' src='/images/logo.png' width={180} height={54}/>
+          <NextImage alt='HAmburger' src='/images/hamburger.svg' width={32} height={16} className='cursor-pointer' onClick={toggleSidebar}/>
+        </div>
+      </div>
     </main>
   );
 }

@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import * as React from 'react';
-
+// import localFont from '@next/font/local'
+import '@/styles/colors.css';
 import '@/styles/globals.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
-
 import { siteConfig } from '@/constant/config';
 
 // !STARTERCONF Change these default meta
@@ -49,13 +48,16 @@ export const metadata: Metadata = {
   ],
 };
 
+// const myFont = localFont({
+//   src: './public/fonts/RecifeDisplay-SemiBold.woff2',
+// })
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
