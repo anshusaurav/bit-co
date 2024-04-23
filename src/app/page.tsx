@@ -363,17 +363,17 @@ export default function HomePage() {
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
-              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[240px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[220px] lxl:w-[240px] rounded-lg'>
               </div>
             </div>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
-              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[340px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[310px] lxl:w-[340px]rounded-lg'>
               </div>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of the 21st century</div>
-              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[420px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[360px] lxl:w-[420px]rounded-lg'>
               </div>
             </div>
           </div>

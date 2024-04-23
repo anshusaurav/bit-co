@@ -12,9 +12,6 @@ export default {
         decor: ['Recife', ...defaultTheme.fontFamily.sans],
         polysans:['Polysans', ...defaultTheme.fontFamily.sans]
       },
-      fontSize: {
-        '7xl': '4.8rem',
-      },
       colors: {
         primary: {
           // Customize it on globals.css :root
