@@ -360,20 +360,20 @@ export default function HomePage() {
       </Head>
       <section className=''>
         <div className='mx-8'>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose'>
+          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
             <div className='flex flex-wrap items-center justify-between w-full gap-4'>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
-              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] md:[h-90px] lg:[h-114px] w-full md:w-[198px] lg:w-[240px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[81px] md:[h-90px] lg:[h-114px] w-full md:w-[198px] lg:w-[240px] rounded-lg'>
               </div>
             </div>
             <div className='flex flex-wrap items-center justify-between w-full mt-8 gap-4'>
-              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[114px] md:[h-90px] lg:[h-114px] w-full md:w-[260px] lg:w-[340px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[81px] md:[h-90px] lg:[h-114px] w-full md:w-[260px] lg:w-[340px] rounded-lg'>
               </div>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
             <div className='flex flex-wrap items-center justify-between w-full mt-8 gap-4'>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-normal text-center md:text-left w-full md:w-auto'>of the 21st century</div>
-              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[114px] md:[h-90px] lg:[h-114px] w-full md:w-[284px] lg:w-[420px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[81px] md:[h-90px] lg:[h-114px] w-full md:w-[284px] lg:w-[420px] rounded-lg'>
               </div>
             </div>
           </div>
