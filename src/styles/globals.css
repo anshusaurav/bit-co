@@ -97,6 +97,12 @@
     @apply mx-auto w-11/12;
   }
 
+  .sidebar-layout {
+    /* 1100px */
+    max-width: 73.00rem;
+
+  }
+
   .bg-dark a.custom-link {
     @apply border-gray-200 hover:border-gray-200/0;
   }
