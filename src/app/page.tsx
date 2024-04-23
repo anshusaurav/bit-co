@@ -361,19 +361,19 @@ export default function HomePage() {
       <section className='pt-16 md:pt-0'>
         <div className='mx-8'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
-            <div className='flex flex-row md:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
+            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
-              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:[h-90px] lg:[h-114px] w-[180px] lg:w-[240px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[240px] rounded-lg'>
               </div>
             </div>
-            <div className='flex flex-row md:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
-              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[60px] md:[h-90px] lg:[h-114px] w-[180px] lg:w-[340px] rounded-lg'>
+            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
+              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[340px] rounded-lg'>
               </div>
               <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
-            <div className='flex flex-row md:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
-              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-normal text-center md:text-left w-full md:w-auto'>of the 21st century</div>
-              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:[h-90px] lg:[h-114px] w-[180px] lg:w-[420px] rounded-lg'>
+            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
+              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of the 21st century</div>
+              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[420px] rounded-lg'>
               </div>
             </div>
           </div>
@@ -603,7 +603,7 @@ export default function HomePage() {
                 {
                   FOOTER_LINKS.map((item, index) => {
                     return (
-                      <PrimaryLink key={index} href={item?.uri} variant='primary'>{item?.title}</PrimaryLink>
+                      <Link key={index} href={item?.uri} target="_blank">{item?.title}</Link>
                     )
                   })
                 }
@@ -613,14 +613,14 @@ export default function HomePage() {
                 <div className='flex justify-start items-center gap-4'>
                   {SOCIAL_MEDIA_DATA?.map((item, index) => {
                     return (
-                      <PrimaryLink key={index} href={item?.uri} variant='primary'>
+                      <Link key={index} href={item?.uri} target="_blank">
                         <NextImage
                         key={index}
                         alt={item?.image_data?.alt_text}
                         src={item?.image_data?.uri}
                         height={item?.image_data?.height}
                         width={item?.image_data?.width}/>
-                      </PrimaryLink>
+                      </Link>
                     )
                   })}
                 </div>
@@ -667,7 +667,9 @@ export default function HomePage() {
                     {
                       SIDEBAR_SOCIAL_DATA?.map((item, index) => {
                         return (
-                          <NextImage key={index} alt={item?.image_data?.alt_text} src={item?.image_data?.uri} width={item?.image_data?.width} height={item?.image_data?.height}/>
+                          <Link href={item?.uri} target="_blank">
+                            <NextImage className='cursor-pointer' key={index} alt={item?.image_data?.alt_text} src={item?.image_data?.uri} width={item?.image_data?.width} height={item?.image_data?.height}/>
+                          </Link>
                         )
                       })
                     }
