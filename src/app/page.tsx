@@ -211,7 +211,7 @@ const FOOTER_LINKS = [
     uri: ''
   },
   {
-    title: 'Terms & Condition',
+    title: 'Terms & Conditions',
     uri: ''
   }
 ]
@@ -453,27 +453,28 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-darkBg bg-opacity-99 font-content pb-16' id='whyus-section'>
-        <div className={clsx('flex flex-col md:flex-row justify-between items-center gap-6 pt-4 px-10')}>
-          <div className={clsx('w-full md:w-1/2 order-last md:order-first')}>
-            <div className='flex flex-col'>
-              <div className='flex flex-col items-start md:items-center'>
-                <div className='text-lg md:text-2xl font-normal text-white'>Your Bitcoin Partner from</div>
-                <div className='text-xl md:text-3xl font-bold text-white'>Purchase to Custody.</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className='bg-darkBg bg-opacity-99 font-content py-16' id='whyus-section'>
+
         {
           CAPTION_DATA?.map((card,index) => {
             return (
-              <div className='py-6 px-10' key={index}>
-                <div className='flex flex-col md:flex-row justify-between items-center gap-6 mt-4'>
+              <>
+              <div className={clsx('flex flex-col md:flex-row justify-between items-center gap-6 pt-4 px-6 md:px-10')}>
+                <div className={clsx('w-full md:w-1/2 order-last md:order-first px-0 md:px-8')}>
+                  <div className='flex flex-wrap flex-col items-start justify-start'>
+                    <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-normal text-white'>Your Bitcoin partner from</div>
+                    <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white mt-2'>Purchase to Custody</div>
+                    {/*<div className='text-md md:text-lg lg:text-xl font-normal text-kobichaLight text-left max-w-full md:max-w-md mt-6 tracking-wide '>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>*/}
+                  </div>
+                </div>
+              </div>
+              <div className='py-6 px-6 md:px-10' key={index}>
+                <div className='flex flex-col md:flex-row justify-between items-center gap-6 lg:gap-12 mt-4'>
                   <div className={clsx('w-full md:w-1/2 order-last md:order-first')}>
                     <div className='flex flex-col'>
                       <div className='flex flex-1 p-4 justify-center items-center mt-6'>
                         <NextImage
-                          className='flex-1 max-w-[400px]'
+                          className='flex-1 max-w-[240px] md:max-w-[400px]'
                           alt={card?.image_data?.alt_text}
                           src={card?.image_data?.uri}
                           width={400}
@@ -482,11 +483,14 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className={clsx('w-full md:w-1/2 order-first md:order-last')}>
-                    <div className='text-2xl md:text-3xl font-normal text-white max-w-sm'>{card?.title}</div>
-                    <div className='text-md md:text-xl font-normal text-grabniteGrey max-w-md mt-4'>{card?.description}</div>
+                    <div className='flex flex-wrap flex-col items-start justify-start'>
+                      <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-normal text-white max-w-lg tracking-wide'>{card?.title}</div>
+                      <div className='text-md md:text-xl lg:text-2xl font-normal text-grabniteGrey max-w-md mt-4'>{card?.description}</div>
+                    </div>
                   </div>
                 </div>
               </div>
+              </>
             )
           })
         }
@@ -513,8 +517,8 @@ export default function HomePage() {
         </div>
       </section>
       <section className='font-content'>
-        <div className='mx-10'>
-          <div className='layout relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
+        <div className='px-6 md:px-10'>
+          <div className='relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
             <div className='flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-between'>
               <div className='text-lg sm:xl md:text-2xl lg:text-4xl font-normal text-kobicha text-center md:text-left max-w-full md:max-w-md'>Be a part of our thriving</div>
               <div className='text-xl sm:text-2xl md:text-3xl lg:text-[42px] font-bold text-kobicha text-center md:text-left max-w-full md:max-w-md mt-2'>Bitcoiners community</div>
@@ -589,9 +593,9 @@ export default function HomePage() {
                 <div className="absolute top-4 left-3">
                   <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
                 </div>
-                <input type="text" className="block min-w-full pr-20 rounded-lg z-0 focus:shadow focus:outline-none bg-transparent" placeholder="Email"/>
+                <input type="text" className="block min-w-full pr-20 rounded-lg z-0 focus:shadow focus:outline-none bg-transparent text-white" placeholder="Email"/>
                 <div className="absolute top-2 right-2">
-                  <button className="px-1 py-1 text-eerieBlack text-xs font-semibold rounded-lg bg-white">Subscribe</button>
+                  <button className="p-[6px] text-eerieBlack text-xs font-semibold rounded-lg bg-white">Subscribe</button>
                 </div>
               </div>
             </div>
@@ -603,7 +607,7 @@ export default function HomePage() {
                 {
                   FOOTER_LINKS.map((item, index) => {
                     return (
-                      <Link key={index} href={item?.uri} target="_blank">{item?.title}</Link>
+                      <Link className='text-white' key={index} href={item?.uri} target="_blank">{item?.title}</Link>
                     )
                   })
                 }
@@ -630,7 +634,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-black border-t border-t-amber-50 py-6 font-content' id='podcast-section'>
+      <section className='bg-black border-t border-opacity-20 border-t-amber-50 py-6 font-content' id='podcast-section'>
         <div className='text-white font-normal text-sm tracking-wide flex justify-center items-center'>
           © 2024 21Towers. All rights reserved
         </div>
