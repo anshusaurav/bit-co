@@ -362,17 +362,17 @@ export default function HomePage() {
         <div className='mx-8'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
-              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
+              <div className='text-3xl sm:text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
               <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[220px] lxl:w-[240px] rounded-lg'>
               </div>
             </div>
-            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
+            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-4 lg:mt-8 gap-4'>
               <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[310px] lxl:w-[340px] rounded-lg'>
               </div>
-              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
+              <div className='text-3xl sm:text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
-            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-8 gap-4'>
-              <div className='text-3xl md:text-4xl mlg:text-[42px] lg:text-5xl lxl:text-6xl xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of the 21st century</div>
+            <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-4 lg:mt-8 gap-4'>
+              <div className='text-3xl sm:text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of the 21st century</div>
               <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[360px] lxl:w-[420px] rounded-lg'>
               </div>
             </div>
@@ -512,19 +512,19 @@ export default function HomePage() {
           <div className='text-md text-kobicha font-normal'>and more...</div>
         </div>
       </section>
-      <section className='bg-white bg-opacity-80 font-content'>
+      <section className='font-content'>
         <div className='mx-10'>
           <div className='layout relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
-            <div className='flex flex-wrap items-center justify-between'>
-              <div className='text-lg md:text-2xl font-normal text-kobicha text-center md:text-left max-w-full md:max-w-md'>Be a part of our thriving</div>
-              <div className='text-xl md:text-3xl font-bold text-kobicha text-center md: text-left max-w-full md:max-w-md'>Bitcoiners community</div>
-              <div className='text-md md:text-xl font-normal text-kobichaLight text-left max-w-sm mt-6 tracking-tighter'>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>
+            <div className='flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-between'>
+              <div className='text-lg sm:xl md:text-2xl lg:text-4xl font-normal text-kobicha text-center md:text-left max-w-full md:max-w-md'>Be a part of our thriving</div>
+              <div className='text-xl sm:text-2xl md:text-3xl lg:text-[42px] font-bold text-kobicha text-center md:text-left max-w-full md:max-w-md mt-2'>Bitcoiners community</div>
+              <div className='text-md md:text-lg lg:text-xl font-normal text-kobichaLight text-left max-w-full md:max-w-md mt-6 tracking-wide '>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>
             </div>
-            <div className='flex flex-col flex-wrap items-center justify-between w-full mt-6 px-0 md:px-6 gap-12'>
+            <div className='flex flex-col flex-wrap items-center justify-between w-full px-0 md:px-6 gap-12'>
               {
                 COMMUNITY_DATA?.map((item, index) => {
                   return (
-                    <Link href={item?.cta?.action?.data?.uri} target="_blank" key={index} className='bg-kobicha rounded-lg p-6 flex-1 w-full'>
+                    <Link href={item?.cta?.action?.data?.uri} target="_blank" key={index} className='bg-kobicha rounded-2xl p-8 flex-1 w-full'>
                       <div className='flex flex-col md:flex-row justify-between items-center md:items-start'>
                         <div>
                           <div className='h-10 w-10 rounded-full bg-bone flex justify-center items-center bg-opacity-30 p-2'>
@@ -557,11 +557,11 @@ export default function HomePage() {
                 now!
               </div>
               <div className='flex justify-start items-center mt-4'>
-                <div className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white py-1 px-4 tracking-wider mt-4'>
-                <div className='font-normal text-md md:text-lg text-white'>
+                <div className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white p-2 tracking-wider mt-4'>
+                <div className='font-light text-md md:text-lg text-white '>
                   Contact us now
                 </div>
-                <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center'>
+                <div className='w-6 h-6 bg-white rounded-full flex items-center justify-center'>
                   <RiArrowRightLine className='text-black'/>
                 </div>
               </div>

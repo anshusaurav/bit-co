@@ -8,9 +8,9 @@ export default {
       fontFamily: {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
         hero: ['Roboto', ...defaultTheme.fontFamily.sans],
-        content: ['Noto Sans', ...defaultTheme.fontFamily.sans],
+        content: ['Public Sans', ...defaultTheme.fontFamily.sans],
         decor: ['Recife', ...defaultTheme.fontFamily.sans],
-        polysans:['Polysans', ...defaultTheme.fontFamily.sans]
+        polysans:['Polysans', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
@@ -71,9 +71,9 @@ export default {
 
         'mlg': '840px',
         // => @media (min-width: 768px) { ... }
+        'mgl': '902px',
         'lxl': '1120px',
         // => @media (min-width: 1280px) { ... }
-
       }
     }
   },
