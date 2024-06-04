@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Anshu Saurabh',
-      url: 'https://anshusaurav.netlify.app',
+      url: 'https://twitter.com/anshusaurav',
     },
   ],
 };

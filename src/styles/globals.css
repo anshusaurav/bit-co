@@ -48,14 +48,21 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: block;
-    src: url(/fonts/RecifeDisplay-SemiBold.woff2) format("woff2");
+    src: url('/fonts/RecifeDisplay-SemiBold.woff2') format("woff2");
   }
   @font-face {
     font-family: "Polysans";
     font-style: normal;
     font-weight: 100 900;
     font-display: block;
-    src: url(/fonts/PolySans-Neutral.woff2) format("woff2");
+    src: url('/fonts/PolySans-Neutral.woff2') format("woff2");
+  }
+
+  @font-face {
+    font-family: "Trakya";
+    font-style: normal;
+    font-weight: 300 500;
+    src: url('/fonts/Trakya-Sans-300-Light.woff2') format("woff2");
   }
 
   .cursor-newtab {
@@ -107,4 +114,38 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
+}
+
+@layer components {
+  .container {
+    max-width: 1530px;
+    width: 100%;
+    /*margin: 50px auto;*/
+    /*padding: 50px;*/
+    /*background: #000;*/
+  }
+  @screen 2xl {
+    .container {
+      @apply px-6;
+      @apply py-6;
+      min-width: unset;
+      @apply mx-auto;
+    }
+  }
+  /*@screen lg {*/
+  /*  .container {*/
+  /*    @apply px-44;*/
+  /*    @apply py-10;*/
+  /*    min-width: unset;*/
+  /*    @apply mx-auto;*/
+  /*  }*/
+  /*}*/
+  /*@screen xl {*/
+  /*  .container {*/
+  /*    @apply px-44;*/
+  /*    @apply py-12;*/
+  /*    min-width: unset;*/
+  /*    @apply mx-auto;*/
+  /*  }*/
+  /*}*/
 }

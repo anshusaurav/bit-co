@@ -11,6 +11,7 @@ export default {
         content: ['Public Sans', ...defaultTheme.fontFamily.sans],
         decor: ['Recife', ...defaultTheme.fontFamily.sans],
         polysans:['Polysans', ...defaultTheme.fontFamily.sans],
+        trakya: ['Trakya', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
@@ -73,6 +74,7 @@ export default {
         // => @media (min-width: 768px) { ... }
         'mgl': '902px',
         'lxl': '1120px',
+        '3xl': '1700px',
         // => @media (min-width: 1280px) { ... }
       }
     }

@@ -8,6 +8,8 @@ import '@/lib/env';
 import {RiArrowRightLine, RiCloseLine} from "react-icons/ri";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import '@/styles/Home.module.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import localFont from '@next/font/local'
 // import ArrowLink from '@/components/links/ArrowLink';
 // import ButtonLink from '@/components/links/ButtonLink';
@@ -26,7 +28,10 @@ import NextImage from '@/components/NextImage';
 // import Image from 'next/image';
 import clsx from 'clsx';
 import PrimaryLink from '@/components/links/PrimaryLink';
-// import Background from '~/images/background.png';
+import {useEffect, useState} from 'react';
+import {db} from '@/lib/firebase'
+import {collection, getDocs, addDoc, doc, updateDoc, deleteDoc} from "firebase/firestore";
+// import Background from '~/images/background-light.png';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -174,7 +179,7 @@ const COMMUNITY_DATA = [
       uri: '/images/users.png',
       alt_text: 'user count'
     },
-    title: 'Users',
+    title: 'Clients',
     cta: {
       title: 'Join our community',
       action: {
@@ -184,7 +189,7 @@ const COMMUNITY_DATA = [
         }
       }
     },
-    countString: '1000+'
+    countString: '100+'
   },
   // {
   //   icon: {
@@ -215,7 +220,6 @@ const FOOTER_LINKS = [
     uri: ''
   }
 ]
-
 const SOCIAL_MEDIA_DATA = [
   // {
   //   title: 'Youtube',
@@ -270,10 +274,10 @@ const SOCIAL_MEDIA_DATA = [
 ]
 const SIDEBAR_DATA = [
   {
-    title: 'About',
+    title: 'Opportunity',
     image_data: {
-      uri: '/images/about.svg',
-      alt_text: 'About',
+      uri: '/images/bitcoin.svg',
+      alt_text: 'Opportunity',
       width: 30,
       height: 30
     },
@@ -290,35 +294,35 @@ const SIDEBAR_DATA = [
     uri: '#whyus-section'
   },
   {
-    title: 'Client',
+    title: 'Clients',
     image_data: {
       uri: '/images/client.svg',
-      alt_text: 'Client',
+      alt_text: 'Clients',
       width: 30,
       height: 30
     },
     uri: '#client-section'
   },
   {
-    title: 'Features',
+    title: 'Book a call',
     image_data: {
       uri: '/images/features.svg',
-      alt_text: 'Features',
+      alt_text: 'Book a call',
       width: 30,
       height: 30
     },
     uri: '#feature-section'
   },
-  {
-    title: 'Podcast',
-    image_data: {
-      uri: '/images/podcast.svg',
-      alt_text: 'Podcast',
-      width: 30,
-      height: 30
-    },
-    uri: '#podcast-section'
-  }
+  // {
+  //   title: 'Podcast',
+  //   image_data: {
+  //     uri: '/images/podcast.svg',
+  //     alt_text: 'Podcast',
+  //     width: 30,
+  //     height: 30
+  //   },
+  //   uri: '#podcast-section'
+  // }
 ]
 const SIDEBAR_SOCIAL_DATA = [
   {
@@ -350,15 +354,48 @@ const SIDEBAR_SOCIAL_DATA = [
   },
 ]
 export default function HomePage() {
+
+  const emailsRef = collection(db, "emails")
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const toggleSidebar = () => {setSidebarOpen(bool => !bool)}
+
+  const addEmail = async () => {
+    const dt = new Date();
+    setIsLoading(true);
+    const newDocRef = await addDoc(emailsRef, {email: email, createdOn: dt.toDateString()})
+    setEmail('');
+    // const data = await getDocs(emailsRef)
+    setIsLoading(false);
+    toast('🦄 Wow so easy!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+  useEffect(() => {
+    const init = async() =>  {
+      const data = await getDocs(emailsRef)
+      console.log(data);
+    }
+    init();
+  },[])
   return (
-    <main style={{backgroundImage: `url("/images/background.png")`}} className='bg-contain bg-center bg-repeat-y relative'>
-      <Head>
-        <title>Hi</title>
-      </Head>
-      <section className='pt-16 md:pt-0'>
+    <div className='container'>
+    <main style={{backgroundImage: `url("/images/background-light.png")`}} className='bg-contain bg-center bg-repeat-y relative'>
+      {/*<Head>*/}
+      {/*  <title>Hi</title>*/}
+      {/*</Head>*/}
+
+      <section className='pt-16 md:pt-0 mx-auto'>
         <div className='mx-8'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
@@ -379,10 +416,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-darkBg font-decor py-12' id='about-section'>
-        <div className='py-10'>
+      <section className='font-content mx-auto bg-contain bg-center bg-repeat-y' id='about-section' style={{backgroundImage: `url("/images/background-dark.png")`}}>
+        <div className='py-12 bg-black opacity-85'>
           <div className='flex flex-1 justify-center'>
+            {/*<div className='max-w-auto md:min-w-[240px] lg:max-w-[480px]'></div>*/}
             <div className='bg-greyBg p-3 rounded-md text-white text-lg'>In the last 10 years</div>
+            {/*<div className='max-w-auto md:max-w-[160px] lg:max-w-[324px]'></div>*/}
           </div>
           <div className='flex justify-center items-center relative mt-8 md:mt-0'>
             <div className='absolute left-0 top-1/2 -translate-y-1/2 mx-10 hidden md:block'>
@@ -396,50 +435,61 @@ export default function HomePage() {
                 }
               </div>
             </div>
-            <div className='absolute right-0 top-1/2 -translate-y-1/2 w-[180px] py-6 px-4 bg-greyBg rounded-l-lg hidden md:block'>
+            <div className='absolute right-0 top-1/2 -translate-y-1/2 w-[180px] h-[240px] px-8 py-6 rounded-l-lg hidden md:flex flex-col justify-center bg-opacity-0' style={{background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(61, 61, 61, 0.29) 43%, rgba(141, 141, 141, 0.15) 100%)'}}>
               <div className='text-grabniteGrey'>
                 {COMPARISON_DATA?.[selectedIndex]?.title } <span>{COMPARISON_DATA?.[selectedIndex]?.gain}%</span>
               </div>
-              <div className='flex justify-start items-center mt-2 text-white'>
+              <div className='flex justify-start items-center mt-4 text-white'>
                 <div >Know more</div>
                 <RiArrowRightLine className='ml-2'/>
               </div>
             </div>
-            <div className='card w-full mx-10'>
-              <div className='flex items-center flex-wrap md:flex-nowrap justify-center w-full mt-4'>
-                {
-                  COMPARISON_DATA?.[selectedIndex]?.cards.map((card, index) => {
-                    return (
-                      <>
-                      <div className={index === 0?'w-4/7':'w-3/7 ml-0 md:ml-6'}>
-                        <div className='flex justify-center items-center'>
+            <div className='flex items-center flex-col md:flex-row flex-wrap md:flex-nowrap justify-center w-full mt-4 gap-6'>
+              {/*{*/}
+              {/*  COMPARISON_DATA?.[selectedIndex]?.cards.map((card, index) => {*/}
+              {/*    return (*/}
+              {/*      <>*/}
+                      <div className='flex-1 flex flex-col items-center max-w-[full] md:max-w-[240px] lg:max-w-[480px]'>
+                        <div className='flex justify-center items-center self-center'>
                           <NextImage
-                            className='h-10 w-10 rounded-md'
-                            alt={card?.icon?.alt_text}
-                            src={card?.icon?.uri}
+                            className='h-10 w-10 rounded-md opacity-100'
+                            alt={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.icon?.alt_text}
+                            src={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.icon?.uri}
                             width={40}
                             height={40}/>
-                          <div className='text-white font-semibold text-xl ml-5'>{card?.title}</div>
+                          <div className='text-white font-semibold text-xl ml-5'>{COMPARISON_DATA[selectedIndex]?.cards?.[0]?.title}</div>
                         </div>
                         <NextImage
                           className='rounded-lg mt-6'
-                          alt={card?.image_data?.alt_text}
-                          src={card?.image_data?.uri}
-                          width={292}
+                          alt={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.alt_text}
+                          src={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.uri}
+                          width={480}
                           height={166}
                           />
-                        {
-                          index === 0 && <div className='text-white w-full text-center text-2xl font-normal tracking-wide flex flex-col justify-center min-h-full block md:hidden'>vs</div>
-                        }
                       </div>
-                        {
-                          index === 0 && <div className='text-white text-2xl font-normal tracking-wide ml-6 flex flex-col justify-center min-h-full hidden md:block'>vs</div>
-                        }
-                      </>
-                    )
-                  })
-                }
-              </div>
+                      <div className='text-white text-2xl font-normal tracking-wide flex flex-col justify-between min-h-full'>vs</div>
+                      <div className='flex-1 flex flex-col items-center max-w-[full] md:max-w-[160px] lg:max-w-[324px]'>
+                        <div className='flex justify-center items-center self-center'>
+                          <NextImage
+                            className='h-10 w-10 rounded-md opacity-100'
+                            alt={COMPARISON_DATA[selectedIndex]?.cards?.[1]?.icon?.alt_text}
+                            src={COMPARISON_DATA[selectedIndex]?.cards?.[1]?.icon?.uri}
+                            width={40}
+                            height={40}/>
+                          <div className='text-white font-semibold text-xl ml-5'>{COMPARISON_DATA[selectedIndex]?.cards?.[1]?.title}</div>
+                        </div>
+                        <NextImage
+                          className='rounded-lg mt-6 max-w-[full] md:max-w-[324px]'
+                          alt={COMPARISON_DATA[selectedIndex]?.cards?.[1]?.image_data?.alt_text}
+                          src={COMPARISON_DATA[selectedIndex]?.cards?.[1]?.image_data?.uri}
+                          width={324}
+                          height={166}
+                        />
+                      </div>
+              {/*      </>*/}
+              {/*    )*/}
+              {/*  })*/}
+              {/*}*/}
             </div>
           </div>
           <div className='w-full py-6 px-4 bg-greyBg mt-12 visible md:hidden'>
@@ -453,17 +503,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-darkBg bg-opacity-99 font-content py-16' id='whyus-section'>
+      <section className='bg-darkBg bg-opacity-99 font-content py-16 mx-auto' id='whyus-section'>
 
         {
           CAPTION_DATA?.map((card,index) => {
             return (
-              <>
+              <React.Fragment key={index}>
               <div className={clsx('flex flex-col md:flex-row justify-between items-center gap-6 pt-4 px-6 md:px-10')}>
                 <div className={clsx('w-full md:w-1/2 order-last md:order-first px-0 md:px-8')}>
                   <div className='flex flex-wrap flex-col items-start justify-start'>
                     <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-normal text-white'>Your Bitcoin partner from</div>
-                    <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white mt-2'>Purchase to Custody</div>
+                    <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white mt-2'>Purchase, Custody & more</div>
                     {/*<div className='text-md md:text-lg lg:text-xl font-normal text-kobichaLight text-left max-w-full md:max-w-md mt-6 tracking-wide '>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>*/}
                   </div>
                 </div>
@@ -490,12 +540,12 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              </>
+              </React.Fragment>
             )
           })
         }
       </section>
-      <section className='bg-white px-20 py-20 font-content' id='client-section'>
+      <section className='bg-white px-20 py-20 font-content mx-auto' id='client-section'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4'>
             <div className='text-kobicha text-2xl font-semibold w-full md:w-auto text-center md:text-left'>Powered by</div>
             {
@@ -508,7 +558,7 @@ export default function HomePage() {
                       src={item?.image_data?.uri}
                       width={166}
                       height={48}/>
-                    <div className='text-xs text-grabniteGrey font-light text-center mt-1'>{item?.description}</div>
+                    {/*<div className='text-xs text-grabniteGrey font-light text-center mt-1'>{item?.description}</div>*/}
                   </div>
                 )
               })
@@ -516,7 +566,7 @@ export default function HomePage() {
           <div className='text-md text-kobicha font-normal'>and more...</div>
         </div>
       </section>
-      <section className='font-content'>
+      <section className='font-content mx-auto'>
         <div className='px-6 md:px-10'>
           <div className='relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
             <div className='flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-between'>
@@ -552,14 +602,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-black font-content'>
+      <section className='bg-black font-content mx-auto' id='feature-section'>
         <div className='py-16 flex flex-col md:flex-row items-center justify-between'>
           <div className='flex-1 flex items-center justify-center p-6'>
             <div>
-              <div className='text-white text-2xl md:text-4xl font-normal max-w-sm md:max-w-md tracking-wide leading-relaxed'>To start preserving &
+              <div className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] leading-loose font-normal text-white max-w-lg tracking-wide'>To start preserving &
                 multiplying your wealth
-                now!
-              </div>
+                now!</div>
+              {/*<div className='text-md md:text-xl lg:text-2xl font-normal text-grabniteGrey max-w-md mt-4'>{card?.description}</div>*/}
+
+              {/*<div className='text-white text-2xl md:text-4xl font-normal max-w-sm md:max-w-md tracking-wide leading-relaxed'>*/}
+              {/*</div>*/}
               <div className='flex justify-start items-center mt-4'>
                 <div className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white p-2 tracking-wider mt-4'>
                 <div className='font-light text-md md:text-lg text-white '>
@@ -581,62 +634,76 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className='bg-black font-content' id='feature-section'>
-        <div className='py-10 w-full flex flex-col md:flex-row items-center justify-between px-10'>
-          <div className='w-full md:w-1/2 flex items-center justify-center'>
-            <div>
-              {/*<NextImage alt={} src={}/>*/}
-              <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12'>
-                Join the rank of Savy Investor who trust us for their Bitcoins needs.
-              </div>
-              <div className="relative mt-6 max-w-sm">
-                <div className="absolute top-4 left-3">
-                  <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
-                </div>
-                <input type="text" className="block min-w-full pr-20 rounded-lg z-0 focus:shadow focus:outline-none bg-transparent text-white" placeholder="Email"/>
-                <div className="absolute top-2 right-2">
-                  <button className="p-[6px] text-eerieBlack text-xs font-semibold rounded-lg bg-white">Subscribe</button>
-                </div>
-              </div>
-            </div>
+      <section className='bg-white py-8 md:py-10 mx-auto'></section>
+      <section className='bg-black font-content mx-auto' >
+        <div className='px-6 md:px-10 py-10 '>
+          <div className='flex gap-2 justify-start items-center'>
+            <NextImage alt='Logo' src='/images/logo-dark.webp' width={48} height={48} className='rounded-md'/>
+            <div className='font-trakya text-white font-light text-4xl tracking-wide'>BITCOINCIERGE</div>
           </div>
-          <div className='w-full md:w-1/2 flex justify-center items-center'>
-            {/*<div className='flex-1'>*/}
-            <div>
-              <div className='flex flex-col md:flex-row justify-start items-center gap-6 mt-8 md:mt-0'>
-                {
-                  FOOTER_LINKS.map((item, index) => {
-                    return (
-                      <Link className='text-white' key={index} href={item?.uri} target="_blank">{item?.title}</Link>
-                    )
-                  })
-                }
-              </div>
-              <div className='flex flex-col md:flex-row flex-nowrap md:flex-wrap justify-start items-center gap-4 mt-10'>
-                <div className='text-white text-opacity-60 text-sm tracking-wide'>Follow us on: </div>
-                <div className='flex justify-start items-center gap-4'>
-                  {SOCIAL_MEDIA_DATA?.map((item, index) => {
-                    return (
-                      <Link key={index} href={item?.uri} target="_blank">
-                        <NextImage
-                        key={index}
-                        alt={item?.image_data?.alt_text}
-                        src={item?.image_data?.uri}
-                        height={item?.image_data?.height}
-                        width={item?.image_data?.width}/>
-                      </Link>
-                    )
-                  })}
+          <div className='w-full flex flex-col md:flex-row items-center justify-between mt-4'>
+            <div className='w-full md:w-1/2 flex flex-col items-start justify-center'>
+                {/*<NextImage alt={} src={}/>*/}
+                <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12'>
+                  Join the rank of Savy Investor who trust us for their Bitcoins needs.
+                </div>
+                <div className="relative mt-6 max-w-sm">
+                  <div className="absolute top-4 left-3">
+                    <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
+                  </div>
+                  <input
+                    type="text"
+                    className="block min-w-full pr-20 rounded-lg z-0 focus:shadow focus:outline-none bg-transparent text-white"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(evt) => setEmail(evt.target.value)}/>
+                  <div className="absolute top-2 right-2">
+                    <button
+                      disabled={email?.trim().length === 0}
+                      className="p-[6px] text-eerieBlack text-xs font-semibold rounded-lg bg-white disabled:cursor-not-allowed"
+                      onClick={addEmail}
+                    >Subscribe</button>
+                  </div>
+                </div>
+            </div>
+            <div className='w-full md:w-1/2 flex justify-center items-center'>
+              {/*<div className='flex-1'>*/}
+              <div>
+                <div className='flex flex-col md:flex-row justify-start items-center gap-6 mt-8 md:mt-0'>
+                  {
+                    FOOTER_LINKS.map((item, index) => {
+                      return (
+                        <Link className='text-white' key={index} href={item?.uri} target="_blank">{item?.title}</Link>
+                      )
+                    })
+                  }
+                </div>
+                <div className='flex flex-col md:flex-row flex-nowrap md:flex-wrap justify-start items-center gap-4 mt-10'>
+                  <div className='text-white text-opacity-60 text-sm tracking-wide'>Follow us on: </div>
+                  <div className='flex justify-start items-center gap-4'>
+                    {SOCIAL_MEDIA_DATA?.map((item, index) => {
+                      return (
+                        <Link key={index} href={item?.uri} target="_blank">
+                          <NextImage
+                          key={index}
+                          alt={item?.image_data?.alt_text}
+                          src={item?.image_data?.uri}
+                          height={item?.image_data?.height}
+                          width={item?.image_data?.width}/>
+                        </Link>
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
+              {/*</div>*/}
             </div>
-            {/*</div>*/}
           </div>
         </div>
       </section>
       <section className='bg-black border-t border-opacity-20 border-t-amber-50 py-6 font-content' id='podcast-section'>
         <div className='text-white font-normal text-sm tracking-wide flex justify-center items-center'>
-          © 2024 21Towers. All rights reserved
+          © 2024 Bitcoincierge. All rights reserved
         </div>
       </section>
       {
@@ -656,7 +723,7 @@ export default function HomePage() {
                       return (
                         <Link key={index} href={item?.uri} className='flex justify-start items-center gap-3 py-3' onClick={toggleSidebar}>
                           <NextImage alt={item?.image_data?.alt_text} src={item?.image_data?.uri} width={item?.image_data?.width}
-                                     height={item?.image_data?.height}/>
+                                     height={item?.image_data?.height} className='rounded-xl'/>
                           <div className='text-4xl text-bone font-semibold'>{item?.title}</div>
                         </Link>
 
@@ -686,10 +753,25 @@ export default function HomePage() {
       }
       <div className='layout absolute top-0 inset-x-0 py-10 z-10'>
         <div className='flex justify-between items-center '>
-          <NextImage alt='Logo' src='/images/logo.png' width={180} height={54}/>
+          <div className='flex gap-2 justify-start items-center'>
+            <NextImage alt='Logo' src='/images/logo-dark.webp' width={48} height={48} className='rounded-md'/>
+            <div className='font-trakya text-dark font-light text-4xl tracking-wide'>BITCOINCIERGE</div>
+          </div>
           <NextImage alt='HAmburger' src='/images/hamburger.svg' width={32} height={16} className='cursor-pointer' onClick={toggleSidebar}/>
         </div>
       </div>
     </main>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </div>
   );
 }
