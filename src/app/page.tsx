@@ -399,18 +399,18 @@ export default function HomePage() {
         <div className='mx-8'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
-              <div className='text-3xl sm:text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
-              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[220px] lxl:w-[240px] rounded-lg'>
+              <div className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto' >Simplifying ownership of</div>
+              <div style={{backgroundImage: `url("/images/Rectangle1.png")`}} className='bg-cover bg-center bg-no-repeat h-[90px] lg:h-[102px] w-[200px] md:w-[180px] lg:w-[220px] lxl:w-[240px] rounded-lg'>
               </div>
             </div>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-4 lg:mt-8 gap-4'>
-              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[310px] lxl:w-[340px] rounded-lg'>
+              <div style={{backgroundImage: `url("/images/Rectangle2.png")`}} className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[90px] lg:h-[102px] w-[200px] md:w-[180px] lg:w-[310px] lxl:w-[340px] rounded-lg'>
               </div>
-              <div className='text-3xl sm:text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
+              <div className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best performing asset</div>
             </div>
             <div className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-4 lg:mt-8 gap-4'>
-              <div className='text-3xl sm:text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of the 21st century</div>
-              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[60px] md:h-[90px] lg:h-[102px] w-[180px] lg:w-[360px] lxl:w-[420px] rounded-lg'>
+              <div className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of the 21st century</div>
+              <div style={{backgroundImage: `url("/images/Rectangle3.png")`}} className='bg-cover bg-center bg-no-repeat h-[90px] lg:h-[102px] w-[200px] md:w-[180px] lg:w-[360px] lxl:w-[420px] rounded-lg'>
               </div>
             </div>
           </div>
@@ -460,12 +460,19 @@ export default function HomePage() {
                           <div className='text-white font-semibold text-xl ml-5'>{COMPARISON_DATA[selectedIndex]?.cards?.[0]?.title}</div>
                         </div>
                         <NextImage
-                          className='rounded-lg mt-6'
+                          className='rounded-lg mt-6 hidden md:inline-block'
                           alt={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.alt_text}
                           src={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.uri}
                           width={480}
                           height={166}
                           />
+                        <NextImage
+                          className='rounded-lg mt-6 inline-block md:hidden'
+                          alt={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.alt_text}
+                          src={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.uri}
+                          width={320}
+                          height={82}
+                        />
                       </div>
                       <div className='text-white text-2xl font-normal tracking-wide flex flex-col justify-between min-h-full'>vs</div>
                       <div className='flex-1 flex flex-col items-center max-w-[full] md:max-w-[160px] lg:max-w-[324px]'>
@@ -479,11 +486,18 @@ export default function HomePage() {
                           <div className='text-white font-semibold text-xl ml-5'>{COMPARISON_DATA[selectedIndex]?.cards?.[1]?.title}</div>
                         </div>
                         <NextImage
-                          className='rounded-lg mt-6 max-w-[full] md:max-w-[324px]'
+                          className='rounded-lg mt-6 hidden md:inline-block'
                           alt={COMPARISON_DATA[selectedIndex]?.cards?.[1]?.image_data?.alt_text}
                           src={COMPARISON_DATA[selectedIndex]?.cards?.[1]?.image_data?.uri}
                           width={324}
                           height={166}
+                        />
+                        <NextImage
+                          className='rounded-lg mt-6 inline-block md:hidden'
+                          alt={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.alt_text}
+                          src={COMPARISON_DATA[selectedIndex]?.cards?.[0]?.image_data?.uri}
+                          width={320}
+                          height={82}
                         />
                       </div>
               {/*      </>*/}
