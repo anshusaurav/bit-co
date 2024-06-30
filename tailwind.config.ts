@@ -39,6 +39,8 @@ export default {
         grabniteGrey: '#666666',
         darkBg:'#0F0F0F',
         greyBg: '#2C2D31',
+        increase: '#65C467',
+        decrease: '#D24B34'
       },
       backgroundColor: {
         bone: '#E5D8C5',

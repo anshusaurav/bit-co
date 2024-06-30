@@ -126,8 +126,8 @@
   }
   @screen 2xl {
     .container {
-      @apply px-6;
-      @apply py-6;
+      /*@apply px-6;*/
+      /*@apply py-6;*/
       min-width: unset;
       @apply mx-auto;
     }
@@ -148,4 +148,14 @@
   /*    @apply mx-auto;*/
   /*  }*/
   /*}*/
+
+  .tncContainer {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-y: 20px;
+    max-width: 90%;
+    padding-x: 24px;
+    padding-y: 20px
+  }
 }

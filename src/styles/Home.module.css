@@ -5,3 +5,13 @@
             1px -1px 0 black,
             -1px 1px black;
 }
+
+.sidebarIcon {
+    color: #E5D8C5;
+}
+
+.sidebarIcon:hover {
+    color: #EF7828;
+    /*border: 1px solid #EF7828;*/
+
+}
