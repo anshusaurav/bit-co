@@ -667,7 +667,7 @@ export default function HomePage() {
                 years
               </div>
             </div>
-            <div className='flex flex-col md:flex-row items-stretch justify-center gap-6 relative p-16 '>
+            <div className='flex flex-col md:flex-row items-stretch justify-center gap-6 relative px-4 py-16 md:p-16 '>
               <div className='absolute left-0 top-1/2 -translate-y-1/2 mx-10 hidden md:block'>
                 <div className='flex flex-col w-2'>
                   {
@@ -700,26 +700,26 @@ export default function HomePage() {
                   <div
                     className='text-white font-semibold text-xl ml-5'>{FIN_DATA?.[selectedIndex]?.title}</div>
                 </div>
-                <div className='rounded-xl p-4 bg-greyBg w-[320px] lg:w-[480px] flex-1'>
+                <div className='rounded-xl p-2 md:p-4 bg-greyBg w-[96%] lg:w-[480px] flex-1'>
                   {
                     FIN_DATA?.[selectedIndex]?.constituents?.map((item, index) => {
                       return (
                         <div
                           key={index}
-                          className={`flex items-center justify-between gap-4 border-b-eerieBlack p-4 ${index !== FIN_DATA?.[selectedIndex]?.constituents?.length - 1 ? 'border-b' : ''}`}>
-                          <div className='font-semibold text-xl tracking-normal w-[96px] '>{item?.title}
+                          className={`flex items-center justify-between gap-0 md:gap-4 border-b-eerieBlack p-2 md:p-4 ${index !== FIN_DATA?.[selectedIndex]?.constituents?.length - 1 ? 'border-b' : ''}`}>
+                          <div className='font-semibold text-md md:text-xl tracking-normal w-[32px] md:w-[96px]'>{item?.title}
                             {/*{item?.subTitle && <span className='text-sm font-light'>{item?.subTitle}</span>}*/}
                           </div>
-                          <div className='w-[120px] self-center flex justify-center items-center'>
+                          <div className='w-[90px] md:w-[120px] self-center flex justify-center items-center'>
                             <Sparklines data={item?.prices?.[selectedDuration]}>
                               <SparklinesLine color="#c0c0c0"/>
                             </Sparklines>
                           </div>
-                          <div className='flex items-center justify-start gap-3'>
-                            <div className='max-w-[60px] font-semibold text-lg'>${item?.endPrice}</div>
+                          <div className='flex items-center justify-start gap-2 md:gap-3'>
+                            <div className='max-w-[60px] font-semibold text-md md:text-lg'>${item?.endPrice}</div>
                             <div className='flex justify-start gap-1 items-center'>
                               <div
-                                className={`font-semibold text-lg ${item?.endPrice > item?.startingPrice?.[selectedDuration] ? 'text-increase' : 'text-decrease'}`}>{Math.round(((item?.endPrice - item?.startingPrice?.[selectedDuration]) * 100) / item?.startingPrice?.[selectedDuration])}%
+                                className={`font-semibold text-md md:text-lg ${item?.endPrice > item?.startingPrice?.[selectedDuration] ? 'text-increase' : 'text-decrease'}`}>{Math.round(((item?.endPrice - item?.startingPrice?.[selectedDuration]) * 100) / item?.startingPrice?.[selectedDuration])}%
                               </div>
                               {item?.endPrice > item?.startingPrice?.[selectedDuration] ?
                                 <FaCaretUp color={'#65C467'} className='font-semibold text-lg'/> :
@@ -744,11 +744,11 @@ export default function HomePage() {
                   <div
                     className='text-white font-semibold text-xl ml-5'>Bitcoin</div>
                 </div>
-                <div className='rounded-xl p-4 bg-greyBg w-[320px] lg:w-[360px] flex-1'>
+                <div className='rounded-xl p-4 bg-greyBg w-[96%] lg:w-[360px] flex-1'>
                   <div className='flex flex-col gap-2 bg-greyBg'>
                     <div className='flex items-center justify-between gap-3'>
-                      <div className='font-semibold text-xl tracking-normal'>{BIT_DATA.title}</div>
-                      <div className={`font-semibold text-lg flex items-center justify-start ${BIT_DATA?.endPrice > BIT_DATA?.startingPrice?.[selectedDuration] ? 'text-increase' : 'text-decrease'}`}>
+                      <div className='font-semibold text-md md:text-xl tracking-normal'>{BIT_DATA.title}</div>
+                      <div className={`font-semibold text-md md:text-lg flex items-center justify-start ${BIT_DATA?.endPrice > BIT_DATA?.startingPrice?.[selectedDuration] ? 'text-increase' : 'text-decrease'}`}>
                         {BIT_DATA?.endPrice > BIT_DATA?.startingPrice?.[selectedDuration] ?
                           <FaCaretUp color={'#65C467'} className='font-semibold text-lg'/> :
                           <FaCaretDown color={'#D24B34'} className='font-semibold text-lg'/>}
@@ -761,7 +761,7 @@ export default function HomePage() {
                       </Sparklines>
                       <div className='bg-greyBg'>
                         <div className='flex items-center justify-end gap-3'>
-                          <div className='font-semibold text-lg'>${BIT_DATA?.endPrice}</div>
+                          <div className='font-semibold text-md md:text-lg'>${BIT_DATA?.endPrice}</div>
                         </div>
                       </div>
                     </div>
@@ -962,9 +962,9 @@ export default function HomePage() {
                 {/*<NextImage alt={} src={}/>*/}
                 <div className='flex gap-2 justify-start items-center'>
                   <NextImage alt='Logo' src='/images/logo-dark.webp' width={48} height={48} className='rounded-md'/>
-                  <div className='font-trakya text-white font-light text-4xl tracking-wide'>BITCOINCIERGE</div>
+                  <div className='font-trakya text-white font-light text-xl md:text-4xl tracking-wide'>BITCOINCIERGE</div>
                 </div>
-                <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12'>
+                <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12 mt-2'>
                   Join the rank of Savy Investor who trust us for their Bitcoins needs.
                 </div>
                 <div className="relative mt-6 max-w-sm">
