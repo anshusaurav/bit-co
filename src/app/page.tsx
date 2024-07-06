@@ -613,10 +613,10 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <section className='pt-16 md:pt-0 mx-auto'>
-          <div className='mx-8'>
+        <section className='pt-0 md:pt-16 md:pt-0 mx-auto'>
+          <div className='mx-6 md:mx-8'>
             <div
-              className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center leading-loose px-5 md:px-auto'>
+              className='layout relative flex min-h-screen flex-col items-center justify-center py-6 md:py-12 text-center leading-loose px-3 md:px-auto'>
               <div
                 className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
                 <div
@@ -700,7 +700,7 @@ export default function HomePage() {
                   <div
                     className='text-white font-semibold text-xl ml-5'>{FIN_DATA?.[selectedIndex]?.title}</div>
                 </div>
-                <div className='rounded-xl p-2 md:p-4 bg-greyBg w-[96%] lg:w-[480px] flex-1'>
+                <div className='rounded-xl p-4 bg-greyBg w-[96%] lg:w-[480px] flex-1'>
                   {
                     FIN_DATA?.[selectedIndex]?.constituents?.map((item, index) => {
                       return (
