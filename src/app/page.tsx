@@ -64,7 +64,7 @@ const FIN_DATA = [
     },
     constituents: [
       {
-        title: 'Apple',
+        title: `Apple   `,
         prices: {
           '15': [7.64, 56.63, 158, 314],
           '10': [56.63, 158, 314],
@@ -115,7 +115,7 @@ const FIN_DATA = [
     },
     constituents: [
       {
-        title: 'Gold',
+        title: `Gold  `,
         subTitle: '(per oz)',
         prices: {
           '15': [1087, 1205, 1290, 2000],
@@ -555,8 +555,10 @@ export default function HomePage() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  // const [moved, setMoved] = useState(false);
   const toggleSidebar = () => {
     setSidebarOpen(bool => !bool)
+    // window.scrollBy( 0, -96 );
   }
   const getOutperformance = (item : any) => {
     const itemPerformance = (item?.index?.endPrice - item?.index?.startingPrice?.[selectedDuration]) * 100 / item?.index?.startingPrice?.[selectedDuration];
@@ -590,6 +592,11 @@ export default function HomePage() {
   //   }
   //   init();
   // }, [])
+  // const handleScroll = (e) => {
+  //   if(e.currentTarget.scrollTop === 0) {
+  //     setMoved(true);
+  //   }
+  // }
   return (
     <div className='container'>
       <main style={{backgroundImage: `url("/images/background-light.png")`}}
@@ -597,13 +604,15 @@ export default function HomePage() {
         {/*<Head>*/}
         {/*  <title>Hi</title>*/}
         {/*</Head>*/}
+        <div className='absolute w-full'>
+      </div>
         <div className='sticky top-0 inset-x-0 p-4 z-10 bg-black md:bg-opacity-[0.5]'>
           <div className='sticky top-0'>
             <div className='flex justify-between items-center '>
               <div className='flex gap-2 justify-start items-center bg-opacity-1'>
                 <NextImage alt='Logo' src='/images/logo-dark.webp' width={48} height={48} className='rounded-md'/>
                 <div
-                  className='font-trakya text-kobichaLight md:text-dark font-light text-4xl tracking-wide'>BITCOINCIERGE
+                  className='font-trakya text-kobichaLight md:text-dark font-light text-xl md:text-4xl tracking-wide'>BITCOINCIERGE
                 </div>
               </div>
               <div className={'h-16 w-16 rounded-lg bg-black focus:outline-none flex justify-center items-center'}>
@@ -613,14 +622,15 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <section className='pt-0 md:pt-16 md:pt-0 mx-auto'>
+        <section className='pt-0 mx-auto'>
           <div className='mx-6 md:mx-8'>
             <div
-              className='layout relative flex min-h-screen flex-col items-center justify-center py-6 md:py-12 text-center leading-loose px-3 md:px-auto'>
+              className='layout relative flex flex-col items-center justify-center py-6 text-center leading-loose px-3 md:px-auto'
+              style={{height: 'calc(100vh - 96px)'}}>
               <div
                 className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
                 <div
-                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>Simplifying
+                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-normal text-center md:text-left w-full md:w-auto'>Simplifying
                   ownership of
                 </div>
                 <div style={{backgroundImage: `url("/images/Rectangle1.png")`}}
@@ -652,7 +662,7 @@ export default function HomePage() {
         </section>
         <section className='font-content mx-auto bg-contain bg-center bg-repeat-y' id='about-section'
                  style={{backgroundImage: `url("/images/background-dark.png")`}}>
-          <div className='text-white bg-black opacity-85'>
+          <div className='text-white bg-darkBg'>
             <div className='flex flex-1 justify-center pt-12'>
               <div className='bg-greyBg p-3 rounded-md text-white text-lg flex text-nowrap '>In the last
                 <select
