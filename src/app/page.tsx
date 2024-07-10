@@ -630,7 +630,7 @@ export default function HomePage() {
               <div
                 className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
                 <div
-                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-normal text-center md:text-left w-full md:w-auto'>Simplifying
+                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 leading-normal text-center md:text-left w-full md:w-auto' style={{textShadow: '-1px 0  #000, 0 1px  #000, 1px 0  #000, 0 -1px  #000'}}>Simplifying
                   ownership of
                 </div>
                 <div style={{backgroundImage: `url("/images/Rectangle1.png")`}}
@@ -650,7 +650,7 @@ export default function HomePage() {
               <div
                 className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-4 lg:mt-8 gap-4'>
                 <div
-                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 drop-shadow-lg text-shadow leading-tight text-center md:text-left w-full md:w-auto'>of
+                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 leading-tight text-center md:text-left w-full md:w-auto' style={{textShadow: '-1px 0  #000, 0 1px  #000, 1px 0  #000, 0 -1px  #000'}}>of
                   the 21st century
                 </div>
                 <div style={{backgroundImage: `url("/images/Rectangle3.png")`}}
@@ -971,7 +971,7 @@ export default function HomePage() {
               <div className=''>
                 {/*<NextImage alt={} src={}/>*/}
                 <div className='flex gap-2 justify-start items-center'>
-                  <NextImage alt='Logo' src='/images/logo-dark.webp' width={48} height={48} className='rounded-md'/>
+                  <NextImage alt='Logo' src='/images/logo-light.webp' width={48} height={48} className='rounded-md'/>
                   <div className='font-trakya text-white font-light text-xl md:text-4xl tracking-wide'>BITCOINCIERGE</div>
                 </div>
                 <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12 mt-2'>
