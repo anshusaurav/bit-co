@@ -38,7 +38,7 @@ import NextImage from '@/components/NextImage';
 // import Image from 'next/image';
 import clsx from 'clsx';
 import {useEffect, useState} from 'react';
-// import {db} from '@/firebase'
+import {db} from '@/firebase'
 import {collection, getDocs, addDoc} from "firebase/firestore";
 // import Background from '~/images/background-light.png';
 
@@ -549,13 +549,13 @@ const SIDEBAR_SOCIAL_DATA = [
 ]
 export default function HomePage() {
 
-  // const emailsRef = collection(db, "emails")
+  const emailsRef = collection(db, "emails")
   const [selectedDuration, setSelectedDuration] = useState('5');
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  // const [moved, setMoved] = useState(false);
+  const [moved, setMoved] = useState(false);
   const toggleSidebar = () => {
     setSidebarOpen(bool => !bool)
     // window.scrollBy( 0, -96 );
@@ -566,32 +566,45 @@ export default function HomePage() {
     return Math.round((bitPerformance / itemPerformance)*100);
 
   }
-  // const addEmail = async () => {
-  //   const dt = new Date();
-  //   setIsLoading(true);
-  //   const newDocRef = await addDoc(emailsRef, {email: email, createdOn: dt.toDateString()})
-  //   setEmail('');
-  //   // const data = await getDocs(emailsRef)
-  //   setIsLoading(false);
-  //   toast('🦄 Wow so easy!', {
-  //     position: "bottom-center",
-  //     autoClose: 5000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "light",
-  //   });
-  // }
+  const listenScrollEvent = (event) => {
+    if (window.scrollY < 1) {
+      return setMoved(false)
+    } else if (window.scrollY > 1) {
+      return setMoved(true);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent);
 
-  // useEffect(() => {
-  //   const init = async () => {
-  //     const data = await getDocs(emailsRef)
-  //     console.log(data);
-  //   }
-  //   init();
-  // }, [])
+    return () =>
+      window.removeEventListener('scroll', listenScrollEvent);
+  },[])
+  const addEmail = async () => {
+    const dt = new Date();
+    setIsLoading(true);
+    const newDocRef = await addDoc(emailsRef, {email: email, createdOn: dt.toDateString()})
+    setEmail('');
+    // const data = await getDocs(emailsRef)
+    setIsLoading(false);
+    toast('🦄 Wow so easy!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+  useEffect(() => {
+    const init = async () => {
+      const data = await getDocs(emailsRef)
+      console.log(data);
+    }
+    init();
+  }, [])
   // const handleScroll = (e) => {
   //   if(e.currentTarget.scrollTop === 0) {
   //     setMoved(true);
@@ -606,16 +619,16 @@ export default function HomePage() {
         {/*</Head>*/}
         <div className='absolute w-full'>
       </div>
-        <div className='sticky top-0 inset-x-0 p-4 z-10 bg-black md:bg-opacity-[0.5]'>
+        <div className={`sticky top-0 inset-x-0 p-4 z-10 ${moved?'bg-black md:bg-opacity-[0.8]': 'bg-transparent'}`}>
           <div className='sticky top-0'>
             <div className='flex justify-between items-center '>
               <div className='flex gap-2 justify-start items-center bg-opacity-1'>
-                <NextImage alt='Logo' src='/images/logo-dark.webp' width={48} height={48} className='rounded-md'/>
-                <div
-                  className='font-trakya text-kobichaLight md:text-dark font-light text-xl md:text-4xl tracking-wide'>BITCOINCIERGE
-                </div>
+                <NextImage alt='Logo' src={moved?'/images/logo-light.webp': '/images/logo-dark.webp'} width={54} height={54} className='rounded-md'/>
+                {!moved && <div
+                  className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincerge
+                </div>}
               </div>
-              <div className={'h-16 w-16 rounded-lg bg-black focus:outline-none flex justify-center items-center'}>
+              <div className={`h-16 w-16 rounded-lg flex justify-center items-center ${moved?'bg-black':''}`}>
                 <NextImage alt='HAmburger' src='/images/hamburger.svg' width={32} height={16} className='cursor-pointer'
                            onClick={toggleSidebar}/>
               </div>
@@ -626,11 +639,11 @@ export default function HomePage() {
           <div className='mx-6 md:mx-8'>
             <div
               className='layout relative flex flex-col items-center justify-center py-6 text-center leading-loose px-3 md:px-auto'
-              style={{height: 'calc(100vh - 96px)'}}>
+              style={{minHeight: 'calc(100vh - 96px)'}}>
               <div
                 className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full gap-4'>
                 <div
-                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 leading-normal text-center md:text-left w-full md:w-auto' style={{textShadow: '-1px 0  #000, 0 1px  #000, 1px 0  #000, 0 -1px  #000'}}>Simplifying
+                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 tracking-wide text-center md:text-left w-full md:w-auto' style={{textShadow: '-1px 0  #000, 0 1px  #000, 1px 0  #000, 0 -1px  #000'}}>Simplifying
                   ownership of
                 </div>
                 <div style={{backgroundImage: `url("/images/Rectangle1.png")`}}
@@ -643,14 +656,14 @@ export default function HomePage() {
                      className='order-last md:order-first bg-cover bg-center bg-no-repeat h-[90px] lg:h-[102px] w-[200px] md:w-[180px] lg:w-[310px] lxl:w-[340px] rounded-lg'>
                 </div>
                 <div
-                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md text-center md:text-right order-first md:order-last w-full md:w-auto'>best
+                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-decor font-semibold italic text-slate-900 drop-shadow-md tracking-wide text-center md:text-right order-first md:order-last w-full md:w-auto'>best
                   performing asset
                 </div>
               </div>
               <div
                 className='flex flex-row lg:flex-row flex-wrap items-center justify-center md:justify-between w-full mt-4 lg:mt-8 gap-4'>
                 <div
-                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 leading-tight text-center md:text-left w-full md:w-auto' style={{textShadow: '-1px 0  #000, 0 1px  #000, 1px 0  #000, 0 -1px  #000'}}>of
+                  className='text-4xl mlg:text-[42px] mgl:text-5xl lxl:text-[56px] xl:text-7xl font-polysans font-medium text-yellow-900 tracking-wide text-center md:text-left w-full md:w-auto' style={{textShadow: '-1px 0  #000, 0 1px  #000, 1px 0  #000, 0 -1px  #000'}}>of
                   the 21st century
                 </div>
                 <div style={{backgroundImage: `url("/images/Rectangle3.png")`}}
@@ -851,8 +864,8 @@ export default function HomePage() {
             }
           </div>
         </section>
-        <section className='bg-white p-6 md:p-16 font-content mx-auto' id='client-section'>
-          <div className='px-0 md:px-6'>
+        <section className='bg-white px-6 md:px-16 py-16  font-content mx-auto' id='client-section'>
+          <div className='px-0 md:px-16'>
             <div className='flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4'>
               <div className='text-kobicha text-2xl font-semibold w-full md:w-auto text-center md:text-left'>Powered
                 by
@@ -878,7 +891,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className='font-content mx-auto px-6 md:px-16'>
-          <div className='px-6'>
+          <div className='px-6 md:px-16'>
             <div
               className='relative flex flex-col md:flex-row min-h-screen items-center justify-center py-12 text-center leading-loose gap-8'>
               <div className='flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-between'>
@@ -927,7 +940,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className='bg-black font-content mx-auto' id='feature-section'>
-          <div className='py-16 flex flex-col md:flex-row items-center justify-between'>
+          <div className='py-16 mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-between'>
             <div className='flex-1 flex items-center justify-center p-6'>
               <div>
                 <div
@@ -966,13 +979,13 @@ export default function HomePage() {
         </section>
         <section className='bg-pumpkin py-8 md:py-10 mx-auto'></section>
         <section className='bg-black font-content mx-auto' id='feature-section'>
-          <div className='py-16 flex flex-col md:flex-row items-center justify-between'>
+          <div className='py-16 mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-between'>
             <div className='flex-1 flex items-center justify-center p-6'>
               <div className=''>
                 {/*<NextImage alt={} src={}/>*/}
                 <div className='flex gap-2 justify-start items-center'>
-                  <NextImage alt='Logo' src='/images/logo-light.webp' width={48} height={48} className='rounded-md'/>
-                  <div className='font-trakya text-white font-light text-xl md:text-4xl tracking-wide'>BITCOINCIERGE</div>
+                  <NextImage alt='Logo' src='/images/logo-light.webp' width={54} height={54} className='rounded-md'/>
+                  <div className='font-trakya text-white font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge</div>
                 </div>
                 <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12 mt-2'>
                   Join the rank of Savy Investor who trust us for their Bitcoins needs.
@@ -991,7 +1004,7 @@ export default function HomePage() {
                     <button
                       disabled={email?.trim().length === 0}
                       className="p-[6px] text-eerieBlack text-xs font-semibold rounded-lg bg-white disabled:cursor-not-allowed"
-                      onClick={()=>{console.log('Clicked')}}
+                      onClick={()=>{console.log('Clicked'); addEmail();}}
                     >Subscribe
                     </button>
                   </div>
@@ -1036,7 +1049,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className='bg-black font-content mx-auto'>
-          <div className='py-16 flex flex-col md:flex-row items-center justify-between'>
+          <div className='py-16 mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-between'>
             <div className='mx-auto flex flex-col md:flex-row items-center justify-between mt-4'>
             </div>
           </div>
@@ -1095,7 +1108,6 @@ export default function HomePage() {
         }
 
       </main>
-
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
