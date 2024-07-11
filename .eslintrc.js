@@ -23,7 +23,10 @@ module.exports = {
       'warn',
       { props: 'never', children: 'never' },
     ],
-
+    '@typescript-eslint/ban-ts-comment': [
+      'error',
+      {'ts-ignore': 'allow-with-description'},
+    ],
     //#region  //*=========== Unused Import ===========
     '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'warn',
