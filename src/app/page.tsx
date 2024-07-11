@@ -567,7 +567,7 @@ export default function HomePage() {
     return Math.round((bitPerformance / itemPerformance)*100);
 
   }
-  const listenScrollEvent = (event) => {
+  const listenScrollEvent = (event : any) => {
     if (window.scrollY < 1) {
       return setMoved(false)
     } else if (window.scrollY > 1) {
