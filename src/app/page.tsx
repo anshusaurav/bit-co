@@ -38,7 +38,7 @@ import NextImage from '@/components/NextImage';
 // import Image from 'next/image';
 import clsx from 'clsx';
 import {useEffect, useState} from 'react';
-// @ts-ignore
+// @ts-ignore firebase efficiently
 import {db} from '@/firebase'
 import {collection, getDocs, addDoc} from "firebase/firestore";
 // import Background from '~/images/background-light.png';
