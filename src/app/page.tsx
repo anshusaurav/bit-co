@@ -362,14 +362,14 @@ const PARTNER_DATA = [
     },
     description: 'Hardware Wallet'
   },
-  {
-    title: 'Liminal',
-    image_data: {
-      alt_text: 'liminal',
-      uri: '/images/Liminal.png'
-    },
-    description: 'Multisig Custody'
-  }
+  // {
+  //   title: 'Liminal',
+  //   image_data: {
+  //     alt_text: 'liminal',
+  //     uri: '/images/Liminal.png'
+  //   },
+  //   description: 'Multisig Custody'
+  // }
 ]
 const COMMUNITY_DATA = [
   {
@@ -383,7 +383,7 @@ const COMMUNITY_DATA = [
       action: {
         type: 'NAVIGATION',
         data: {
-          uri: 'https://calendly.com/anshu-saurav/15min'
+          uri: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9'
         }
       }
     },
@@ -444,7 +444,7 @@ const SOCIAL_MEDIA_DATA = [
       width: 30,
       height: 30
     },
-    uri: 'https://www.x.com/bitcoincierge-x/'
+    uri: 'https://www.x.com/bitcoinciergein/'
   },
   {
     title: 'Facebook',
@@ -454,7 +454,7 @@ const SOCIAL_MEDIA_DATA = [
       width: 30,
       height: 30
     },
-    uri: 'https://www.facebook.com/Bitcoincierge/'
+    uri: 'https://www.facebook.com/groups/Bitcoincierge/'
   },
   {
     title: 'LinkedIn',
@@ -606,11 +606,7 @@ export default function HomePage() {
     }
     init();
   }, [])
-  // const handleScroll = (e) => {
-  //   if(e.currentTarget.scrollTop === 0) {
-  //     setMoved(true);
-  //   }
-  // }
+
   return (
     <div className='container'>
       <main style={{backgroundImage: `url("/images/background-light.png")`}}
@@ -956,9 +952,9 @@ export default function HomePage() {
                 {/*</div>*/}
                 <div className='flex justify-start items-center mt-4'>
                   <div
-                    className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white p-2 tracking-wider mt-4'>
+                    className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white p-2 tracking-wider mt-4 cursor-pointer'>
                     <div className='font-light text-md md:text-lg text-white '>
-                      <Link href={'https://calendly.com/anshu-saurav/15min'} target="_blank">
+                      <Link href={'https://calendar.app.google/5Q8NaBfxKPFaSitj9'} target="_blank">
                         Contact us now
                       </Link>
                     </div>
