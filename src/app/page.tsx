@@ -506,7 +506,7 @@ const SIDEBAR_DATA = [
       width: 30,
       height: 30
     },
-    uri: '#feature-section'
+    uri: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9'
   },
   // {
   //   title: 'Podcast',
@@ -521,7 +521,7 @@ const SIDEBAR_DATA = [
 ]
 const SIDEBAR_SOCIAL_DATA = [
   {
-    uri: 'https://www.facebook.com/Bitcoincierge/',
+    uri: 'https://www.facebook.com/groups/Bitcoincierge/',
     image_data: {
       uri: <FaFacebookF className='text-3xl font-bold text-bone hover:text-pumpkin'/>,
       alt_text: 'Facebook',
@@ -539,7 +539,7 @@ const SIDEBAR_SOCIAL_DATA = [
     }
   },
   {
-    uri: 'https://www.x.com/bitcoincierge-x/',
+    uri: 'https://www.x.com/bitcoinciergein/',
     image_data: {
       uri: <FaTwitter className='text-3xl font-bold text-bone hover:text-pumpkin'/>,
       alt_text: 'Twitter',
@@ -622,7 +622,7 @@ export default function HomePage() {
               <div className='flex gap-2 justify-start items-center bg-opacity-1'>
                 <NextImage alt='Logo' src={moved?'/images/logo-light.webp': '/images/logo-dark.webp'} width={54} height={54} className='rounded-md'/>
                 {!moved && <div
-                  className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincerge
+                  className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge
                 </div>}
               </div>
               <div className={`h-16 w-16 rounded-lg flex justify-center items-center ${moved?'bg-black':''}`}>
