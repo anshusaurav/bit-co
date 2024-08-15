@@ -347,6 +347,22 @@ const CAPTION_DATA = [
   }]
 const PARTNER_DATA = [
   {
+    title: 'Getbit',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/getbit.png'
+    },
+    description: 'Exchange'
+  },
+  {
+    title: 'Unocoin',
+    image_data: {
+      alt_text: 'unocoin',
+      uri: '/images/unocoin.png'
+    },
+    description: 'Exchange'
+  },
+  {
     title: 'Zebpay',
     image_data: {
       alt_text: 'zebpay',
@@ -873,7 +889,7 @@ export default function HomePage() {
                     <div key={index}
                          className='w-full md:w-auto self-auto md:self-stretch flex flex-col justify-between items-center'>
                       <NextImage
-                        className='flex-1'
+                        className='flex-1 flex justify-center items-center'
                         alt={item?.image_data?.alt_text}
                         src={item?.image_data?.uri}
                         width={166}
