@@ -879,7 +879,7 @@ export default function HomePage() {
         </section>
         <section className='bg-white px-6 md:px-16 py-16  font-content mx-auto' id='client-section'>
           <div className='px-0 md:px-16'>
-            <div className='flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4'>
+            <div className='flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-4'>
               <div className='text-kobicha text-2xl font-semibold w-full md:w-auto text-center md:text-left'>Powered
                 by
               </div>
@@ -887,7 +887,7 @@ export default function HomePage() {
                 PARTNER_DATA?.map((item, index) => {
                   return (
                     <div key={index}
-                         className='w-full md:w-auto self-auto md:self-stretch flex flex-col justify-between items-center'>
+                         className='flex flex-col justify-between items-center'>
                       <NextImage
                         className='flex-1 flex justify-center items-center'
                         alt={item?.image_data?.alt_text}
@@ -1080,7 +1080,7 @@ export default function HomePage() {
               <div className='absolute inset-y-0 right-0 max-w-[465px] w-full min-h-screen bg-jet overflow-auto'>
                 <div className='flex-1 flex-col'>
                   <div className='border-b border-b-bone border-opacity-20'>
-                    <div className='flex justify-end px-14 py-6 text-bone hover:text-pumpkin cursor-pointer' onClick={toggleSidebar}>
+                    <div className='flex justify-end px-8 py-6 text-bone hover:text-pumpkin cursor-pointer' onClick={toggleSidebar}>
                       <RiCloseLine size={48} className=''/>
                     </div>
                   </div>
