@@ -377,15 +377,70 @@ const PARTNER_DATA = [
       uri: '/images/Trezor.png'
     },
     description: 'Hardware Wallet'
+  }
+]
+
+const TEAM_DATA = [
+  {
+    id: 1,
+    title: 'Sovrav S',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Saurabh_S.webp'
+    },
+    designation: 'Cofounder & Mentor',
+    description: 'Purchase & Custody, Multisig & Inheritance, Taxes & Regulations, Bitcoin & LN node'
   },
-  // {
-  //   title: 'Liminal',
-  //   image_data: {
-  //     alt_text: 'liminal',
-  //     uri: '/images/Liminal.png'
-  //   },
-  //   description: 'Multisig Custody'
-  // }
+  {
+    id: 2,
+    title: 'Prof KK Ratan',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Prof_KK_Ratan.webp'
+    },
+    designation: 'Cofounder & Mentor',
+    description: 'Purchase & Custody'
+  },
+  {
+    id: 3,
+    title: 'Shreyan Joshi',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Shreyan.webp'
+    },
+    designation: '',
+    description: 'Purchase & Custody, Taxes & Regulations, Bitcoin & LN node'
+  },
+  {
+    id: 4,
+    title: 'Amol',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Amol.webp'
+    },
+    designation: '',
+    description: 'Purchase & Custody, Multisig & Inheritance, Taxes & Regulations'
+  },
+  {
+    id: 5,
+    title: 'Nihal Armaan',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Nihal_Armaan.webp'
+    },
+    designation: '',
+    description: 'Purchase & Custody, Multisig & Inheritance, Mining'
+  },
+  {
+    id: 6,
+    title: 'Digant Bhujbal',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Digant_Bhujbal.webp'
+    },
+    designation: '',
+    description: 'Purchase & Custody, Taxes & Regulations, Bitcoin & LN node'
+  },
 ]
 const COMMUNITY_DATA = [
   {
@@ -573,6 +628,8 @@ export default function HomePage() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [moved, setMoved] = useState(false);
+  const [selectedDescription, setSelectedDescription] = useState(TEAM_DATA?.[0]?.description || '')
+  const [startTeamIndex, setStartTeamIndex] = useState(0);
   const toggleSidebar = () => {
     setSidebarOpen(bool => !bool)
     // window.scrollBy( 0, -96 );
@@ -589,6 +646,14 @@ export default function HomePage() {
     } else if (window.scrollY > 1) {
       return setMoved(true);
     }
+  }
+
+  const onRightNavClick = () => {
+    setStartTeamIndex(s => (s+1)%TEAM_DATA.length);
+  }
+
+  const onLeftNavClick = () => {
+    setStartTeamIndex(s => (s+TEAM_DATA.length-1)%TEAM_DATA.length);
   }
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent);
@@ -623,6 +688,40 @@ export default function HomePage() {
     init();
   }, [])
 
+
+  const renderTeamItems = () => {
+    const itemOne = TEAM_DATA?.[startTeamIndex];
+    const itemTwo = TEAM_DATA?.[(startTeamIndex + 1)%TEAM_DATA.length]
+    const itemThree = TEAM_DATA?.[(startTeamIndex + 2)%TEAM_DATA.length]
+    return (
+      <>
+    <div key={itemOne?.id}style={{backgroundImage: ` url(${itemOne?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2">
+      <div
+        className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4' style={{backgroundColor: 'rgba(11,11,11, 0.5)', minHeight: 120}}>
+          <div className='font-semibold text-white text-xl'>{itemOne?.title || ''}</div>
+          <div className={'text-white font-normal text-md'}>{itemOne?.designation || ''}</div>
+          <div className={'text-white font-normal text-xs'}>{itemOne?.description || ''}</div>
+        </div>
+    </div>
+        <div key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-[#C0C0C0] border-2 hidden md:block">
+          <div
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4' style={{backgroundColor: 'rgba(11,11,11, 0.5)', minHeight: 120}}>
+            <div className='font-semibold text-white text-xl'>{itemTwo?.title || ''}</div>
+            <div className={'text-white font-normal text-md'}>{itemTwo?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs'}>{itemTwo?.description || ''}</div>
+          </div>
+        </div>
+        <div key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden lg:block">
+          <div
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4' style={{backgroundColor: 'rgba(11,11,11, 0.5)', minHeight: 120}}>
+            <div className='font-semibold text-white text-xl'>{itemThree?.title || ''}</div>
+            <div className={'text-white font-normal text-md'}>{itemThree?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs'}>{itemThree?.description || ''}</div>
+          </div>
+        </div>
+      </>
+    )
+  }
   return (
     <div className='container'>
       <main style={{backgroundImage: `url("/images/background-light.png")`}}
@@ -840,7 +939,7 @@ export default function HomePage() {
                             Bitcoin partner from
                           </div>
                           <div
-                            className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white mt-2'>Purchase,
+                            className='text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white mt-3'>Purchase,
                             Custody & more
                           </div>
                           {/*<div className='text-md md:text-lg lg:text-xl font-normal text-kobichaLight text-left max-w-full md:max-w-md mt-6 tracking-wide '>Become part of a growing community of individuals who invest in the markets to grow theirwealth over time.</div>*/}
@@ -901,6 +1000,29 @@ export default function HomePage() {
               }
               <div className='text-md text-kobicha font-normal'>and more...</div>
             </div>
+          </div>
+        </section>
+        <section className='bg-opacity-99 px-6 md:px-16 py-16  font-content mx-auto' id='team-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
+          <div className='px-0 md:px-16'>
+            <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center mt-2 mb-8 md:mb-12">Meet the team</div>
+            <div className="flex gap-4 justify-between items-center">
+            <div className="w-12 h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
+                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
+              </svg>
+            </div>
+            <div className='flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-2 md:gap-8 auto-rows-1fr' >
+              {
+                renderTeamItems()
+              }
+            </div>
+            <div className="w-12 h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-right">
+                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
+              </svg>
+            </div>
+            </div>
+            {/*<div className='text-xs text-grabniteGrey font-light text-center mt-1 p-4 hidden lg:block w-full'>{selectedDescription}</div>*/}
           </div>
         </section>
         <section className='font-content mx-auto px-6 md:px-16'>

@@ -78,6 +78,9 @@ export default {
         'lxl': '1120px',
         '3xl': '1700px',
         // => @media (min-width: 1280px) { ... }
+      },
+      gridAutoRows: {
+        '1fr': '1fr',
       }
     }
   },
