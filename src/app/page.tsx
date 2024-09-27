@@ -389,7 +389,7 @@ const TEAM_DATA = [
       uri: '/images/Saurabh_S.webp'
     },
     designation: 'Cofounder & Mentor',
-    description: 'Purchase & Custody, Multisig & Inheritance, Taxes & Regulations, Bitcoin & LN node'
+    description: 'Product Leader at Times Internet, Consensys, and GoMechanic. Currently, he educates on Bitcoin at Bitshala. At Bitcoincierge, Saurabh leads Product and Mentor Team.'
   },
   {
     id: 2,
@@ -399,7 +399,7 @@ const TEAM_DATA = [
       uri: '/images/Prof_KK_Ratan.webp'
     },
     designation: 'Cofounder & Mentor',
-    description: 'Purchase & Custody'
+    description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
   },
   {
     id: 3,
@@ -408,18 +408,8 @@ const TEAM_DATA = [
       alt_text: 'getbit',
       uri: '/images/Shreyan.webp'
     },
-    designation: '',
-    description: 'Purchase & Custody, Taxes & Regulations, Bitcoin & LN node'
-  },
-  {
-    id: 4,
-    title: 'Amol',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Amol.webp'
-    },
-    designation: '',
-    description: 'Purchase & Custody, Multisig & Inheritance, Taxes & Regulations'
+    designation: 'Mentor',
+    description: ' Legal expert from NLU, currently overseeing sales and legal aspects at GetBit - a Bitcoin-only exchange. At Bitcoincierge, Shreyan mentors on Bitcoin purchase, custody, inheritance planning and regulatory compliance.'
   },
   {
     id: 5,
@@ -428,8 +418,18 @@ const TEAM_DATA = [
       alt_text: 'getbit',
       uri: '/images/Nihal_Armaan.webp'
     },
-    designation: '',
-    description: 'Purchase & Custody, Multisig & Inheritance, Mining'
+    designation: 'Mentor',
+    description: 'Content Creator, Podcaster, and Digital Marketer known for the \'Bitcoin Hub Show\'. At Bitcoincierge, Nihal provides guidance on Bitcoin purchase, custody, and mining operations.'
+  },
+  {
+    id: 4,
+    title: 'Amol B',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Amol.webp'
+    },
+    designation:  'Mentor',
+    description: 'Senior banker with over 20 years of experience at major institutions like SBI and ICICI Bank. At Bitcoincierge, Amol mentors on Bitcoin purchase, custody, and inheritance strategies.'
   },
   {
     id: 6,
@@ -438,8 +438,8 @@ const TEAM_DATA = [
       alt_text: 'getbit',
       uri: '/images/Digant_Bhujbal.webp'
     },
-    designation: '',
-    description: 'Purchase & Custody, Taxes & Regulations, Bitcoin & LN node'
+    designation: 'Mentor',
+    description: 'Finance Professional and analyst in FX advisory and trading. At Bitcoincierge, Digant specializes in mentoring on the tax implications and regulatory environment surrounding Bitcoin.'
   },
 ]
 const COMMUNITY_DATA = [
@@ -697,26 +697,26 @@ export default function HomePage() {
       <>
     <div key={itemOne?.id}style={{backgroundImage: ` url(${itemOne?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2">
       <div
-        className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4' style={{backgroundColor: 'rgba(11,11,11, 0.5)', minHeight: 120}}>
-          <div className='font-semibold text-white text-xl'>{itemOne?.title || ''}</div>
-          <div className={'text-white font-normal text-md'}>{itemOne?.designation || ''}</div>
-          <div className={'text-white font-normal text-xs'}>{itemOne?.description || ''}</div>
+        className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+          <div className='font-semibold text-white text-lg leading-3'>{itemOne?.title || ''}</div>
+          <div className={'text-white font-normal text-xs mt-1'}>{itemOne?.designation || ''}</div>
+          <div className={'text-white font-normal text-xs mt-[6px]'}>{itemOne?.description || ''}</div>
         </div>
     </div>
-        <div key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-[#C0C0C0] border-2 hidden md:block">
+        <div key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block">
           <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4' style={{backgroundColor: 'rgba(11,11,11, 0.5)', minHeight: 120}}>
-            <div className='font-semibold text-white text-xl'>{itemTwo?.title || ''}</div>
-            <div className={'text-white font-normal text-md'}>{itemTwo?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs'}>{itemTwo?.description || ''}</div>
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+            <div className='font-semibold text-white text-lg leading-3'>{itemTwo?.title || ''}</div>
+            <div className={'text-white font-normal text-xs mt-1'}>{itemTwo?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemTwo?.description || ''}</div>
           </div>
         </div>
         <div key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden lg:block">
           <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4' style={{backgroundColor: 'rgba(11,11,11, 0.5)', minHeight: 120}}>
-            <div className='font-semibold text-white text-xl'>{itemThree?.title || ''}</div>
-            <div className={'text-white font-normal text-md'}>{itemThree?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs'}>{itemThree?.description || ''}</div>
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+            <div className='font-semibold text-white text-lg leading-3'>{itemThree?.title || ''}</div>
+            <div className={'text-white font-normal text-xs mt-1'}>{itemThree?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemThree?.description || ''}</div>
           </div>
         </div>
       </>
@@ -1003,10 +1003,10 @@ export default function HomePage() {
           </div>
         </section>
         <section className='bg-opacity-99 px-6 md:px-16 py-16  font-content mx-auto' id='team-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
-          <div className='px-0 md:px-16'>
+          <div className='px-0 md:px-8 lg:px-10'>
             <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center mt-2 mb-8 md:mb-12">Meet the team</div>
-            <div className="flex gap-4 justify-between items-center">
-            <div className="w-12 h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
+            <div className="flex gap-2 md:gap-4 justify-between items-center">
+            <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
               <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
                 <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
               </svg>
@@ -1016,7 +1016,7 @@ export default function HomePage() {
                 renderTeamItems()
               }
             </div>
-            <div className="w-12 h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
+            <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
               <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-right">
                 <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
               </svg>
