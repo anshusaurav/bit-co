@@ -374,7 +374,7 @@ const PARTNER_DATA = [
     title: 'Trezor',
     image_data: {
       alt_text: 'trezor',
-      uri: '/images/Trezor.png'
+      uri: '/images/trezor1.png'
     },
     description: 'Hardware Wallet'
   }
@@ -656,6 +656,7 @@ export default function HomePage() {
     setStartTeamIndex(s => (s+TEAM_DATA.length-1)%TEAM_DATA.length);
   }
   useEffect(() => {
+
     window.addEventListener('scroll', listenScrollEvent);
 
     return () =>
@@ -740,9 +741,8 @@ export default function HomePage() {
                   className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge
                 </div>}
               </div>
-              <div className={`h-16 w-16 rounded-lg flex justify-center items-center ${moved?'bg-black':''}`}>
-                <NextImage alt='HAmburger' src='/images/hamburger.svg' width={32} height={16} className='cursor-pointer'
-                           onClick={toggleSidebar}/>
+              <div className={`h-16 w-16 rounded-lg flex justify-center items-center ${moved?'bg-black':''} cursor-pointer`} onClick={toggleSidebar}>
+                <NextImage alt='HAmburger' src='/images/hamburger.svg' width={32} height={16} />
               </div>
             </div>
           </div>
@@ -854,7 +854,7 @@ export default function HomePage() {
                             <div className='max-w-[60px] font-semibold text-md md:text-lg'>${item?.endPrice}</div>
                             <div className='flex justify-start gap-1 items-center'>
                               <div
-                                className={`font-semibold text-md md:text-lg ${item?.endPrice > item?.startingPrice?.[selectedDuration] ? 'text-increase' : 'text-decrease'}`}>{Math.round(((item?.endPrice - item?.startingPrice?.[selectedDuration]) * 100) / item?.startingPrice?.[selectedDuration])}%
+                                className={`font-semibold text-md md:text-lg ${item?.endPrice > item?.startingPrice?.[selectedDuration] ? 'text-increase' : 'text-decrease'}`}>{(Math.round(((item?.endPrice - item?.startingPrice?.[selectedDuration]) * 100) / item?.startingPrice?.[selectedDuration]))/100}x
                               </div>
                               {item?.endPrice > item?.startingPrice?.[selectedDuration] ?
                                 <FaCaretUp color={'#65C467'} className='font-semibold text-lg'/> :
@@ -887,7 +887,7 @@ export default function HomePage() {
                         {BIT_DATA?.endPrice > BIT_DATA?.startingPrice?.[selectedDuration] ?
                           <FaCaretUp color={'#65C467'} className='font-semibold text-lg'/> :
                           <FaCaretDown color={'#D24B34'} className='font-semibold text-lg'/>}
-                        {Math.round((BIT_DATA?.endPrice - BIT_DATA?.startingPrice?.[selectedDuration]) * 100 / BIT_DATA?.startingPrice?.[selectedDuration])}%
+                        {(Math.round((BIT_DATA?.endPrice - BIT_DATA?.startingPrice?.[selectedDuration]) * 100 / BIT_DATA?.startingPrice?.[selectedDuration]))/100}x
                       </div>
                     </div>
                     <div className=''>
@@ -976,7 +976,7 @@ export default function HomePage() {
             }
           </div>
         </section>
-        <section className='bg-white px-6 md:px-16 py-16  font-content mx-auto' id='client-section'>
+        <section className='bg-white px-6 md:px-16 py-16 md:py-[10rem]  font-content mx-auto' id='client-section'>
           <div className='px-0 md:px-16'>
             <div className='flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-4'>
               <div className='text-kobicha text-2xl font-semibold w-full md:w-auto text-center md:text-left'>Powered
@@ -988,11 +988,11 @@ export default function HomePage() {
                     <div key={index}
                          className='flex flex-col justify-between items-center'>
                       <NextImage
-                        className='flex-1 flex justify-center items-center'
+                        className='flex-1 flex justify-center items-center min-h-[60px]'
                         alt={item?.image_data?.alt_text}
                         src={item?.image_data?.uri}
                         width={166}
-                        height={48}/>
+                        height={60}/>
                       {/*<div className='text-xs text-grabniteGrey font-light text-center mt-1'>{item?.description}</div>*/}
                     </div>
                   )
@@ -1206,34 +1206,35 @@ export default function HomePage() {
                       <RiCloseLine size={48} className=''/>
                     </div>
                   </div>
-                  <div className='flex-1 px-10 py-10'>
-                    <div className='flex flex-col gap-8'>
-                      {
-                        SIDEBAR_DATA?.map((item, index) => {
-                          return (
-                            <Link key={index} href={item?.uri} className='group flex justify-start items-center gap-3 py-3 px-4 border border-transparent hover:border-pumpkin rounded-md'
-                                  onClick={toggleSidebar}>
-                              {item?.image_data?.uri}
-                              <div className='text-4xl text-bone font-semibold group-hover:text-pumpkin'>{item?.title}</div>
-                            </Link>
-
-                          )
-                        })
-                      }
+                  <div className='flex flex-col flex-1 self-stretch'>
+                    <div className='flex-1 px-10 pt-14 pb-10 '>
+                      <div className='flex flex-col gap-6'>
+                        {
+                          SIDEBAR_DATA?.map((item, index) => {
+                            return (
+                              <Link key={index} href={item?.uri} className='group flex justify-start items-center gap-3 py-3 px-4 border border-transparent hover:border-pumpkin rounded-md'
+                                    onClick={toggleSidebar}>
+                                {item?.image_data?.uri}
+                                <div className='text-4xl text-bone font-semibold group-hover:text-pumpkin'>{item?.title}</div>
+                              </Link>
+                            )
+                          })
+                        }
+                      </div>
                     </div>
-                  </div>
-                  <div className='px-14 py-6'>
-                    <div className='text-bone font-xs font-light'>We are available here</div>
-                    <div className='flex justify-start items-center gap-6 mt-1'>
-                      {
-                        SIDEBAR_SOCIAL_DATA?.map((item, index) => {
-                          return (
-                            <Link key={index} href={item?.uri} target="_blank">
-                              {item?.image_data?.uri}
-                            </Link>
-                          )
-                        })
-                      }
+                    <div className='px-14 py-6'>
+                      <div className='text-bone font-xs font-light'>We are available here</div>
+                      <div className='flex justify-start items-center gap-6 mt-1'>
+                        {
+                          SIDEBAR_SOCIAL_DATA?.map((item, index) => {
+                            return (
+                              <Link key={index} href={item?.uri} target="_blank">
+                                {item?.image_data?.uri}
+                              </Link>
+                            )
+                          })
+                        }
+                      </div>
                     </div>
                   </div>
                 </div>
