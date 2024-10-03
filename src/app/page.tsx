@@ -563,7 +563,7 @@ const SIDEBAR_DATA = [
     title: 'Clients',
     image_data: {
       uri: <FaUsers className='text-3xl font-bold text-bone group-hover:text-pumpkin'/>,
-      alt_text: 'Clients',
+      alt_text: 'clients',
       width: 30,
       height: 30
     },
@@ -1002,9 +1002,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className='bg-opacity-99 px-6 md:px-16 py-16  font-content mx-auto' id='team-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
+        <section className='bg-opacity-99 px-6 md:px-16 py-16 font-content mx-auto' id='team-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
           <div className='px-0 md:px-8 lg:px-10'>
-            <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center mt-2 mb-8 md:mb-12">Meet the team</div>
+            <div className=" mt-2 mb-8 md:mb-12">
+              <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center">Meet the team</div>
+              <div className="text-md md:text-xl lg:text-2xl font-normal text-grabniteGrey mt-4 text-center">Bitcoiners, trusted by savvy investors for their Bitcoin needs</div>
+            </div>
             <div className="flex gap-2 md:gap-4 justify-between items-center">
             <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
               <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
