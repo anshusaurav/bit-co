@@ -17,7 +17,7 @@ import {
   FaQuestionCircle,
   FaHeadphones,
   FaLinkedin,
-  FaTwitter, FaFacebookF
+  FaTwitter, FaFacebookF, FaYoutube
 } from "react-icons/fa";
 import {FaCaretDown, FaCaretUp} from "react-icons/fa6";
 // import localFont from '@next/font/local'
@@ -371,10 +371,10 @@ const PARTNER_DATA = [
     description: 'Exchange'
   },
   {
-    title: 'Trezor',
+    title: 'Theya',
     image_data: {
-      alt_text: 'trezor',
-      uri: '/images/trezor1.png'
+      alt_text: 'theya',
+      uri: '/images/theya.png'
     },
     description: 'Hardware Wallet'
   }
@@ -383,24 +383,25 @@ const PARTNER_DATA = [
 const TEAM_DATA = [
   {
     id: 1,
-    title: 'Sovrav S',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Saurabh_S.webp'
-    },
-    designation: 'Cofounder & Mentor',
-    description: 'Product Leader at Times Internet, Consensys, and GoMechanic. Currently, he educates on Bitcoin at Bitshala. At Bitcoincierge, Saurabh leads Product and Mentor Team.'
-  },
-  {
-    id: 2,
     title: 'Prof KK Ratan',
     image_data: {
       alt_text: 'getbit',
       uri: '/images/Prof_KK_Ratan.webp'
     },
-    designation: 'Cofounder & Mentor',
+    designation: 'Advisor',
     description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
   },
+  {
+    id: 2,
+    title: 'Saurabh S',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Saurabh_S.webp'
+    },
+    designation: 'Mentor',
+    description: 'Product Leader at Times Internet, Consensys, and GoMechanic. Currently, he educates on Bitcoin at Bitshala. At Bitcoincierge, Saurabh leads Product and Mentor Team.'
+  },
+
   {
     id: 3,
     title: 'Shreyan Joshi',
@@ -487,16 +488,16 @@ const FOOTER_LINKS = [
   }
 ]
 const SOCIAL_MEDIA_DATA = [
-  // {
-  //   title: 'Youtube',
-  //   image_data: {
-  //     uri: '/images/youtube.png',
-  //     alt_text: 'Youtube',
-  //     width: 110,
-  //     height: 30
-  //   },
-  //   uri: 'https://www.facebook.com/Bitcoincierge'
-  // },
+  {
+    title: 'Youtube',
+    image_data: {
+      uri: '/images/youtube.png',
+      alt_text: 'Youtube',
+      width: 110,
+      height: 30
+    },
+    uri: 'https://www.youtube.com/@Bitcoincierge'
+  },
   // {
   //   title: 'Instagram',
   //   image_data: {
@@ -591,6 +592,15 @@ const SIDEBAR_DATA = [
   // }
 ]
 const SIDEBAR_SOCIAL_DATA = [
+  {
+    uri: 'https://www.youtube.com/@Bitcoincierge/',
+    image_data: {
+      uri: <FaYoutube className='text-3xl font-bold text-bone hover:text-pumpkin'/>,
+      alt_text: 'Youtube',
+      width: 30,
+      height: 30
+    }
+  },
   {
     uri: 'https://www.facebook.com/groups/Bitcoincierge/',
     image_data: {
