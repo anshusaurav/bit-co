@@ -381,19 +381,32 @@ const PARTNER_DATA = [
 ]
 
 const TEAM_DATA = [
+  // {
+  //   id: 1,
+  //   title: 'Prof KK Ratan',
+  //   image_data: {
+  //     alt_text: 'getbit',
+  //     uri: '/images/Prof_KK_Ratan.webp'
+  //   },
+  //   designation: 'Advisor',
+  //   description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
+  // },
+
   {
     id: 1,
-    title: 'Prof KK Ratan',
+    title: 'Shreyan Joshi',
+    calenderUrl: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
     image_data: {
       alt_text: 'getbit',
-      uri: '/images/Prof_KK_Ratan.webp'
+      uri: '/images/Shreyan.webp'
     },
-    designation: 'Advisor',
-    description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
+    designation: 'Mentor',
+    description: ' Legal expert from NLU, currently overseeing sales and legal aspects at GetBit - a Bitcoin-only exchange. At Bitcoincierge, Shreyan mentors on Bitcoin purchase, custody, inheritance planning and regulatory compliance.'
   },
   {
     id: 2,
     title: 'Saurabh S',
+    calenderUrl: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
     image_data: {
       alt_text: 'getbit',
       uri: '/images/Saurabh_S.webp'
@@ -404,17 +417,8 @@ const TEAM_DATA = [
 
   {
     id: 3,
-    title: 'Shreyan Joshi',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Shreyan.webp'
-    },
-    designation: 'Mentor',
-    description: ' Legal expert from NLU, currently overseeing sales and legal aspects at GetBit - a Bitcoin-only exchange. At Bitcoincierge, Shreyan mentors on Bitcoin purchase, custody, inheritance planning and regulatory compliance.'
-  },
-  {
-    id: 5,
     title: 'Nihal Armaan',
+    calenderUrl: 'https://calendly.com/inbitcoinhub/bm',
     image_data: {
       alt_text: 'getbit',
       uri: '/images/Nihal_Armaan.webp'
@@ -425,6 +429,7 @@ const TEAM_DATA = [
   {
     id: 4,
     title: 'Amol B',
+    calenderUrl: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
     image_data: {
       alt_text: 'getbit',
       uri: '/images/Amol.webp'
@@ -433,14 +438,37 @@ const TEAM_DATA = [
     description: 'Senior banker with over 20 years of experience at major institutions like SBI and ICICI Bank. At Bitcoincierge, Amol mentors on Bitcoin purchase, custody, and inheritance strategies.'
   },
   {
-    id: 6,
+    id: 5,
     title: 'Digant Bhujbal',
+    calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
     image_data: {
       alt_text: 'getbit',
       uri: '/images/Digant_Bhujbal.webp'
     },
     designation: 'Mentor',
     description: 'Finance Professional and analyst in FX advisory and trading. At Bitcoincierge, Digant specializes in mentoring on the tax implications and regulatory environment surrounding Bitcoin.'
+  },
+  {
+    id: 6,
+    title: 'Ravi Koushik',
+    calenderUrl: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Ravi_Koushik.jpg'
+    },
+    designation: 'Mentor',
+    description: 'Finance Professional working with 13 years of Work ex. self learner of Bitcoin, newly joined as part of Bitshala group and also working group Bitcoin Payments as PPI.'
+  },
+  {
+    id: 7,
+    title: 'Varun Chiddarwar',
+    calenderUrl: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Varun_Chiddarwar.jpg'
+    },
+    designation: 'Mentor',
+    description: 'Finance Professional, valuations expert in venture capital industry. At Bitcoincierge, Varun specializes in mentoring on the importance of Bitcoin in personal portfolio allocation, purchase, custory and inheritance planning for Bitcoin.'
   },
 ]
 const COMMUNITY_DATA = [
@@ -578,7 +606,7 @@ const SIDEBAR_DATA = [
       width: 30,
       height: 30
     },
-    uri: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9'
+    uri: '#mentor-section'
   },
   // {
   //   title: 'Podcast',
@@ -706,30 +734,30 @@ export default function HomePage() {
     const itemThree = TEAM_DATA?.[(startTeamIndex + 2)%TEAM_DATA.length]
     return (
       <>
-    <div key={itemOne?.id}style={{backgroundImage: ` url(${itemOne?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2">
-      <div
-        className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-          <div className='font-semibold text-white text-lg leading-3'>{itemOne?.title || ''}</div>
-          <div className={'text-white font-normal text-xs mt-1'}>{itemOne?.designation || ''}</div>
-          <div className={'text-white font-normal text-xs mt-[6px]'}>{itemOne?.description || ''}</div>
-        </div>
-    </div>
-        <div key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block">
+        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}style={{backgroundImage: ` url(${itemOne?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 cursor-pointer">
+          <div
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px] ' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+              <div className='font-semibold text-white text-lg leading-3'>{itemOne?.title || ''}</div>
+              <div className={'text-white font-normal text-xs mt-1'}>{itemOne?.designation || ''}</div>
+              <div className={'text-white font-normal text-xs mt-[6px]'}>{itemOne?.description || ''}</div>
+            </div>
+        </Link>
+        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
           <div
             className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
             <div className='font-semibold text-white text-lg leading-3'>{itemTwo?.title || ''}</div>
             <div className={'text-white font-normal text-xs mt-1'}>{itemTwo?.designation || ''}</div>
             <div className={'text-white font-normal text-xs mt-[6px]'}>{itemTwo?.description || ''}</div>
           </div>
-        </div>
-        <div key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden lg:block">
+        </Link>
+        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden lg:block cursor-pointer">
           <div
             className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
             <div className='font-semibold text-white text-lg leading-3'>{itemThree?.title || ''}</div>
             <div className={'text-white font-normal text-xs mt-1'}>{itemThree?.designation || ''}</div>
             <div className={'text-white font-normal text-xs mt-[6px]'}>{itemThree?.description || ''}</div>
           </div>
-        </div>
+        </Link>
       </>
     )
   }
@@ -741,7 +769,7 @@ export default function HomePage() {
         {/*  <title>Hi</title>*/}
         {/*</Head>*/}
         <div className='absolute w-full'>
-      </div>
+         </div>
         <div className={`sticky top-0 inset-x-0 p-4 z-10 ${moved?'bg-black md:bg-opacity-[0.8]': 'bg-transparent'}`}>
           <div className='sticky top-0'>
             <div className='flex justify-between items-center '>
@@ -1012,10 +1040,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className='bg-opacity-99 px-6 md:px-16 py-16 font-content mx-auto' id='team-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
+        <section className='bg-opacity-99 px-6 md:px-16 py-16 font-content mx-auto' id='mentor-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
           <div className='px-0 md:px-8 lg:px-10'>
             <div className=" mt-2 mb-8 md:mb-12">
-              <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center">Meet the team</div>
+              <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center">Meet the mentors</div>
               <div className="text-md md:text-xl lg:text-2xl font-normal text-grabniteGrey mt-4 text-center">Bitcoiners, trusted by savvy investors for their Bitcoin needs</div>
             </div>
             <div className="flex gap-2 md:gap-4 justify-between items-center">
@@ -1105,8 +1133,8 @@ export default function HomePage() {
                   <div
                     className='inline-flex justify-start items-center gap-4 text-white rounded-3xl border border-white p-2 tracking-wider mt-4 cursor-pointer'>
                     <div className='font-light text-md md:text-lg text-white '>
-                      <Link href={'https://calendar.app.google/5Q8NaBfxKPFaSitj9'} target="_blank">
-                        Contact us now
+                      <Link href={'#mentor-section'}>
+                        Contact Mentors Now
                       </Link>
                     </div>
                     <div className='w-6 h-6 bg-white rounded-full flex items-center justify-center'>

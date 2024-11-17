@@ -3,6 +3,46 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/saurabh',
+        destination: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
+        permanent: true,
+      },
+      {
+        source: '/shreyan',
+        destination: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
+        permanent: true,
+      },
+      {
+        source: '/nihal',
+        destination: 'https://calendly.com/inbitcoinhub/bm',
+        permanent: true,
+      },
+      {
+        source: '/amol',
+        destination: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
+        permanent: true,
+      },
+      {
+        source: '/digant',
+        destination: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
+        permanent: true,
+      },
+      {
+        source: '/ravi',
+        destination: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
+        permanent: true,
+      },
+      {
+        source: '/varun',
+        destination: 'https://calendar.google.com/calendar/u/0/r/week/2024/11/16?hl=en-IN&pli=1',
+        permanent: true,
+      },
+
+    ]
+  },
 
   reactStrictMode: true,
   swcMinify: true,
