@@ -747,7 +747,7 @@ export default function HomePage() {
     const itemFive = TEAM_DATA?.[(startTeamIndex + 4)%TEAM_DATA.length]
     const itemSix = TEAM_DATA?.[(startTeamIndex + 5)%TEAM_DATA.length]
 
-    const renderItem = (item, index) => {
+    const renderItem = (item: any, index: number) => {
         return (
           <Link href={item?.calenderUrl} target="_blank" key={item?.id}  className={`${index>startTeamIndex+2?"hidden lg:block": ""}  cursor-pointer p-4 text-left rounded-md`}>
           <div
