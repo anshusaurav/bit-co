@@ -762,52 +762,52 @@ export default function HomePage() {
     }
     return (
       <>
-        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}  className={`cursor-pointer p-4 text-left rounded-md`}>
+        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemOne?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemOne?.description || ''}</div>
+              <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemOne?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}  className={`cursor-pointer p-4 text-left rounded-md`}>
+        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemTwo?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemTwo?.description || ''}</div>
+              <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemTwo?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}  className={`cursor-pointer p-4 text-left rounded-md`}>
+        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemThree?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemThree?.description || ''}</div>
+              <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemThree?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}  className={`cursor-pointer p-4 text-left rounded-md hidden md:block`}>
+        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md hidden md:block`}>
           <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFour?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemFour?.description || ''}</div>
+              <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemFour?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}  className={`cursor-pointer p-4 text-left rounded-md hidden md:block`}>
+        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md hidden md:block`}>
           <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFive?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemFive?.description || ''}</div>
+              <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemFive?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}  className={`cursor-pointer p-4 text-left rounded-md hidden md:block`}>
+        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md hidden md:block`}>
           <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemSix?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemSix?.description || ''}</div>
+              <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemSix?.description || ''}</div>
             </div>
         </Link>
         {/* {
@@ -1153,13 +1153,13 @@ export default function HomePage() {
               <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-slate-900 text-center">Meet The Mentors</div>
               <div className="text-md md:text-xl lg:text-2xl font-normal text-slate-900 mt-4 text-center">Bitcoiners, trusted by savvy investors for their Bitcoin needs</div>
             </div>
-            <div className="flex gap-2 md:gap-4 justify-between items-center">
+            <div className="flex gap-1 md:gap-2 lg:gap-4 justify-between items-center">
               <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
                   <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
                 </svg>
               </div>
-              <div className='flex-1 grid grid-cols-3 md:grid-cols-6 justify-between items-center gap-1 md:gap-2 auto-rows-1fr' >
+              <div className='flex-1 grid grid-cols-3 md:grid-cols-6 justify-between items-center auto-rows-1fr' >
                 {
                   renderTeamItems()
                 }
