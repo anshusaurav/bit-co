@@ -26,8 +26,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/digant',
-        destination: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
+        source: '/ayush',
+        destination: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
+        permanent: true,
+      },
+      {
+        source: '/varun',
+        destination: 'https://calendar.app.google/DuNB9EjWkoJqUKkDA',
         permanent: true,
       },
       {
@@ -36,10 +41,12 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/varun',
-        destination: 'https://calendar.google.com/calendar/u/0/r/week/2024/11/16?hl=en-IN&pli=1',
+        source: '/digant',
+        destination: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
         permanent: true,
       },
+      
+      
 
     ]
   },

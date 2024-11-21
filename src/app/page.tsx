@@ -391,20 +391,8 @@ const TEAM_DATA = [
   //   designation: 'Advisor',
   //   description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
   // },
-
   {
     id: 1,
-    title: 'Shreyan Joshi',
-    calenderUrl: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Shreyan.webp'
-    },
-    designation: 'Mentor',
-    description: ' Legal expert from NLU, currently overseeing sales and legal aspects at GetBit - a Bitcoin-only exchange. At Bitcoincierge, Shreyan mentors on Bitcoin purchase, custody, inheritance planning and regulatory compliance.'
-  },
-  {
-    id: 2,
     title: 'Saurabh S',
     calenderUrl: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
     image_data: {
@@ -412,9 +400,19 @@ const TEAM_DATA = [
       uri: '/images/Saurabh_S.webp'
     },
     designation: 'Mentor',
-    description: 'Product Leader at Times Internet, Consensys, and GoMechanic. Currently, he educates on Bitcoin at Bitshala. At Bitcoincierge, Saurabh leads Product and Mentor Team.'
+    description: 'Saurabh helps Bitcoiners custody their Bitcoin, run node and use Bitcoin products to live and breathe Bitcoin.' 
   },
-
+  {
+    id: 2,
+    title: 'Shreyan Joshi',
+    calenderUrl: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Shreyan.webp'
+    },
+    designation: 'Mentor',
+    description: 'Shreyan helps clients purchase Bitcoin keeping regulation and taxes in mind. His law background from NLU.'
+  },
   {
     id: 3,
     title: 'Nihal Armaan',
@@ -424,7 +422,7 @@ const TEAM_DATA = [
       uri: '/images/Nihal_Armaan.webp'
     },
     designation: 'Mentor',
-    description: 'Content Creator, Podcaster, and Digital Marketer known for the \'Bitcoin Hub Show\'. At Bitcoincierge, Nihal provides guidance on Bitcoin purchase, custody, and mining operations.'
+    description: 'Nihal helps newbies make sense of through "Bitcoin Hub Show". Guided many on mining, purchase & custody.'
   },
   {
     id: 4,
@@ -435,21 +433,32 @@ const TEAM_DATA = [
       uri: '/images/Amol.webp'
     },
     designation:  'Mentor',
-    description: 'Senior banker with over 20 years of experience at major institutions like SBI and ICICI Bank. At Bitcoincierge, Amol mentors on Bitcoin purchase, custody, and inheritance strategies.'
+    description: 'Amol helps clients stack sats securely and economically. He regularly runs (or joins) Bitcoin meetups to guide.'
   },
   {
     id: 5,
-    title: 'Digant Bhujbal',
-    calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
+    title: 'Ayush Surana',
+    calenderUrl: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
     image_data: {
       alt_text: 'getbit',
-      uri: '/images/Digant_Bhujbal.webp'
+      uri: '/images/Ayush_Surana.jpg'
     },
-    designation: 'Mentor',
-    description: 'Finance Professional and analyst in FX advisory and trading. At Bitcoincierge, Digant specializes in mentoring on the tax implications and regulatory environment surrounding Bitcoin.'
+    designation:  'Mentor',
+    description: 'Ayush helps HNIs buy and custody Bitcoin and is operating a bitcoin mining farm. His current work at Getbit.'
   },
   {
     id: 6,
+    title: 'Varun Chiddarwar',
+    calenderUrl: 'https://calendar.app.google/DuNB9EjWkoJqUKkDA',
+    image_data: {
+      alt_text: 'getbit',
+      uri: '/images/Varun_Chiddarwar.jpg'
+    },
+    designation: 'Mentor',
+    description: 'Varun mentors beginners on importance of Bitcoin in personal portfolio allocation, purchase, custody and inheritance.'
+  },
+  {
+    id: 7,
     title: 'Ravi Koushik',
     calenderUrl: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
     image_data: {
@@ -457,19 +466,21 @@ const TEAM_DATA = [
       uri: '/images/Ravi_Koushik.jpg'
     },
     designation: 'Mentor',
-    description: 'Finance Professional working with 13 years of Work ex. self learner of Bitcoin, newly joined as part of Bitshala group and also working group Bitcoin Payments as PPI.'
+    description: 'Ravi helps Bitcoiners manage taxes and regulations including trickier aspects like Inheritance, transfers & more.'
   },
   {
-    id: 7,
-    title: 'Varun Chiddarwar',
-    calenderUrl: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
+    id: 8,
+    title: 'Digant Bhujbal',
+    calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
     image_data: {
       alt_text: 'getbit',
-      uri: '/images/Varun_Chiddarwar.jpg'
+      uri: '/images/Digant_Bhujbal.webp'
     },
     designation: 'Mentor',
-    description: 'Finance Professional, valuations expert in venture capital industry. At Bitcoincierge, Varun specializes in mentoring on the importance of Bitcoin in personal portfolio allocation, purchase, custory and inheritance planning for Bitcoin.'
+    description: 'Digant helps clients with tax implications and regulatory environment surrounding Bitcoin. CFA journey & FX advisory.'
   },
+  
+  
 ]
 const COMMUNITY_DATA = [
   {
@@ -732,17 +743,89 @@ export default function HomePage() {
     const itemOne = TEAM_DATA?.[startTeamIndex];
     const itemTwo = TEAM_DATA?.[(startTeamIndex + 1)%TEAM_DATA.length]
     const itemThree = TEAM_DATA?.[(startTeamIndex + 2)%TEAM_DATA.length]
-    return (
-      <>
-        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}style={{backgroundImage: ` url(${itemOne?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 cursor-pointer">
+    const itemFour = TEAM_DATA?.[(startTeamIndex + 3)%TEAM_DATA.length]
+    const itemFive = TEAM_DATA?.[(startTeamIndex + 4)%TEAM_DATA.length]
+    const itemSix = TEAM_DATA?.[(startTeamIndex + 5)%TEAM_DATA.length]
+
+    const renderItem = (item, index) => {
+        return (
+          <Link href={item?.calenderUrl} target="_blank" key={item?.id}  className={`${index>startTeamIndex+2?"hidden lg:block": ""}  cursor-pointer p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px] ' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-              <div className='font-semibold text-white text-lg leading-3'>{itemOne?.title || ''}</div>
-              <div className={'text-white font-normal text-xs mt-1'}>{itemOne?.designation || ''}</div>
-              <div className={'text-white font-normal text-xs mt-[6px]'}>{itemOne?.description || ''}</div>
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              
+              <div style={{backgroundImage: `url(${item?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{item?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
+        )
+    }
+    return (
+      <>
+        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}  className={`cursor-pointer p-4 text-left rounded-md`}>
+          <div
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              <div style={{backgroundImage: `url(${itemOne?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemOne?.description || ''}</div>
+            </div>
+        </Link>
+        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}  className={`cursor-pointer p-4 text-left rounded-md`}>
+          <div
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              <div style={{backgroundImage: `url(${itemTwo?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemTwo?.description || ''}</div>
+            </div>
+        </Link>
+        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}  className={`cursor-pointer p-4 text-left rounded-md`}>
+          <div
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              <div style={{backgroundImage: `url(${itemThree?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemThree?.description || ''}</div>
+            </div>
+        </Link>
+        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}  className={`cursor-pointer p-4 text-left rounded-md hidden md:block`}>
+          <div
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              <div style={{backgroundImage: `url(${itemFour?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemFour?.description || ''}</div>
+            </div>
+        </Link>
+        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}  className={`cursor-pointer p-4 text-left rounded-md hidden md:block`}>
+          <div
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              <div style={{backgroundImage: `url(${itemFive?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemFive?.description || ''}</div>
+            </div>
+        </Link>
+        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}  className={`cursor-pointer p-4 text-left rounded-md hidden md:block`}>
+          <div
+            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+              <div style={{backgroundImage: `url(${itemSix?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              </div>
+              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{itemSix?.description || ''}</div>
+            </div>
+        </Link>
+        {/* {
+          renderItem(itemTwo)
+        }
+        {
+          renderItem(itemThree)
+        }
+        {
+          renderItem(itemFour)
+        }
+        {
+          renderItem(itemFive)
+        }
+        {
+          renderItem(itemSix)
+        } */}
+        {/* <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2  cursor-pointer">
           <div
             className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
             <div className='font-semibold text-white text-lg leading-3'>{itemTwo?.title || ''}</div>
@@ -750,7 +833,7 @@ export default function HomePage() {
             <div className={'text-white font-normal text-xs mt-[6px]'}>{itemTwo?.description || ''}</div>
           </div>
         </Link>
-        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 464}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden lg:block cursor-pointer">
+        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 cursor-pointer">
           <div
             className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
             <div className='font-semibold text-white text-lg leading-3'>{itemThree?.title || ''}</div>
@@ -758,6 +841,30 @@ export default function HomePage() {
             <div className={'text-white font-normal text-xs mt-[6px]'}>{itemThree?.description || ''}</div>
           </div>
         </Link>
+        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}style={{backgroundImage: ` url(${itemFour?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
+          <div
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+            <div className='font-semibold text-white text-lg leading-3'>{itemFour?.title || ''}</div>
+            <div className={'text-white font-normal text-xs mt-1'}>{itemFour?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemFour?.description || ''}</div>
+          </div>
+        </Link>
+        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}style={{backgroundImage: ` url(${itemFive?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
+          <div
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+            <div className='font-semibold text-white text-lg leading-3'>{itemFive?.title || ''}</div>
+            <div className={'text-white font-normal text-xs mt-1'}>{itemFive?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemFive?.description || ''}</div>
+          </div>
+        </Link>
+        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}style={{backgroundImage: ` url(${itemSix?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
+          <div
+            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
+            <div className='font-semibold text-white text-lg leading-3'>{itemSix?.title || ''}</div>
+            <div className={'text-white font-normal text-xs mt-1'}>{itemSix?.designation || ''}</div>
+            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemSix?.description || ''}</div>
+          </div>
+        </Link> */}
       </>
     )
   }
@@ -1040,28 +1147,28 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className='bg-opacity-99 px-6 md:px-16 py-16 font-content mx-auto' id='mentor-section' style={{background: "linear-gradient(to bottom, #222222 55%, #ffffff 45%);"}}>
+        <section className='bg-opacity-99 px-6 md:px-16 py-16 font-content mx-auto' id='mentor-section' style={{background: "#f8f7f2"}}>
           <div className='px-0 md:px-8 lg:px-10'>
             <div className=" mt-2 mb-8 md:mb-12">
-              <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-white text-center">Meet the mentors</div>
-              <div className="text-md md:text-xl lg:text-2xl font-normal text-grabniteGrey mt-4 text-center">Bitcoiners, trusted by savvy investors for their Bitcoin needs</div>
+              <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-slate-900 text-center">Meet The Mentors</div>
+              <div className="text-md md:text-xl lg:text-2xl font-normal text-slate-900 mt-4 text-center">Bitcoiners, trusted by savvy investors for their Bitcoin needs</div>
             </div>
             <div className="flex gap-2 md:gap-4 justify-between items-center">
-            <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
-                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
-              </svg>
-            </div>
-            <div className='flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-2 md:gap-8 auto-rows-1fr' >
-              {
-                renderTeamItems()
-              }
-            </div>
-            <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-right">
-                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
-              </svg>
-            </div>
+              <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
+                  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
+                </svg>
+              </div>
+              <div className='flex-1 grid grid-cols-3 md:grid-cols-6 justify-between items-center gap-1 md:gap-2 auto-rows-1fr' >
+                {
+                  renderTeamItems()
+                }
+              </div>
+              <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-right">
+                  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
+                </svg>
+              </div>
             </div>
             {/*<div className='text-xs text-grabniteGrey font-light text-center mt-1 p-4 hidden lg:block w-full'>{selectedDescription}</div>*/}
           </div>

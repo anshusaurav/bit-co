@@ -40,10 +40,26 @@ export default {
         darkBg:'#0F0F0F',
         greyBg: '#2C2D31',
         increase: '#65C467',
-        decrease: '#D24B34'
+        decrease: '#D24B34',
+        mentorCardBgStart: '#e9e8e0', 
+        mentorCardBgEnd: '#f8f7f2',
+        
       },
       backgroundColor: {
         bone: '#E5D8C5',
+      },
+      backgroundSize: {
+        '50%': '50%',
+        '88%': '88%',
+      },
+      borderWidth: {
+        DEFAULT: '1px',
+        '0': '0',
+        '2': '2px',
+        '3': '3px',
+        '4': '4px',
+        '6': '6px',
+        '8': '8px',
       },
       keyframes: {
         flicker: {
