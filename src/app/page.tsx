@@ -400,7 +400,7 @@ const TEAM_DATA = [
       uri: '/images/Saurabh_S.webp'
     },
     designation: 'Mentor',
-    description: 'Saurabh helps Bitcoiners custody their Bitcoin, run node and use Bitcoin products to live and breathe Bitcoin.' 
+    description: 'Saurabh advises on Bitcoin custody, tools, and portfolios.' 
   },
   {
     id: 2,
@@ -411,7 +411,7 @@ const TEAM_DATA = [
       uri: '/images/Shreyan.webp'
     },
     designation: 'Mentor',
-    description: 'Shreyan helps clients purchase Bitcoin keeping regulation and taxes in mind. His law background from NLU.'
+    description: 'Shreyan guides Bitcoin buyers on legal and regulatory clarity.'
   },
   {
     id: 3,
@@ -422,7 +422,7 @@ const TEAM_DATA = [
       uri: '/images/Nihal_Armaan.webp'
     },
     designation: 'Mentor',
-    description: 'Nihal helps newbies make sense of through "Bitcoin Hub Show". Guided many on mining, purchase & custody.'
+    description: 'Nihal simplifies Bitcoin purchase, custody, and mining.'
   },
   {
     id: 4,
@@ -433,7 +433,7 @@ const TEAM_DATA = [
       uri: '/images/Amol.webp'
     },
     designation:  'Mentor',
-    description: 'Amol helps clients stack sats securely and economically. He regularly runs (or joins) Bitcoin meetups to guide.'
+    description: 'Amol helps clients securely and efficiently acquire Bitcoin.'
   },
   {
     id: 5,
@@ -444,7 +444,7 @@ const TEAM_DATA = [
       uri: '/images/Ayush_Surana.jpg'
     },
     designation:  'Mentor',
-    description: 'Ayush helps HNIs buy and custody Bitcoin and is operating a bitcoin mining farm. His current work at Getbit.'
+    description: 'Ayush supports HNIs in Bitcoin custody, acquisition, and mining.'
   },
   {
     id: 6,
@@ -455,7 +455,7 @@ const TEAM_DATA = [
       uri: '/images/Varun_Chiddarwar.jpg'
     },
     designation: 'Mentor',
-    description: 'Varun mentors beginners on importance of Bitcoin in personal portfolio allocation, purchase, custody and inheritance.'
+    description: 'Varun mentors on Bitcoin allocation and inheritance planning.'
   },
   {
     id: 7,
@@ -466,7 +466,7 @@ const TEAM_DATA = [
       uri: '/images/Ravi_Koushik.jpg'
     },
     designation: 'Mentor',
-    description: 'Ravi helps Bitcoiners manage taxes and regulations including trickier aspects like Inheritance, transfers & more.'
+    description: 'Ravi advises on Bitcoin taxes, inheritance, and compliance.'
   },
   {
     id: 8,
@@ -477,7 +477,7 @@ const TEAM_DATA = [
       uri: '/images/Digant_Bhujbal.webp'
     },
     designation: 'Mentor',
-    description: 'Digant helps clients with tax implications and regulatory environment surrounding Bitcoin. CFA journey & FX advisory.'
+    description: 'Digant specializes in Bitcoin taxes and regulations.'
   },
   
   
