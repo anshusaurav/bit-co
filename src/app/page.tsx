@@ -762,49 +762,49 @@ export default function HomePage() {
     }
     return (
       <>
-        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md`}>
+        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemOne?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemOne?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md`}>
+        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemTwo?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemTwo?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md`}>
+        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
-            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemThree?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemThree?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md hidden md:block`}>
+        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
           <div
-            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFour?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemFour?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md hidden md:block`}>
+        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
           <div
-            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFive?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemFive?.description || ''}</div>
             </div>
         </Link>
-        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}  className={`cursor-pointer p-2 md:p-4 text-left rounded-md hidden md:block`}>
+        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
           <div
-            className='flex flex-col gap-4 justify-start p-2 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
+            className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemSix?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemSix?.description || ''}</div>
