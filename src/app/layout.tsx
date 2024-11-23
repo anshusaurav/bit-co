@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     images: [`${siteConfig.url}/images/og.jpg`],
     // creator: '@th_clarence',
   },
-  authors: [
-    {
-      name: 'Anshu Saurabh',
-      url: 'https://twitter.com/anshusaurav',
-    },
-  ],
+  // authors: [
+  //   {
+  //     name: 'Bitcoincierge',
+  //     url: 'https://x.com/bitcoinciergein',
+  //   },
+  // ],
 };
 
 // const myFont = localFont({
