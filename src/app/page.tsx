@@ -869,6 +869,15 @@ export default function HomePage() {
     )
   }
   return (
+    <>
+    <Head>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
+        <meta name="type" property="og:type" content="website"></meta>
+        <meta name="image" property="og:image" content="https://lh3.googleusercontent.com/hRAupJAWpl2GhwADXDT2Y-umUWhdAI5ptZWNqv4ms3a2lbJFbPqKYuLqb8TlpuBtPXuKxUmDekJWKlVBA-daW1uFdHXEmK9eedV0iYiamDG8wrazpi5aam8c4nyrAeHB6Hm58KAqDA=w2400?source=screenshot.guru7"></meta>
+        <meta name="url" property="og:url" content="https://www.bitcoincierge.in"></meta>
+    </Head>
+      
     <div className='container'>
       <main style={{backgroundImage: `url("/images/background-light.png")`}}
             className='bg-contain bg-center bg-repeat-y relative'>
@@ -1404,5 +1413,6 @@ export default function HomePage() {
         pauseOnHover
       />
     </div>
+    </>
   );
 }

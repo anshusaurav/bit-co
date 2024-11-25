@@ -38,14 +38,13 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/og.jpg`],
-    // creator: '@th_clarence',
   },
-  // authors: [
-  //   {
-  //     name: 'Bitcoincierge',
-  //     url: 'https://x.com/bitcoinciergein',
-  //   },
-  // ],
+  authors: [
+    {
+      name: 'Bitcoin Concierge',
+      url: 'https://x.com/bitcoinciergein',
+    },
+  ],
 };
 
 // const myFont = localFont({
