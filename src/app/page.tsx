@@ -1,6 +1,5 @@
 'use client';
 
-import Head from 'next/head';
 import Link from 'next/link'
 import * as React from 'react';
 import '@/lib/env';
@@ -20,6 +19,8 @@ import {
   FaTwitter, FaFacebookF, FaYoutube
 } from "react-icons/fa";
 import {FaCaretDown, FaCaretUp} from "react-icons/fa6";
+import { useRouter } from 'next/navigation';
+import { MENTORS_DATA } from './constants/MentorsConstants';
 // import localFont from '@next/font/local'
 // import ArrowLink from '@/components/links/ArrowLink';
 // import ButtonLink from '@/components/links/ButtonLink';
@@ -380,108 +381,111 @@ const PARTNER_DATA = [
   }
 ]
 
-const TEAM_DATA = [
-  // {
-  //   id: 1,
-  //   title: 'Prof KK Ratan',
-  //   image_data: {
-  //     alt_text: 'getbit',
-  //     uri: '/images/Prof_KK_Ratan.webp'
-  //   },
-  //   designation: 'Advisor',
-  //   description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
-  // },
-  {
-    id: 1,
-    title: 'Saurabh S',
-    calenderUrl: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Saurabh_S.webp'
-    },
-    designation: 'Mentor',
-    description: 'Saurabh advises on Bitcoin custody, tools, and portfolios.' 
-  },
-  {
-    id: 2,
-    title: 'Shreyan Joshi',
-    calenderUrl: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Shreyan.webp'
-    },
-    designation: 'Mentor',
-    description: 'Shreyan guides Bitcoin buyers on legal and regulatory clarity.'
-  },
-  {
-    id: 3,
-    title: 'Nihal Armaan',
-    calenderUrl: 'https://calendly.com/inbitcoinhub/bm',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Nihal_Armaan.webp'
-    },
-    designation: 'Mentor',
-    description: 'Nihal simplifies Bitcoin purchase, custody, and mining.'
-  },
-  {
-    id: 4,
-    title: 'Amol B',
-    calenderUrl: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Amol.webp'
-    },
-    designation:  'Mentor',
-    description: 'Amol helps clients securely and efficiently acquire Bitcoin.'
-  },
-  {
-    id: 5,
-    title: 'Ayush Surana',
-    calenderUrl: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Ayush_Surana.jpg'
-    },
-    designation:  'Mentor',
-    description: 'Ayush supports HNIs in Bitcoin custody, acquisition, and mining.'
-  },
-  {
-    id: 6,
-    title: 'Varun Chiddarwar',
-    calenderUrl: 'https://calendar.app.google/DuNB9EjWkoJqUKkDA',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Varun_Chiddarwar.jpg'
-    },
-    designation: 'Mentor',
-    description: 'Varun mentors on Bitcoin allocation and inheritance planning.'
-  },
-  {
-    id: 7,
-    title: 'Ravi Koushik',
-    calenderUrl: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Ravi_Koushik.jpg'
-    },
-    designation: 'Mentor',
-    description: 'Ravi advises on Bitcoin taxes, inheritance, and compliance.'
-  },
-  {
-    id: 8,
-    title: 'Digant Bhujbal',
-    calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
-    image_data: {
-      alt_text: 'getbit',
-      uri: '/images/Digant_Bhujbal.webp'
-    },
-    designation: 'Mentor',
-    description: 'Digant specializes in Bitcoin taxes and regulations.'
-  },
+// const TEAM_DATA = [
+//   // {
+//   //   id: 1,
+//   //   title: 'Prof KK Ratan',
+//   //   image_data: {
+//   //     alt_text: 'getbit',
+//   //     uri: '/images/Prof_KK_Ratan.webp'
+//   //   },
+//   //   designation: 'Advisor',
+//   //   description: 'Professor of Digital Marketing at premier institutions including IIM Ahmedabad ISB Hyderabad, and XLRI. He is the Founder of GutsGo Marketing Lab. At Bitcoincierge, Prof. Ratan spearheads Strategy and Content.'
+//   // },
+//   {
+//     id: 1,
+//     title: 'Saurabh S',
+//     calenderUrl: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Saurabh_S.webp'
+//     },
+//     uri: '/saurabh',
+//     designation: 'Mentor',
+//     description: 'Saurabh advises on Bitcoin custody, tools, and portfolios.' 
+//   },
+//   {
+//     id: 2,
+//     title: 'Shreyan Joshi',
+//     calenderUrl: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Shreyan.webp'
+//     },
+//     designation: 'Mentor',
+//     description: 'Shreyan guides Bitcoin buyers on legal and regulatory clarity.'
+//   },
+//   {
+//     id: 3,
+//     title: 'Nihal Armaan',
+//     calenderUrl: 'https://calendly.com/inbitcoinhub/bm',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Nihal_Armaan.webp'
+//     },
+//     designation: 'Mentor',
+//     description: 'Nihal simplifies Bitcoin purchase, custody, and mining.'
+//   },
+//   {
+//     id: 4,
+//     title: 'Amol B',
+//     calenderUrl: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Amol.webp'
+//     },
+//     designation:  'Mentor',
+//     description: 'Amol helps clients securely and efficiently acquire Bitcoin.'
+//   },
+//   {
+//     id: 5,
+//     title: 'Ayush Surana',
+//     calenderUrl: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Ayush_Surana.jpg'
+//     },
+//     uri: '/ayush',
+//     designation:  'Mentor',
+//     description: 'Ayush supports HNIs in Bitcoin custody, acquisition, and mining.'
+//   },
+//   {
+//     id: 6,
+//     title: 'Varun Chiddarwar',
+//     calenderUrl: 'https://calendar.app.google/DuNB9EjWkoJqUKkDA',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Varun_Chiddarwar.jpg'
+//     },
+//     designation: 'Mentor',
+//     description: 'Varun mentors on Bitcoin allocation and inheritance planning.'
+//   },
+//   {
+//     id: 7,
+//     title: 'Ravi Koushik',
+//     calenderUrl: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Ravi_Koushik.jpg'
+//     },
+//     uri: '/ravi',
+//     designation: 'Mentor',
+//     description: 'Ravi advises on Bitcoin taxes, inheritance, and compliance.'
+//   },
+//   {
+//     id: 8,
+//     title: 'Digant Bhujbal',
+//     calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
+//     image_data: {
+//       alt_text: 'getbit',
+//       uri: '/images/Digant_Bhujbal.webp'
+//     },
+//     designation: 'Mentor',
+//     description: 'Digant specializes in Bitcoin taxes and regulations.'
+//   },
   
   
-]
+// ]
 const COMMUNITY_DATA = [
   {
     icon: {
@@ -668,7 +672,7 @@ const SIDEBAR_SOCIAL_DATA = [
     }
   },
 ]
-export default function HomePage() {
+export default function MentorPage() {
 
   const emailsRef = collection(db, "emails")
   const [selectedDuration, setSelectedDuration] = useState('5');
@@ -677,8 +681,9 @@ export default function HomePage() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [moved, setMoved] = useState(false);
-  const [selectedDescription, setSelectedDescription] = useState(TEAM_DATA?.[0]?.description || '')
   const [startTeamIndex, setStartTeamIndex] = useState(0);
+  const router = useRouter();
+  // console.log(MENTORS_DATA + 'HERE@')
   const toggleSidebar = () => {
     setSidebarOpen(bool => !bool)
     // window.scrollBy( 0, -96 );
@@ -698,14 +703,14 @@ export default function HomePage() {
   }
 
   const onRightNavClick = () => {
-    setStartTeamIndex(s => (s+1)%TEAM_DATA.length);
+    setStartTeamIndex(s => (s+1)%MENTORS_DATA.length);
   }
 
   const onLeftNavClick = () => {
-    setStartTeamIndex(s => (s+TEAM_DATA.length-1)%TEAM_DATA.length);
+    setStartTeamIndex(s => (s+MENTORS_DATA.length-1)%MENTORS_DATA.length);
   }
   useEffect(() => {
-
+    console.log('HERE', MENTORS_DATA)
     window.addEventListener('scroll', listenScrollEvent);
 
     return () =>
@@ -740,12 +745,12 @@ export default function HomePage() {
 
 
   const renderTeamItems = () => {
-    const itemOne = TEAM_DATA?.[startTeamIndex];
-    const itemTwo = TEAM_DATA?.[(startTeamIndex + 1)%TEAM_DATA.length]
-    const itemThree = TEAM_DATA?.[(startTeamIndex + 2)%TEAM_DATA.length]
-    const itemFour = TEAM_DATA?.[(startTeamIndex + 3)%TEAM_DATA.length]
-    const itemFive = TEAM_DATA?.[(startTeamIndex + 4)%TEAM_DATA.length]
-    const itemSix = TEAM_DATA?.[(startTeamIndex + 5)%TEAM_DATA.length]
+    const itemOne = MENTORS_DATA?.[startTeamIndex];
+    const itemTwo = MENTORS_DATA?.[(startTeamIndex + 1)%MENTORS_DATA.length]
+    const itemThree = MENTORS_DATA?.[(startTeamIndex + 2)%MENTORS_DATA.length]
+    const itemFour = MENTORS_DATA?.[(startTeamIndex + 3)%MENTORS_DATA.length]
+    const itemFive = MENTORS_DATA?.[(startTeamIndex + 4)%MENTORS_DATA.length]
+    const itemSix = MENTORS_DATA?.[(startTeamIndex + 5)%MENTORS_DATA.length]
 
     const renderItem = (item: any, index: number) => {
         return (
@@ -762,54 +767,96 @@ export default function HomePage() {
     }
     return (
       <>
-        <Link href={itemOne?.calenderUrl} target="_blank" key={itemOne?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
+        <button onClick={() => {
+          if(itemOne?.uri) {
+            router.push(itemOne?.uri);
+          }
+          else {
+            window.open(itemOne?.calenderUrl, '_blank');
+          }
+        }} key={itemOne?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemOne?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemOne?.description || ''}</div>
             </div>
-        </Link>
-        <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
+        </button>
+        <button onClick={() => {
+          if(itemTwo?.uri) {
+            router.push(itemTwo?.uri);
+          }
+          else {
+            window.open(itemTwo?.calenderUrl, '_blank');
+          }
+        }} key={itemTwo?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemTwo?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemTwo?.description || ''}</div>
             </div>
-        </Link>
-        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
+        </button>
+        <button onClick={() => {
+          if(itemThree?.uri) {
+            router.push(itemThree?.uri);
+          }
+          else {
+            window.open(itemThree?.calenderUrl, '_blank');
+          }
+        }} key={itemThree?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemThree?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemThree?.description || ''}</div>
             </div>
-        </Link>
-        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
+        </button>
+        <button onClick={() => {
+          if(itemFour?.uri) {
+            router.push(itemFour?.uri);
+          }
+          else {
+            window.open(itemFour?.calenderUrl, '_blank');
+          }
+        }} key={itemFour?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFour?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemFour?.description || ''}</div>
             </div>
-        </Link>
-        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
+        </button>
+        <button onClick={() => {
+          if(itemFive?.uri) {
+            router.push(itemFive?.uri);
+          }
+          else {
+            window.open(itemFive?.calenderUrl, '_blank');
+          }
+        }} key={itemFive?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFive?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemFive?.description || ''}</div>
             </div>
-        </Link>
-        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
+        </button>
+        <button onClick={() => {
+          if(itemSix?.uri) {
+            router.push(itemSix?.uri);
+          }
+          else {
+            window.open(itemSix?.calenderUrl, '_blank');
+          }
+        }} key={itemSix?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemSix?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemSix?.description || ''}</div>
             </div>
-        </Link>
+        </button>
         {/* {
           renderItem(itemTwo)
         }
@@ -869,15 +916,6 @@ export default function HomePage() {
     )
   }
   return (
-    <>
-    <Head>
-        <title>My page title</title>
-        <meta property="og:title" content="My page title" key="title" />
-        <meta name="type" property="og:type" content="website"></meta>
-        <meta name="image" property="og:image" content="https://lh3.googleusercontent.com/hRAupJAWpl2GhwADXDT2Y-umUWhdAI5ptZWNqv4ms3a2lbJFbPqKYuLqb8TlpuBtPXuKxUmDekJWKlVBA-daW1uFdHXEmK9eedV0iYiamDG8wrazpi5aam8c4nyrAeHB6Hm58KAqDA=w2400?source=screenshot.guru7"></meta>
-        <meta name="url" property="og:url" content="https://www.bitcoincierge.in"></meta>
-    </Head>
-      
     <div className='container'>
       <main style={{backgroundImage: `url("/images/background-light.png")`}}
             className='bg-contain bg-center bg-repeat-y relative'>
@@ -1165,7 +1203,7 @@ export default function HomePage() {
             <div className="flex gap-1 md:gap-2 lg:gap-4 justify-between items-center">
               <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
-                  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
+                  <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
                 </svg>
               </div>
               <div className='flex-1 grid grid-cols-3 md:grid-cols-6 justify-between items-center auto-rows-1fr' >
@@ -1175,7 +1213,7 @@ export default function HomePage() {
               </div>
               <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-right">
-                  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
+                  <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
                 </svg>
               </div>
             </div>
@@ -1280,7 +1318,7 @@ export default function HomePage() {
                   <div className='font-trakya text-white font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge</div>
                 </div>
                 <div className='text-white text-opacity-70 text-md md:text-lg font-normal max-w-sm md:max-w-md pr-12 mt-2'>
-                  Join the rank of Savy Investor who trust us for their Bitcoins needs.
+                  Join the rank of Savvy Investor who trust us for their Bitcoins needs.
                 </div>
                 <div className="relative mt-6 max-w-sm">
                   <div className="absolute top-4 left-3">
@@ -1413,6 +1451,5 @@ export default function HomePage() {
         pauseOnHover
       />
     </div>
-    </>
   );
 }

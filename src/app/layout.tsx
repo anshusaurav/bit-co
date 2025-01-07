@@ -3,6 +3,7 @@ import * as React from 'react';
 // import localFont from '@next/font/local'
 import '@/styles/colors.css';
 import '@/styles/globals.css';
+import '@/styles/Mentors.module.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import { siteConfig } from '@/constant/config';
 

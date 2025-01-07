@@ -1,7 +1,6 @@
 {
-  "short_name": "Bitcoincierge",
-  "name": "Your Bitcoin Partner from Purchase to Custody.",
-  
+  "name": "",
+  "short_name": "",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",

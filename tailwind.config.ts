@@ -13,6 +13,12 @@ export default {
         polysans:['Polysans', ...defaultTheme.fontFamily.sans],
         trakya: ['Trakya', ...defaultTheme.fontFamily.sans],
       },
+      height: {
+        '20': '80px',
+      },
+      width: {
+        '20': '80px',
+      },
       colors: {
         primary: {
           // Customize it on globals.css :root

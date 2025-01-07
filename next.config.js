@@ -5,14 +5,14 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/saurabh',
-        destination: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
-        permanent: true,
-      },
+      // {
+      //   source: '/saurabh',
+      //   destination: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
+      //   permanent: true,
+      // },
       {
         source: '/shreyan',
-        destination: 'https://calendar.app.google/gtSV45gwyhjZXYoD8',
+        destination: 'https://calendar.app.google/f17tUWoRfwWaHXCdA',
         permanent: true,
       },
       {
@@ -25,21 +25,21 @@ const nextConfig = {
         destination: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
         permanent: true,
       },
-      {
-        source: '/ayush',
-        destination: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
-        permanent: true,
-      },
+      // {
+      //   source: '/ayush',
+      //   destination: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
+      //   permanent: true,
+      // },
       {
         source: '/varun',
         destination: 'https://calendar.app.google/DuNB9EjWkoJqUKkDA',
         permanent: true,
       },
-      {
-        source: '/ravi',
-        destination: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
-        permanent: true,
-      },
+      // {
+      //   source: '/ravi',
+      //   destination: 'https://calendar.app.google/KDMMBo6K1fTohC7aA',
+      //   permanent: true,
+      // },
       {
         source: '/digant',
         destination: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
