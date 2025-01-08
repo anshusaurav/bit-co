@@ -21,7 +21,7 @@ export const MENTORS_DATA = [
     designation: 'Mentor',
     description: 'Saurabh advises on Bitcoin custody, tools, and portfolios.',
     longDescription: 'Saurabh guides on how to bring Bitcoin into your investment portfolio, custody, running nodes, and using Bitcoin apps/websites. With 10+ years in product management post-IIM Ahmedabad, he now leads program and ops at Bitshala, a developer school for Bitcoiners.',
-    categories: 'Purchase & Custody, Multisig & Inheritance, Taxes & Regulations, Bitcoin & LN node',
+    tags: ['Purchase & Custody', 'Multisig & Inheritance', 'Taxes & Regulations', 'Bitcoin & LN node'],
     cards: [
         {
           id: 1,
@@ -108,7 +108,8 @@ export const MENTORS_DATA = [
     designation: 'Mentor',
     description: 'Shreyan guides Bitcoin buyers on legal and regulatory clarity.',
     longDescription: 'Shreyan assists new Bitcoiners with purchases, self-custody, regulations, and taxes. A law graduate from NLU, he leads Bitcoin sales at Getbit and has helped hundreds of clients get started.',
-  },
+    tags: ['Purchase & Custody', 'Taxes & Regulations', 'Bitcoin & LN node'],
+},
   {
     id: 3,
     title: 'Nihal Armaan',
@@ -120,6 +121,7 @@ export const MENTORS_DATA = [
     designation: 'Mentor',
     description: 'Nihal simplifies Bitcoin purchase, custody, and mining.',
     longDescription: '',
+    tags: ['Purchase & Custody', 'Multisig & Inheritance', 'Mining']
   },
   {
     id: 4,
@@ -132,6 +134,7 @@ export const MENTORS_DATA = [
     designation:  'Mentor',
     description: 'Amol helps clients securely and efficiently acquire Bitcoin.',
     longDescription: '',
+    tags:['Purchase & Custody', 'Multisig & Inheritance', 'Taxes & Regulations'],
   },
   {
     id: 5,
@@ -145,7 +148,7 @@ export const MENTORS_DATA = [
     designation:  'Mentor',
     description: 'Ayush supports HNIs in Bitcoin custody, acquisition, and mining.',
     longDescription: 'Ayush advises HNIs in buying and custodying Bitcoin while operating a mining farm. His experience at Getbit and in angel investing/VC helps clients optimize their investment strategies.',
-    categories: 'Purchase, Custody, Mining',
+    tags: ['Purchase & Custody', 'Mining'],
     cards: [
         {
           id: 1,
@@ -242,7 +245,8 @@ export const MENTORS_DATA = [
     },
     designation: 'Mentor',
     description: 'Varun mentors on Bitcoin allocation and inheritance planning.',
-    longDescription: ''
+    longDescription: '',
+    tags:['Purchase & Custody', 'Portfolio allocation']
   },
   {
     id: 7,
@@ -256,7 +260,7 @@ export const MENTORS_DATA = [
     designation: 'Mentor',
     description: 'Ravi advises on Bitcoin taxes, inheritance, and compliance.',
     longDescription: 'Ravi assists Bitcoiners with taxes, inheritance planning, and regulatory issues. With 13 years in finance, he is also working on Bitcoin payment solutions as prepaid instruments (PPI).',
-    categories: 'Investment Management, Taxation',
+    tags: ['Investment Management', 'Taxation'],
     cards: [
         {
           id: 1,
@@ -318,7 +322,8 @@ export const MENTORS_DATA = [
     },
     designation: 'Mentor',
     description: 'Digant specializes in Bitcoin taxes and regulations.',
-    longDescription: 'Digant advises clients on Bitcoin’s tax and regulatory implications. His CFA journey and FX advisory experience position him as a trusted guide in the space.'
+    longDescription: 'Digant advises clients on Bitcoin’s tax and regulatory implications. His CFA journey and FX advisory experience position him as a trusted guide in the space.',
+    tags: ['Purchase & Custody', 'Taxes & Regulations', 'Bitcoin & LN node'],
   },
   
   

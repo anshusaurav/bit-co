@@ -1203,7 +1203,7 @@ export default function MentorPage() {
             <div className="flex gap-1 md:gap-2 lg:gap-4 justify-between items-center">
               <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onLeftNavClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-left">
-                  <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-width="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
+                  <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" strokeWidth="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
                 </svg>
               </div>
               <div className='flex-1 grid grid-cols-3 md:grid-cols-6 justify-between items-center auto-rows-1fr' >
@@ -1213,7 +1213,7 @@ export default function MentorPage() {
               </div>
               <div className="w-6 h-6 md:w-12 md:h-12 flex justify-center items-center bg-neutral-600 bg-opacity-25 rounded-full cursor-pointer" onClick={onRightNavClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128" id="arrow-right">
-                  <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-width="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
+                  <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" strokeWidth="6" d="M53 42.3334L68.6765 58.0098C71.8007 61.134 71.8007 66.1994 68.6765 69.3236L53 85"></path>
                 </svg>
               </div>
             </div>

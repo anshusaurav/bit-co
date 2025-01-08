@@ -261,7 +261,7 @@ export default function HomePage() {
             {
               item?.tags?.map((tag, index) => {
                 return (
-                  <div key={index} className='rounded-[24px] font-bold text-sm h-8 px-2 inline-flex items-center justify-center border bg-[#f3f3f7]'>
+                  <div key={index} className='rounded-[24px] font-bold text-sm h-8 px-2 inline-flex items-center justify-center border bg-[#f3f3f7] ml-4'>
                     {tag}
                   </div>
                 )
@@ -376,8 +376,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="flex flex-column md:flex-row bg-[#f5f5f5] min-h-[100vh]">
-            <aside className="relative font-sm justify-stretch" style={{backgroundImage: `url("/images/background-light.png")`, flex: '0 0 33%', maxWidth: '33%', minWidth: '33%', width: '33%'}}>
+        <div className="flex flex-col md:flex-row bg-[#f5f5f5] min-h-[100vh]">
+            <aside className="relative font-sm justify-stretch w-full md:w-1/3 " style={{backgroundImage: `url("/images/background-light.png")`}}>
                 <div className='h-full -mt-1 -mb-1'>
                     <div className='sticky top-[120px] pb-[120px]  ml-[8%]'>
                       <div className='flex justify-center pt-[8%' style={{flex: '0 0 83.33333333333334%',maxWidth: '83.33333333333334%'}}>
@@ -403,15 +403,26 @@ export default function HomePage() {
                                 {mentorData?.title || ''}
                               </h1>
                               <p className='text-lg font-medium'>
-                              {mentorData?.categories || ''}
+                              {mentorData?.description}
                               </p>
+                              <div className='flex flex-row flex-wrap gap-4 mt-4'>
+                                {
+                                  mentorData?.tags?.map((tag, index) => {
+                                    return (
+                                      <div key={index} className='rounded-[24px] font-bold text-sm h-8 px-2 inline-flex items-center justify-center border bg-[#f3f3f7]'>
+                                        {tag}
+                                      </div>
+                                    )
+                                  })
+                                }
+                              </div>
                             </div>
                         </div>
                       </div>
                     </div>
                 </div>
             </aside>
-            <div className='pt-8 pb-16 min-h-[100vh] flex flex-1 flex-column' style={{backgroundColor: '#efece3'}}>
+            <div className='pt-8 pb-16 min-h-[100vh] flex flex-1 flex-column w-full md:w-2/3 ' style={{backgroundColor: '#efece3'}}>
               <div className='flex justify-center flex-wrap flex-1'>
                 <div style={{flex: '0 0 82%', maxWidth: '82%'}}>
                   {/* <div className='overflow-auto' >
@@ -425,7 +436,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div> */}
-                  <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-8'>
+                  <div className='grid grid-cols-1 lg:grid-cols-2 w-full gap-3 md:gap-5 mt-8'>
                     <div className='flex-1'>
                       {
                         mentorData?.cards?.filter((item, index) => index%2===0)?.map(item => {
@@ -448,21 +459,21 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className='flex row-wrap'>
-                      <div className='pr-3' style={{flex: '0 0 50%',maxWidth: '50%'}}>
-                      <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex justify-center items-center bg-[#fdfbf9]' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
-                        <NextImage alt='reviews animation' src='/images/reviews_animation.gif' classNames={{image: 'rounded-[50%] aspect-square'}} width={160} height={160} />
-                      </div>
-                      </div>
-                      <div className='px-3' style={{flex: '0 0 25%',maxWidth: '25%'}}>
-                        <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex flex-col justify-center items-center bg-[#fdfbf9] gap-3' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
-                            <div className='text-3xl tracking-wider font-bold'>5/5</div>
-                            <div className='text-md font-normal tracking-wide text-[#666b60] uppercase'>1 rating</div>
+                      <div className='pr-3 w-1/3 lg:w-1/2'>
+                        <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex justify-center items-center bg-[#fdfbf9]' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
+                          <NextImage alt='reviews animation' src='/images/reviews_animation.gif' classNames={{image: 'rounded-[50%] aspect-square'}} width={160} height={160} />
                         </div>
                       </div>
-                      <div className='px-3' style={{flex: '0 0 25%',maxWidth: '25%'}}>
-                      <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex flex-col justify-center items-center bg-[#fdfbf9] gap-3' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
-                            <div className='text-3xl tracking-wider font-bold'>0</div>
-                            <div className='text-md font-normal tracking-wide text-[#666b60] uppercase'>Testimonial</div>
+                      <div className='px-3 w-1/3 lg:w-1/4'>
+                        <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex flex-col justify-center items-center bg-[#fdfbf9] gap-3' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
+                            <div className='text-xl lg:text-3xl tracking-wider font-bold'>5/5</div>
+                            <div className='text-sm lg:text-md font-normal tracking-wide text-[#666b60] uppercase'>1 rating</div>
+                        </div>
+                      </div>
+                      <div className='px-3 w-1/3 lg:w-1/4'>
+                        <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex flex-col justify-center items-center bg-[#fdfbf9] gap-3' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
+                            <div className='text-xl lg:text-3xl tracking-wider font-bold'>0</div>
+                            <div className='text-sm lg:text-md font-normal tracking-wide text-[#666b60] uppercase'>Testimonial</div>
                         </div>
                       </div>
                     </div>
