@@ -118,10 +118,92 @@ export const MENTORS_DATA = [
       alt_text: 'getbit',
       uri: '/images/Nihal_Armaan.webp'
     },
+    uri: '/nihal',
     designation: 'Mentor',
     description: 'Nihal simplifies Bitcoin purchase, custody, and mining.',
-    longDescription: '',
-    tags: ['Purchase & Custody', 'Multisig & Inheritance', 'Mining']
+    longDescription: 'Nihal helps beginners navigate Bitcoin mining, purchases, and custody. He simplifies Bitcoin concepts through the "Bitcoin Hub Show" and works in customer success at Fedi, a Bitcoin + NOSTR superapp.',
+    tags: ['Purchase & Custody', 'Multisig & Inheritance', 'Mining'],
+    cards: [
+      {
+        id: 1,
+        title: 'Free Bitcoin Consultation',
+        description: 'Why, How and Where to buy and custody Bitcoin',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 0,
+            maximum: 0
+          }
+        }
+      },
+      {
+        id: 2,
+        title: 'Bitcoin Purchase Guidance',
+        description: 'Hands on purchase and custody of Bitcoin',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 3000,
+            maximum: 5000
+          },
+        }
+      },
+      {
+        id: 3,
+        title: 'Bitcoin Custody & Navigation',
+        description: 'Safekeeping your Bitcoin in hardware wallet (Coldcard, Seedsigner, etc)',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 5000,
+            maximum: 10000
+          },
+        }
+      },
+      {
+        id: 4,
+        title: 'Multisig Custody / Inheritance planning for Bitcoin',
+        description: 'Securing your bitcoin for generations',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 5000,
+            maximum: 10000
+          },
+        },
+      },
+      {
+        id: 5,
+        title: 'Bitcoin Mining (Initial Consultation)',
+        description: 'Profitability calculation, ASIC recommendation, ROI and cost analysis ',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 1000,
+            maximum: 2000
+          },
+        }
+      }
+    ],
+    reviews: {
+      averageRating: 5,
+      cards: []
+    }
   },
   {
     id: 4,
@@ -131,10 +213,77 @@ export const MENTORS_DATA = [
       alt_text: 'getbit',
       uri: '/images/Amol.webp'
     },
+    uri: '/amol',
     designation:  'Mentor',
     description: 'Amol helps clients securely and efficiently acquire Bitcoin.',
-    longDescription: '',
+    longDescription: 'Amol guides Bitcoiners in stacking sats securely and economically. With 20+ years in traditional finance, he also runs Bitcoin meetups to help clients with purchases and custody.',
     tags:['Purchase & Custody', 'Multisig & Inheritance', 'Taxes & Regulations'],
+    cards: [
+      {
+        id: 1,
+        title: 'Free Bitcoin Consultation',
+        description: 'Why, How and Where to buy and custody Bitcoin',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 0,
+            maximum: 0
+          }
+        }
+      },
+      {
+        id: 2,
+        title: 'Bitcoin Purchase & Portfolio Guidance',
+        description: 'Hands on purchase and custody of Bitcoin',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 2500,
+            maximum: 5000
+          },
+        }
+      },
+      {
+        id: 3,
+        title: 'Bitcoin Custody',
+        description: 'Safekeeping your Bitcoin in hardware wallet (Coldcard, Seedsigner, etc)',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 2500,
+            maximum: 5000
+          },
+        }
+      },
+      {
+        id: 4,
+        title: 'Multisig Custody / Inheritance planning for Bitcoin',
+        description: 'Securing your bitcoin for generations',
+        ratings: 5,
+        card: {
+          title: '45 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 2500,
+            maximum: 5000
+          },
+        }
+      }
+    ],
+    reviews: {
+      averageRating: 5,
+      cards: []
+    }
   },
   {
     id: 5,
@@ -307,10 +456,10 @@ export const MENTORS_DATA = [
           }
         }
       ],
-      reviews: {
-        averageRating: 5,
-        cards: []
-      }
+    reviews: {
+      averageRating: 5,
+      cards: []
+    }
   },
   {
     id: 8,

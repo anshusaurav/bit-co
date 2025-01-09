@@ -15,16 +15,16 @@ const nextConfig = {
         destination: 'https://calendar.app.google/f17tUWoRfwWaHXCdA',
         permanent: true,
       },
-      {
-        source: '/nihal',
-        destination: 'https://calendly.com/inbitcoinhub/bm',
-        permanent: true,
-      },
-      {
-        source: '/amol',
-        destination: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
-        permanent: true,
-      },
+      // {
+      //   source: '/nihal',
+      //   destination: 'https://calendly.com/inbitcoinhub/bm',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/amol',
+      //   destination: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
+      //   permanent: true,
+      // },
       // {
       //   source: '/ayush',
       //   destination: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0F59wJrxWxTtvcZtPV3-D5mBVlwLx8QdZ3jbUI2IvB1XohDy6d3OGVOlh-_jh-1qnkvw-PznnO',
