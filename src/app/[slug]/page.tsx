@@ -381,7 +381,7 @@ export default function HomePage() {
                 <div className='h-full -mt-1 -mb-1'>
                     <div className='sticky top-[120px] pb-[120px]  ml-[8%]'>
                       <div className='flex justify-center pt-[8%' style={{flex: '0 0 83.33333333333334%',maxWidth: '83.33333333333334%'}}>
-                        <div className='flex flex-wrap'>
+                        <div className='flex flex-wrap pt-5 md:pt-0'>
                             <div className='block relative' style={{flex: '0 0 41.66666666666667%',maxWidth: '41.66666666666667%'}}>
                               <div className='relative inline-flex break-words'>
                                 <NextImage alt={mentorData?.title} src={mentorData?.image_data?.uri} classNames={{image: 'rounded-[50%]'}} width={200} height={200}/>
@@ -459,18 +459,18 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className='flex row-wrap'>
-                      <div className='pr-3 w-1/3 lg:w-1/2'>
+                      <div className='pr-1 md:pr-3 w-1/3 lg:w-1/2'>
                         <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex justify-center items-center bg-[#fdfbf9]' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
                           <NextImage alt='reviews animation' src='/images/reviews_animation.gif' classNames={{image: 'rounded-[50%] aspect-square'}} width={160} height={160} />
                         </div>
                       </div>
-                      <div className='px-3 w-1/3 lg:w-1/4'>
+                      <div className='px-1 md:px-3 w-1/3 lg:w-1/4'>
                         <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex flex-col justify-center items-center bg-[#fdfbf9] gap-3' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
                             <div className='text-xl lg:text-3xl tracking-wider font-bold'>5/5</div>
                             <div className='text-sm lg:text-md font-normal tracking-wide text-[#666b60] uppercase'>1 rating</div>
                         </div>
                       </div>
-                      <div className='px-3 w-1/3 lg:w-1/4'>
+                      <div className='px-1 md:px-3 w-1/3 lg:w-1/4'>
                         <div className='mt-4 border border-[#ebeaeb] rounded-[32px] h-[176px] flex flex-col justify-center items-center bg-[#fdfbf9] gap-3' style={{    boxShadow: '.5px .5px 4px rgba(0, 0, 0, .03), -.5px -.5px 4px rgba(0, 0, 0, .03)'}}>
                             <div className='text-xl lg:text-3xl tracking-wider font-bold'>0</div>
                             <div className='text-sm lg:text-md font-normal tracking-wide text-[#666b60] uppercase'>Testimonial</div>

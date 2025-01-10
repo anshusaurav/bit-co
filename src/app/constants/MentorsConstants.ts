@@ -203,6 +203,11 @@ export const MENTORS_DATA = [
     reviews: {
       averageRating: 5,
       cards: []
+    },
+    socialLinks: {
+      twitter: 'https://x.com/nhlarmaan',
+      linkedin: 'https://www.linkedin.com/in/nihal-armaan-42891b66/',
+      youtube: 'https://www.youtube.com/@INBitcoinHub'
     }
   },
   {
@@ -283,6 +288,11 @@ export const MENTORS_DATA = [
     reviews: {
       averageRating: 5,
       cards: []
+    },
+    socialLinks: {
+      twitter: 'https://x.com/amol59113681401/',
+      linkedin: 'https://www.linkedin.com/in/nihal-armaan-42891b66/',
+      youtube: 'https://www.youtube.com/@INBitcoinHub'
     }
   },
   {
@@ -459,6 +469,9 @@ export const MENTORS_DATA = [
     reviews: {
       averageRating: 5,
       cards: []
+    },
+    socialLinks: {
+      twitter: 'https://x.com/RaviKoushik4/',
     }
   },
   {
