@@ -244,8 +244,8 @@ export default function HomePage() {
   },[])
   
   useEffect(() => {
-    console.log(router, window.location.pathname)
-    setMentorData(MENTORS_DATA?.find((item) => item?.uri === window.location.pathname));
+    const tempMentorData = MENTORS_DATA?.find((item) => item?.uri === window.location.pathname) || null;
+    setMentorData(tempMentorData);
   },[])
 
   const renderServiceCard = (item: any) => {
@@ -364,7 +364,7 @@ export default function HomePage() {
         <div className={`sticky top-0 inset-x-0 p-4 z-10 ${moved?'bg-black md:bg-opacity-[0.8]': 'bg-transparent'}`}>
           <div className='sticky top-0'>
             <div className='flex justify-between items-center '>
-              <div className='flex gap-2 justify-start items-center bg-opacity-1' onClick={() => router.push('/')}>
+              <div className='flex gap-2 justify-start items-center bg-opacity-1 cursor-pointer' onClick={() => router.push('/')}>
                 <NextImage alt='Logo' src={moved?'/images/logo-light.webp': '/images/logo-dark.webp'} width={54} height={54} className='rounded-md'/>
                 {!moved && <div
                   className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge
@@ -384,7 +384,10 @@ export default function HomePage() {
                         <div className='flex flex-wrap pt-5 md:pt-0'>
                             <div className='block relative' style={{flex: '0 0 41.66666666666667%',maxWidth: '41.66666666666667%'}}>
                               <div className='relative inline-flex break-words'>
-                                <NextImage alt={mentorData?.title} src={mentorData?.image_data?.uri} classNames={{image: 'rounded-[50%]'}} width={200} height={200}/>
+                                <div className='bg-cover bg-center bg-no-repeat' style={{backgroundImage: `url("${mentorData?.image_data?.uri}")`, width: '200px', height: '200px', borderRadius: '50%'}}>
+
+                                </div>
+                                {/* <NextImage alt={mentorData?.title} src={mentorData?.image_data?.uri} classNames={{image: 'rounded-[50%]'}} width={200} height={200}/> */}
                               </div>
                             </div>
                             <div className='block' style={{flex: '0 0 50%', maxWidth: '50%'}}>

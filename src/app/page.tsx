@@ -751,20 +751,7 @@ export default function MentorPage() {
     const itemFour = MENTORS_DATA?.[(startTeamIndex + 3)%MENTORS_DATA.length]
     const itemFive = MENTORS_DATA?.[(startTeamIndex + 4)%MENTORS_DATA.length]
     const itemSix = MENTORS_DATA?.[(startTeamIndex + 5)%MENTORS_DATA.length]
-
-    const renderItem = (item: any, index: number) => {
-        return (
-          <Link href={item?.calenderUrl} target="_blank" key={item?.id}  className={`${index>startTeamIndex+2?"hidden lg:block": ""}  cursor-pointer p-4 text-left rounded-md`}>
-          <div
-            className='flex flex-col justify-start p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
-              
-              <div style={{backgroundImage: `url(${item?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
-              </div>
-              <div className={'text-slate-800 font-normal text-xs mt-[6px] line-clamp-3 tracking-wide'}>{item?.description || ''}</div>
-            </div>
-        </Link>
-        )
-    }
+    
     return (
       <>
         <button onClick={() => {
@@ -777,7 +764,7 @@ export default function MentorPage() {
         }} key={itemOne?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
-              <div style={{backgroundImage: `url(${itemOne?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
+              <div style={{backgroundImage: `url(${itemOne?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lgp-2">
               </div>
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemOne?.description || ''}</div>
             </div>
@@ -819,7 +806,7 @@ export default function MentorPage() {
           else {
             window.open(itemFour?.calenderUrl, '_blank');
           }
-        }} key={itemFour?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
+        }} key={itemFour?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden lg:block`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFour?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
@@ -834,7 +821,7 @@ export default function MentorPage() {
           else {
             window.open(itemFive?.calenderUrl, '_blank');
           }
-        }} key={itemFive?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
+        }} key={itemFive?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden lg:block`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemFive?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
@@ -849,7 +836,7 @@ export default function MentorPage() {
           else {
             window.open(itemSix?.calenderUrl, '_blank');
           }
-        }} key={itemSix?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden md:block`}>
+        }} key={itemSix?.id}  className={`cursor-pointer p-1 md:p-4 text-left rounded-md hidden lg:block`}>
           <div
             className='flex flex-col gap-4 justify-start p-1 md:p-4 rounded-md bg-gradient-to-b from-mentorCardBgStart to-mentorCardBgEnd hover:from-mentorCardBgStart hover:to-mentorCardBgStart' >
               <div style={{backgroundImage: `url(${itemSix?.image_data?.uri})`}} className="bg-cover bg-no-repeat bg-center h-[86px] w-[86px] border border-3 border-white rounded-lg">
@@ -857,61 +844,6 @@ export default function MentorPage() {
               <div className={'text-slate-800 font-normal text-xs line-clamp-3 tracking-wide'}>{itemSix?.description || ''}</div>
             </div>
         </button>
-        {/* {
-          renderItem(itemTwo)
-        }
-        {
-          renderItem(itemThree)
-        }
-        {
-          renderItem(itemFour)
-        }
-        {
-          renderItem(itemFive)
-        }
-        {
-          renderItem(itemSix)
-        } */}
-        {/* <Link href={itemTwo?.calenderUrl} target="_blank" key={itemTwo?.id}style={{backgroundImage: ` url(${itemTwo?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2  cursor-pointer">
-          <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-            <div className='font-semibold text-white text-lg leading-3'>{itemTwo?.title || ''}</div>
-            <div className={'text-white font-normal text-xs mt-1'}>{itemTwo?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemTwo?.description || ''}</div>
-          </div>
-        </Link>
-        <Link href={itemThree?.calenderUrl} target="_blank" key={itemThree?.id}style={{backgroundImage: ` url(${itemThree?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 cursor-pointer">
-          <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-            <div className='font-semibold text-white text-lg leading-3'>{itemThree?.title || ''}</div>
-            <div className={'text-white font-normal text-xs mt-1'}>{itemThree?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemThree?.description || ''}</div>
-          </div>
-        </Link>
-        <Link href={itemFour?.calenderUrl} target="_blank" key={itemFour?.id}style={{backgroundImage: ` url(${itemFour?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
-          <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-            <div className='font-semibold text-white text-lg leading-3'>{itemFour?.title || ''}</div>
-            <div className={'text-white font-normal text-xs mt-1'}>{itemFour?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemFour?.description || ''}</div>
-          </div>
-        </Link>
-        <Link href={itemFive?.calenderUrl} target="_blank" key={itemFive?.id}style={{backgroundImage: ` url(${itemFive?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
-          <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-            <div className='font-semibold text-white text-lg leading-3'>{itemFive?.title || ''}</div>
-            <div className={'text-white font-normal text-xs mt-1'}>{itemFive?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemFive?.description || ''}</div>
-          </div>
-        </Link>
-        <Link href={itemSix?.calenderUrl} target="_blank" key={itemSix?.id}style={{backgroundImage: ` url(${itemSix?.image_data?.uri}), url("/images/abstract-textured-backgound.webp")`, height: 364}} className="bg-cover bg-no-repeat bg-center relative rounded-xl border-amber-50 border-2 hidden md:block cursor-pointer">
-          <div
-            className='flex flex-col justify-start absolute bottom-0 left-0 right-0 rounded-b-lg p-4 min-h-[136px] md:min-h-[150px] lg:min-h-[136px]' style={{backgroundColor: 'rgba(11,11,11, 0.5)'}}>
-            <div className='font-semibold text-white text-lg leading-3'>{itemSix?.title || ''}</div>
-            <div className={'text-white font-normal text-xs mt-1'}>{itemSix?.designation || ''}</div>
-            <div className={'text-white font-normal text-xs mt-[6px]'}>{itemSix?.description || ''}</div>
-          </div>
-        </Link> */}
       </>
     )
   }
@@ -927,7 +859,7 @@ export default function MentorPage() {
         <div className={`sticky top-0 inset-x-0 p-4 z-10 ${moved?'bg-black md:bg-opacity-[0.8]': 'bg-transparent'}`}>
           <div className='sticky top-0'>
             <div className='flex justify-between items-center '>
-              <div className='flex gap-2 justify-start items-center bg-opacity-1'>
+              <div className='flex gap-2 justify-start items-center bg-opacity-1 cursor-pointer'>
                 <NextImage alt='Logo' src={moved?'/images/logo-light.webp': '/images/logo-dark.webp'} width={54} height={54} className='rounded-md'/>
                 {!moved && <div
                   className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge
@@ -1206,7 +1138,7 @@ export default function MentorPage() {
                   <path stroke="#000" strokeLinecap="round" stroke-linejoin="round" strokeWidth="6" d="M74.3335 42.3334L58.657 58.0098C55.5328 61.134 55.5328 66.1994 58.657 69.3236L74.3335 85"></path>
                 </svg>
               </div>
-              <div className='flex-1 grid grid-cols-3 md:grid-cols-6 justify-between items-center auto-rows-1fr' >
+              <div className='flex-1 grid grid-cols-3 lg:grid-cols-6 justify-between items-center auto-rows-1fr' >
                 {
                   renderTeamItems()
                 }
