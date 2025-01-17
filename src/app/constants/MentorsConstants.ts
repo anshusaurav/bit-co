@@ -4,7 +4,7 @@ export const MENTORS_DATA = [
     title: 'Saurabh S',
     calenderUrl: 'https://calendar.app.google/5Q8NaBfxKPFaSitj9',
     image_data: {
-      alt_text: 'getbit',
+      alt_text: 'Saurabh S',
       uri: '/images/Saurabh_S.webp'
     },
     uri: '/saurabh',

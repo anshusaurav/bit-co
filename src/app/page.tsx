@@ -859,7 +859,7 @@ export default function MentorPage() {
         <div className={`sticky top-0 inset-x-0 p-4 z-10 ${moved?'bg-black md:bg-opacity-[0.8]': 'bg-transparent'}`}>
           <div className='sticky top-0'>
             <div className='flex justify-between items-center '>
-              <div className='flex gap-2 justify-start items-center bg-opacity-1 cursor-pointer'>
+              <div className='flex gap-2 justify-start items-center bg-opacity-1'>
                 <NextImage alt='Logo' src={moved?'/images/logo-light.webp': '/images/logo-dark.webp'} width={54} height={54} className='rounded-md'/>
                 {!moved && <div
                   className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge
