@@ -862,7 +862,7 @@ export default function MentorPage() {
               <div className='flex gap-2 justify-start items-center bg-opacity-1'>
                 <NextImage alt='Logo' src={moved?'/images/logo-light.webp': '/images/logo-dark.webp'} width={54} height={54} className='rounded-md'/>
                 {!moved && <div
-                  className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide'>Bitcoincierge
+                  className='font-trakya text-dark font-light text-xl md:text-4xl tracking-wide cursor-default'>Bitcoincierge
                 </div>}
               </div>
               <div className={`h-16 w-16 rounded-lg flex justify-center items-center ${moved?'bg-black':''} cursor-pointer`} onClick={toggleSidebar}>
