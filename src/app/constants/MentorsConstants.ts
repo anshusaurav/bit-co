@@ -85,6 +85,10 @@ export const MENTORS_DATA = [
     reviews: {
       averageRating: 5,
       cards: []
+    },
+    socialLinks: {
+      twitter: 'https://x.com/setusaurabh',
+      linkedin: 'https://www.linkedin.com/in/setusaurabh/',
     }
   },
   {
@@ -224,7 +228,8 @@ export const MENTORS_DATA = [
     socialLinks: {
       twitter: 'https://x.com/nhlarmaan',
       linkedin: 'https://www.linkedin.com/in/nihal-armaan-42891b66/',
-      youtube: 'https://www.youtube.com/@INBitcoinHub'
+      youtube: 'https://www.youtube.com/@INBitcoinHub',
+      nostr: 'https://primal.net/p/npub1rkfzkgy6kxwg7e042hpv6x8r4zulsj7zcvrnxqk4jqf5zmpaq5yq948huy'
     }
   },
   {
@@ -233,7 +238,7 @@ export const MENTORS_DATA = [
     calenderUrl: 'https://calendar.app.google/iAm3NNUZQWYEcRy46',
     image_data: {
       alt_text: 'Amol B',
-      uri: '/images/Amol.webp'
+      uri: '/images/Amol.png'
     },
     uri: '/amol',
     designation:  'Mentor',
@@ -309,6 +314,7 @@ export const MENTORS_DATA = [
     socialLinks: {
       twitter: 'https://x.com/amol59113681401/',
       linkedin: 'https://www.linkedin.com/in/nihal-armaan-42891b66/',
+      nostr: 'https://primal.net/p/npub1gjwppe85grayq5d58y4ltsprjyyx8704evvp9fc4wmpecznhtpcqlx97us'
     }
   },
   {
@@ -565,6 +571,80 @@ export const MENTORS_DATA = [
       cards: []
     }
   },
+  // {
+  //   id: 9,
+  //   title: 'Bhavik Marwadi',
+  //   calenderUrl: 'https://calendly.com/keshavtyagi11-kt/30min',
+  //   image_data: {
+  //     alt_text: 'Keshav Tyagi',
+  //     uri: '/images/Keshav.jpg'
+  //   },
+  //   uri: '/keshav',
+  //   designation: 'Mentor',
+  //   description: 'Keshav specializes in Bitcoin purchase, security and safe storage advice.',
+  //   longDescription: 'Keshav specializes Bitcoin purchase along with secure custody solutions, offering practical advice to ensure the safety and protection of their digital assets.',
+  //   tags: ['Purchase & Custody', 'Bitcoin Wallets'],
+  //   cards: [
+  //     {
+  //       id: 1,
+  //       title: 'Free Bitcoin Consultation',
+  //       description: 'Why, How and Where to buy and custody Bitcoin',
+  //       ratings: 5,
+  //       card: {
+  //         title: '45 min',
+  //         description: 'Video Meeting',
+  //         iconUrl: '/images/icon-sc-calendar.svg',
+  //         price: {
+  //           actual: 0,
+  //           maximum: 0
+  //         },
+  //         brokerage: {
+  //             actual: 0,
+  //             maximum: 0
+  //         }
+  //       },
+  //     },
+  //     {
+  //       id: 2,
+  //       title: 'Bitcoin Custody Hands On Guidance',
+  //       description: 'Expert assistance with withdrawing Bitcoin from exchanges. Setup support for hardware wallets (Ledger expertise). Complimentary user guides for self-assisted custody for future transsactions',
+  //       ratings: 5,
+  //       card: {
+  //         title: '45 mins',
+  //         description: 'Video Meeting',
+  //         iconUrl: '/images/icon-sc-calendar.svg',
+  //         price: {
+  //           actual: 1000,
+  //           maximum: 2000
+  //         },
+  //       }
+  //     },
+  //     {
+  //       id: 3,
+  //       title: 'Personalized Hardware Wallet Advice',
+  //       description: 'Expert consultation to help you pick the best hardware wallet to store your Bitcoin securely, based on your technical skills and security preferences.',
+  //       ratings: 5,
+  //       card: {
+  //         title: '45 mins',
+  //         description: 'Video Meeting',
+  //         iconUrl: '/images/icon-sc-calendar.svg',
+  //         price: {
+  //           actual: 1000,
+  //           maximum: 2000
+  //         },
+  //       }
+  //     }
+  //   ],
+  //   reviews: {
+  //     averageRating: 5,
+  //     cards: []
+  //   },
+  //   socialLinks: {
+  //     twitter: 'https://x.com/Kxshav_98',
+  //     linkedin: 'https://www.linkedin.com/in/keshav-tyagi-b57580140/',
+
+  //   }
+  // },
   {
     id: 9,
     title: 'Keshav Tyagi',
@@ -641,17 +721,17 @@ export const MENTORS_DATA = [
   },
   {
     id: 10,
-    title: 'Chaitanya Chaudhary',
-    calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
+    title: 'Plebs',
+    calenderUrl: 'https://calendar.app.google/QEVdhKApeRR3RDXFA',
     image_data: {
-      alt_text: 'Chaitanya Chaudhary',
-      uri: '/images/Chaitanya.png'
+      alt_text: 'Plebs Together Strong',
+      uri: '/images/defaultMentor.webp'
     },
-    uri: '/chaitanya',
+    uri: '/plebstogether',
     designation: 'Mentor',
-    description: 'Chaitanya helps with Acquiring & Self Custody of Bitcoin. Specializes in Privacy Practices.',
-    longDescription: 'Chaitanya assits Bitcoin buyers with Purchases & Self Custody, advises on Privacy Practices and P2P aquisition of Bitcoin.',
-    tags: ['Purchase & Custody', 'Bitcoin & LN node'],
+    description: 'Plebs specializes in Bitcoin purchase, security and safe storage advice.',
+    longDescription: 'Plebs Strong together specializes Bitcoin purchase along with secure custody solutions, offering practical advice to ensure the safety and protection of their digital assets.',
+    tags: [],
     cards: [
       {
         id: 1,
@@ -671,33 +751,192 @@ export const MENTORS_DATA = [
               maximum: 0
           }
         },
-      },
+      }
+    ],
+    reviews: {
+      averageRating: 5,
+      cards: []
+    },
+    socialLinks: {
+      twitter: 'https://x.com/plebstogether',
+    }
+  },
+  // {
+  //   id: 10,
+  //   title: 'Chaitanya Chaudhary',
+  //   calenderUrl: 'https://calendar.app.google/sMfPCFb7yZj2xv7Y6',
+  //   image_data: {
+  //     alt_text: 'Chaitanya Chaudhary',
+  //     uri: '/images/Chaitanya.png'
+  //   },
+  //   uri: '/chaitanya',
+  //   designation: 'Mentor',
+  //   description: 'Chaitanya helps with Acquiring & Self Custody of Bitcoin. Specializes in Privacy Practices.',
+  //   longDescription: 'Chaitanya assits Bitcoin buyers with Purchases & Self Custody, advises on Privacy Practices and P2P aquisition of Bitcoin.',
+  //   tags: ['Purchase & Custody', 'Bitcoin & LN node'],
+  //   cards: [
+  //     {
+  //       id: 1,
+  //       title: 'Free Bitcoin Consultation',
+  //       description: 'Why, How and Where to buy and custody Bitcoin',
+  //       ratings: 5,
+  //       card: {
+  //         title: '45 min',
+  //         description: 'Video Meeting',
+  //         iconUrl: '/images/icon-sc-calendar.svg',
+  //         price: {
+  //           actual: 0,
+  //           maximum: 0
+  //         },
+  //         brokerage: {
+  //             actual: 0,
+  //             maximum: 0
+  //         }
+  //       },
+  //     },
+  //     {
+  //       id: 2,
+  //       title: 'Investment Management & Porfolio Guidance',
+  //       description: '',
+  //       ratings: 5,
+  //       card: {
+  //         title: '45 mins',
+  //         description: 'Video Meeting',
+  //         iconUrl: '/images/icon-sc-calendar.svg',
+  //         price: {
+  //           actual: 2500,
+  //           maximum: 5000
+  //         },
+  //       }
+  //     },
+  //     {
+  //       id: 3,
+  //       title: 'Bitcoin Custody',
+  //       ratings: 5,
+  //       card: {
+  //         title: '45 mins',
+  //         description: 'Video Meeting',
+  //         iconUrl: '/images/icon-sc-calendar.svg',
+  //         price: {
+  //           actual: 2500,
+  //           maximum: 5000
+  //         },
+  //       }
+  //     }
+  //   ],
+  //   reviews: {
+  //     averageRating: 5,
+  //     cards: []
+  //   },
+  //   socialLinks: {
+  //     twitter: 'https://x.com/Chai64205679',
+  //   }
+  // }
+  {
+    id: 11,
+    title: 'Riven S',
+    calenderUrl: 'https://calendly.com/calendar-rivensovereign',
+    image_data: {
+      alt_text: 'Riven S',
+      uri: '/images/Riven.webp'
+    },
+    uri: '/riven',
+    designation: 'Mentor',
+    description: 'Riven S is a consultant with a focus on Bitcoin, providing guidance on topics such as purchasing and storing BTC and setting up Bitcoin and Lightning Network nodes.',
+    longDescription: 'Riven S is a consultant with a focus on Bitcoin, providing guidance on topics such as purchasing and storing BTC, multisignature wallets, tax considerations, and setting up Bitcoin and Lightning Network nodes. As a Bitcoin maximalist, their expertise is centered around the Bitcoin ecosystem and they advise on maintaining privacy and sovereignty in financial matters within this context.',
+    tags: ['Purchase & Custody', 'Multisig', 'Taxes', 'Bitcoin & LN node', 'Cloud mining', 'Privacy & Sovereignity'],
+    cards: [
       {
-        id: 2,
-        title: 'Investment Management & Porfolio Guidance',
-        description: '',
+        id: 1,
+        title: 'Introduction to Bitcoin Maximalism',
+        description: 'Introduction to Bitcoin and its ecosystem, benefits of a Bitcoin-only approach',
         ratings: 5,
         card: {
-          title: '45 mins',
+          title: '30 min',
           description: 'Video Meeting',
           iconUrl: '/images/icon-sc-calendar.svg',
           price: {
-            actual: 2500,
-            maximum: 5000
+            actual: 2000,
+            maximum: 4000
+          },
+          brokerage: {
+              actual: 0,
+              maximum: 0
+          }
+        },
+      },
+      {
+        id: 2,
+        title: 'Bitcoin Node Setup and Management',
+        description: 'Guidance on setting up and maintaining a Bitcoin node, including Lightning Network integration',
+        ratings: 5,
+        card: {
+          title: '60 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 5000,
+            maximum: 8000
           },
         }
       },
       {
         id: 3,
-        title: 'Bitcoin Custody',
+        title: 'Multisig Wallet Setup and Security Best Practices',
+        description: 'Expert advice on setting up and securing multisignature wallets for enhanced asset protection.',
         ratings: 5,
         card: {
-          title: '45 mins',
+          title: '60 mins',
           description: 'Video Meeting',
           iconUrl: '/images/icon-sc-calendar.svg',
           price: {
-            actual: 2500,
-            maximum: 5000
+            actual: 8000,
+            maximum: 12000
+          },
+        }
+      },
+      {
+        id: 4,
+        title: 'Secure Purchase of BTC and Storage of Private Keys',
+        description: 'Advice on safely purchasing and storing private keys, including best practices for key generation, storage, and backup.',
+        ratings: 5,
+        card: {
+          title: '60 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 8000,
+            maximum: 12000
+          },
+        }
+      },
+      {
+        id: 5,
+        title: 'Privacy and Sovereignty Strategies',
+        description: 'Customized guidance on maintaining financial privacy and sovereignty in the context of Bitcoin ownership.',
+        ratings: 5,
+        card: {
+          title: '90 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 10000,
+            maximum: 15000
+          },
+        }
+      },
+      {
+        id: 6,
+        title: 'Advanced Bitcoin Investment Strategies',
+        description: 'In-depth discussion on advanced investment strategies, including tax optimization and portfolio management (for experienced investors).',
+        ratings: 5,
+        card: {
+          title: '160 mins',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 12000,
+            maximum: 20000
           },
         }
       }
@@ -707,7 +946,54 @@ export const MENTORS_DATA = [
       cards: []
     },
     socialLinks: {
-      twitter: 'https://x.com/Chai64205679',
+      nostr: 'https://primal.net/p/npub1vhfyjksnfn8a8g9te4797ysv7ed0sxsvr4v37yyt6409vehnnedsp8y5uc'
     }
-  }
+  },
+  {
+    id: 12,
+    title: 'Karan Gill',
+    calenderUrl: 'https://calendly.com/karan-swapso',
+    image_data: {
+      alt_text: 'Karan Gill',
+      uri: '/images/Karan.png'
+    },
+    uri: '/karan',
+    designation: 'Mentor',
+    description: 'Karan specializes in Bitcoin purchase, security and safe storage advice.',
+    longDescription: 'A Chemical engineer from IIT Bombay, Currently working on SwapSo to build a self custody bitcoin investment platform. Along with SwapSo i do organise Bitcoin events to aware people about Bitcoin.',
+    tags: ['Purchase & Custody','Multsig wallet', 'Bitcoin Gifting'],
+    cards: [
+      {
+        id: 1,
+        title: 'Free Bitcoin Consultation',
+        description: 'Understand the Why, How, and Where of buying Bitcoin. ',
+        ratings: 5,
+        card: {
+          title: '30 min',
+          description: 'Video Meeting',
+          iconUrl: '/images/icon-sc-calendar.svg',
+          price: {
+            actual: 21,
+            maximum: 1000
+          },
+          brokerage: {
+              actual: 0,
+              maximum: 0
+          }
+        },
+      },
+    ],
+    reviews: {
+      averageRating: 5,
+      cards: []
+    },
+    socialLinks: {
+      twitter: 'https://x.com/krngill5',
+      linkedin: 'https://www.linkedin.com/in/karangill27/',
+      youtube: 'https://www.youtube.com/@karangill-btc',
+      instagram: 'https://www.instagram.com/karangill.btc/',
+      nostr: 'https://primal.net/p/npub1rm30jflfaufkeq2ca40eqwyzkekg4mtemxczu5g9e8wd4a2ugfxst5ysum',
+      watsapp: 'https://wa.me/9928893561'
+    }
+  },
 ]

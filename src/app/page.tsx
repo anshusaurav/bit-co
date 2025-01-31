@@ -848,11 +848,9 @@ export default function MentorPage() {
     )
   }
   return (
-
+    
     <div className='container'>
-      <Head>
-      <meta name="google-site-verification" content="ONe4E2chrgHUN2zGL6rGI0NiAO4_sUkDkSEdNlDTORw" />
-      </Head>
+      
       <main style={{backgroundImage: `url("/images/background-light.png")`}}
             className='bg-contain bg-center bg-repeat-y relative'>
         {/*<Head>*/}
