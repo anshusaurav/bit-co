@@ -16,7 +16,8 @@ import {
   FaQuestionCircle,
   FaHeadphones,
   FaLinkedin,
-  FaTwitter, FaFacebookF, FaYoutube
+  FaTwitter, FaFacebookF, FaYoutube,
+  FaCalendar
 } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 // import {FaCaretDown, FaCaretUp} from "react-icons/fa6";
@@ -145,6 +146,16 @@ const SIDEBAR_DATA = [
     },
     uri: '/#mentor-section'
   },
+  {
+    title: 'Events',
+    image_data: {
+      uri: <FaCalendar className='text-3xl font-bold text-bone group-hover:text-pumpkin'/>,
+      alt_text: 'Events',
+      width: 30,
+      height: 30
+    },
+    uri: '/#events-section'
+  },
   // {
   //   title: 'Podcast',
   //   image_data: {
@@ -155,6 +166,7 @@ const SIDEBAR_DATA = [
   //   },
   //   uri: '#podcast-section'
   // }
+  
 ]
 const SIDEBAR_SOCIAL_DATA = [
   {
