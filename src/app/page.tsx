@@ -16,7 +16,8 @@ import {
   FaQuestionCircle,
   FaHeadphones,
   FaLinkedin,
-  FaTwitter, FaFacebookF, FaYoutube
+  FaTwitter, FaFacebookF, FaYoutube,
+  FaCalendar
 } from "react-icons/fa";
 import {FaCaretDown, FaCaretUp} from "react-icons/fa6";
 import { useRouter } from 'next/navigation';
@@ -623,6 +624,16 @@ const SIDEBAR_DATA = [
     },
     uri: '#mentor-section'
   },
+  {
+    title: 'Events',
+    image_data: {
+      uri: <FaCalendar className='text-3xl font-bold text-bone group-hover:text-pumpkin'/>,
+      alt_text: 'Events',
+      width: 30,
+      height: 30
+    },
+    uri: '#events-section'
+  },
   // {
   //   title: 'Podcast',
   //   image_data: {
@@ -1152,6 +1163,31 @@ export default function MentorPage() {
               </div>
             </div>
             {/*<div className='text-xs text-grabniteGrey font-light text-center mt-1 p-4 hidden lg:block w-full'>{selectedDescription}</div>*/}
+          </div>
+        </section>
+        <section className='bg-opacity-99 px-6 md:px-16 py-16 font-content mx-auto' id='events-section' style={{background: "#f8f7f2"}}>
+          <div className='px-0 md:px-8 lg:px-10'>
+            <div className="mt-2 mb-8 md:mb-12">
+              <div className="text-xl sm:text-2xl lg:text-4xl xl:text-[42px] font-bold text-slate-900 text-center">
+                🔥 Upcoming Events 🔥
+              </div>
+              <div className="text-md md:text-xl lg:text-2xl font-normal text-slate-900 mt-4 text-center">
+                Join our community events and workshops
+              </div>
+            </div>
+            <div className="flex justify-center items-center p-10">
+              <iframe
+                src="https://luma.com/embed/event/evt-jZslj0SLUvKfbtV/simple"
+                width="900"
+                height="930"
+                frameBorder="0"
+                style={{border: '1px solid #bfcbda88', borderRadius: '4px'}}
+                allow="fullscreen; payment"
+                aria-hidden={false}
+                tabIndex={0}
+                className="max-w-full"
+              ></iframe>
+            </div>
           </div>
         </section>
         <section className='font-content mx-auto px-6 md:px-16'>
